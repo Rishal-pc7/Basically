@@ -12,6 +12,9 @@
         padding-left: 40px;
         padding-right: 40px;
     }
+    .footer-div .contact-div .input input[type='submit']{
+        padding: 25px 10px;
+    }
     .footer-div .policy-div{
         margin-left: 2em;
         width: 30%;
