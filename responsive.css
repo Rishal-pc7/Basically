@@ -1,0 +1,117 @@
+@media only screen and (min-width:200px) and (max-width:1250px){
+    .mobile-nav{
+        display: block;
+    }
+    .navbar{
+        display: none;
+    }
+    .mob-view{
+        display: block !important;
+    }
+    .footer-div{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .footer-div .policy-div{
+        margin-left: 2em;
+        width: 30%;
+    }
+    .footer-div .help-div{
+        width: 40%;
+    }
+    .footer-div .about-div{
+        width: 20%;
+        margin-left: 2em;
+    }
+    .mob-contact{
+        width: 100% !important;
+        margin-bottom: 2em;
+    }
+    .footer-div .contact-div{
+        display: none;
+    }
+    .footer-div .contact-div .social-media{
+        display: none;
+    }
+    .chat-widget .chat-btn .chat-txt{
+        display: none;
+    }
+    .chat-widget .chat-btn{
+        padding:10px 15px ;
+    }
+    .hero{
+  
+        background:url('./images/whites-43-mob-view.jpg') ;
+        height: 1200px;
+    }
+    .hero-content{
+        width: 100%;
+        float: left;
+        z-index: 2;
+        transform: translateY(210%);
+    }
+    .hero-content button{
+        margin-top: 4em;
+        background: none;
+        transform: translateX(80%);
+    }
+    .hero-content button a{
+        text-decoration: underline;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    .hero-content button:hover,.hero-content button:focus{
+        background-color: transparent;
+    }
+    .page-content{
+        height: 1400px;
+    }
+    .page-content .contents{
+        background: url('./images/whites-132-mob-view.jpg');
+        height: 1400px;
+        width: 100%;
+        position: relative;
+    }
+    .page-content .contents .text-content{
+        width: 85%;
+        transform: translateY(30%);
+        color: #fff;
+        background-color:transparent;
+        margin-left: 100px;
+    }
+    .page-content .text-content h4{
+        margin-left: 200px;
+        font-weight: 500;
+        font-size: 46px;
+      }
+    .page-content .text-content p{
+        margin-top: .5em;
+        font-size: 36px;
+        font-weight:300;
+        margin-left: 50px;
+      }
+    .page-content .text-content .link{
+        margin-top: 5.5em;
+    }
+    .page-content .text-content .link a{
+        color: #fff;
+        margin-left: 250px;
+        font-size: 24px;
+        font-weight:300;
+    }
+    .page-content .contents .img-content{
+        display: none;
+    }
+    .page-content .quote{
+        display: none;
+    }
+    
+    .carousel{
+        display: none;
+    }
+    .mob-carousel-section{
+        display: block;
+    }
+    
+}

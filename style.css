@@ -1,0 +1,741 @@
+@keyframes fade {
+    0%{
+        opacity: 0;
+  
+    }
+    100%{
+        opacity: 1;
+    }
+    
+    
+  }
+  @keyframes unfade {
+    from{opacity: 1;}
+    to{opacity: 0;}
+    
+    
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family:"Be Vietnam Pro", sans-serif;
+    scroll-behavior: smooth;
+    animation: fade .8s ease-in-out;
+    
+  }
+  .mob-view{
+    display: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  .chat-widget{
+    bottom: 1em;
+    right: 1em;
+    position: fixed;
+    z-index: 2;
+  }
+  .chat-widget .chat-btn{
+    border: none;
+    background: #aabcbf;
+    border-radius: 25px;
+    padding: 15px 40px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    cursor: pointer;
+  }
+  .chat-widget .chat i{
+    font-size: 24px;
+  }
+  .chat-widget .chat{
+    background: #fff;
+    height: 550px;
+    width: 350px;
+    border-radius: 24px;
+    display: none;
+  }
+  .chat-widget .chat .header{
+    padding-top: 10px;
+    height: 80px;
+    box-shadow: 0px 15px 38px -15px #9a9898;    
+  }
+  .chat-widget .chat .header h2{
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  .chat-widget .chat .header h3{
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: -1.6em;
+    margin-left: 40px;
+  
+  }
+  .chat-widget .chat .header .dot{
+    font-size: 20px;
+    font-weight: 700;
+    color: #43b72a;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .chat-widget .chat .header .icon{
+    right: 10px;
+    position: absolute;
+    top: 35px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .chat-widget .chat .input{
+    width: 100%;
+    height: 80px;
+    box-shadow: 0px 15px 38px -15px #9a9898;    
+    position: absolute;
+    bottom: 0;
+  }
+  .chat-widget .chat .input input[type='text']{
+    height: 100%;
+    width: 70%;
+    margin-left: 20px;
+    border: none;
+    background: none;
+    font-size: 14px;
+    font-weight: 200;
+    font-family: 'Be Vietnam Pro',sans-serif;
+  }
+  .chat-widget .chat .input input[type='text']:hover , .chat-widget .chat .input input[type='text']:focus {
+    outline: none;
+  }
+  .chat-widget .chat .input button{
+    width: 8%;
+    background: none;
+    border: none;
+    color: #d9dcdc;
+    cursor: pointer;
+  }
+  .chat-widget .chat .input button:hover{
+    color: #ccc;
+  }
+  
+.links{
+    color: #fff;
+
+}
+.mobile-nav{
+    display: none;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 6em;
+    background: transparent;
+    left: 0;
+    z-index: 1;
+    color: #fff;
+}
+.mobile-nav .nav-items{
+    margin-top: 1em;
+}
+.mobile-nav .nav-items .menu{
+    padding-left: 2em;
+    width: 25%;
+    float: left;
+    height: 100%;
+}
+.mobile-nav .nav-items .menu .menu-btn{
+    display: block;
+    background: none;
+    border: none;
+    font-size: 32px;
+    
+}
+.mobile-nav .nav-items .menu .menu-btn i{
+    transition: .8s opacity ease-in-out;
+}
+
+.mobile-nav  .nav-brand{
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    display: block;
+}
+.mobile-nav .menus{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% 18%;
+}
+.mobile-nav .side-menu{
+    width: 80%;
+    background: #fff;
+    position: absolute;
+    color: #000;
+    height: 100vh;
+    animation: fade .8s ease-in-out;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.mobile-nav .balance-menu{
+    position: absolute;
+    height: 100vh;
+    display: none;
+    width: 20%;
+    right: 0;
+}
+
+.mobile-nav .side-menu .header{
+    height: 10%;
+    width: 100%;
+    margin-top: 1em;
+}
+.mobile-nav .side-menu .close{
+    width: 20%;
+    padding-left: 2em;
+    float: left;
+}
+.mobile-nav .side-menu .close .close-btn{
+    border: none;
+    background: none;
+    font-size: 32px;
+
+}
+.mobile-nav .side-menu .nav-brand{
+    display: block;
+}
+.mobile-nav .side-menu .cart{
+    width: 20%;
+    float: right;
+}
+
+.mobile-nav .side-menu .cart .cart-btn{
+    border: none;
+    position: absolute;
+    right: 1em;
+    background: none;
+    font-size: 32px;
+}
+.mobile-nav .side-menu .link{
+    color: #000;
+
+}
+.mobile-nav .side-menu .options{
+    height: 70%;
+    width: 100%;
+    margin-top: 1em;
+    padding-left: 50px;
+}
+.mobile-nav .side-menu .options li{
+    list-style: none;
+    font-size: 24px;
+    line-height: 2em;
+    font-weight: 500;
+}
+.mobile-nav .side-menu .footer{
+    height: 10%;
+    margin-top: 1em;
+    position: absolute;
+    width: 100%;
+    bottom: 2em;
+
+}
+.mobile-nav .side-menu .footer .social-media{
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+.mobile-nav .side-menu .footer .social-media a{
+    text-decoration: none;
+    font-size: 38px;
+    color: #ccc;
+}
+.mobile-nav .side-menu .footer .social-media .social-links{
+    margin-left: 2em;
+}
+.navbar{
+    display: block;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 6em;
+    background-color: transparent;
+    left: 0;
+    z-index: 1;
+}
+.navbar .nav-items{
+   margin-top: 1em;
+}
+.navbar .nav-brand{
+    width: 22%;
+    padding:10px 100px;
+    float: left;
+}
+.nav-brand h2{
+
+    font-size: 26px;
+    font-weight: bolder;
+}
+.nav-brand h2 span{
+    font-weight: 500;
+}
+.navbar .nav-options{
+    width:40%;
+    padding: 20px 0;
+    float: left;
+}
+.navbar .nav-options li{
+    list-style: none;
+    float: left;
+    margin-right: 4.5em;
+    
+}
+.navbar .nav-options a{
+    font-size: 20px;
+}
+.navbar .nav-user{
+    width:22%;
+    padding: 20px 0;
+    float: right;
+    margin-right: -3.5em;
+}
+.navbar .nav-user li{
+    list-style: none;
+    float: left;
+    margin-right: 2.5em;
+    
+}
+.navbar .nav-user a i{
+    font-size: 32px;
+    font-weight: 600;
+}
+.hero{
+  
+    background:url('./images/whites-43.jpg') ;
+    height: 700px;
+    width: 100%;
+}
+.hero-content{
+  width: 50%;
+  margin-top:300px;
+  float: right;
+  padding-top: 30px;
+}
+.hero-content .content{
+  margin-left: 300px;
+  color: #fff;
+}
+.hero-content h3{
+  font-weight: 300;
+}
+.hero-content h1{
+ margin-top: .3em;
+ margin-left: -5px;
+ font-weight: 600;
+ font-size: 28px;
+}
+.hero-content h2{
+  margin-top: .5em;
+ font-weight: 200;
+ font-size: 20px;
+}
+.hero-content button{
+  margin-top: 2em;
+  border: none;
+  padding: 10px 45px;
+  background: #fff;
+  font-size: 15px;
+  font-family: "Be Vietnam Pro",sans-serif;
+}
+.hero-content button a{
+  text-decoration: none;
+  color: #000;
+}
+.hero-content button:hover,.hero-content button:focus  {
+  outline: none;
+  background-color: #000;
+  transition: .5s ease-in;
+}
+.mob-carousel-section{
+
+  display: none;
+}
+.ethics-heading{
+  padding: 30px;
+  text-align: center;
+  position: absolute;
+  color: #fff;
+  z-index: 2;
+  left: 30%;
+  top: 5%;
+}
+.ethics-heading h2{
+  font-size: 55px;
+  font-weight: 600;
+}
+.mob-carousel{
+  position: relative;
+  height: 1400px;
+}
+.mob-carousel .slides{
+  height: 1400px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  width: 100%;
+}
+.slides::-webkit-scrollbar{
+  display: none;
+}
+.mob-carousel  .ellipsis{
+  z-index: 99;
+  position: absolute;
+  bottom: 3em;
+  left: 44%;
+}
+.mob-carousel .ellipsis span{
+  color: #ccc;
+
+}
+.mob-carousel .ellipsis span[data-active-ellipse]{
+  color: #b78d2a;
+  transform: scale(0.5);
+}
+.mob-carousel  .ellipsis span{
+  margin-left: 1em;
+}
+.mob-carousel .slides .first-slide{
+  background: url('./images/basically fsctory-12-mob.jpg');
+}
+.mob-carousel .slides .mid-slide{
+  background: url('./images/basically fsctory-06-1-mob.jpg');
+}
+.mob-carousel .slides .last-slide{
+  background: url('./images/basically-fsctory-11-mob.jpg');
+}
+.mob-carousel .slides .slide-res{
+  inset: 0;
+  transition: 2s opacity ease-in-out;
+  position: relative;
+}
+
+.mob-carousel .slides .slide-res .text{
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #fff;
+  top: 70%;
+  margin-left: 280px;
+}
+.mob-carousel .slides .mid-slide .text{
+  top: 60%;
+  width: 50%;
+}
+.mob-carousel .slides .last-slide .text{
+  top: 40%;
+  width: 55%;
+  margin-left: 120px;
+}
+.mob-carousel .slides .slide-res .text h4 {
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: .5em;
+}
+.mob-carousel .slides .slide-res .text p {
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 1.5em;
+  margin-bottom: .5em;
+}
+.mob-carousel .slides .slide-res .text a {
+  text-decoration: underline;
+  color: #fff;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.page-content{
+  height: 1000px;
+  z-index: 99;
+  background-color: #fff;
+  animation: fade .8s ease-in;
+}
+.page-content .contents{
+  width: 100%;
+}
+.page-content .text-content{
+  padding-top: 170px;
+  float: left;
+  width: 50%;
+  
+  color: #000;
+  background-color: #fff;
+}
+.page-content .text-content h4{
+  margin-left: 250px;
+  font-weight: 500;
+  font-size: 32px;
+}
+.page-content .text-content p{
+  margin-top: 1em;
+  font-size: 20px;
+  font-weight:100;
+  margin-left: 180px;
+}
+.page-content .text-content .link{
+
+  margin-top: 5em;
+}
+.page-content .text-content .link a{
+  font-size: 16px;
+  font-weight:400;
+  margin-left: 120px;
+  text-decoration: underline;
+  color: #000;
+}
+.page-content .img-content{
+  width: 50%;
+  float: right;
+}
+.page-content .img-content img{
+  width: 100%;
+  height: 750px;
+}
+.page-content .quote{
+  width: 100%;
+  float: left;
+  margin-top: 5em;
+}
+.page-content .quote h1{
+  font-weight: 500;
+  font-size: 32px;
+
+}
+.page-content .quote h5{
+  font-weight: 100;
+  font-size: 12px;
+  margin-left: 48%;
+  margin-top: 1.5em;
+}
+.carousel{
+  display: block;
+  margin-top: 1.5em;
+  width: 100%;
+  height: 750px;
+  position: relative;
+}
+.carousel .slide{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 2s opacity ease-in-out;
+  list-style: none;
+}
+.carousel .slide[data-active]{
+   opacity: 1;
+   transition-delay: 0s;
+}
+
+.carousel .slide .text{
+  position: absolute;
+  left: 180px;
+  background: #f1f1f1;
+  width: 400px;
+  height: 170px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding:15px 50px ;
+  text-align: center;
+}
+.carousel .slide .text h4{
+  font-size: 28px;
+  font-weight: 500;
+}
+.carousel .slide .text p{
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: .5em;
+  line-height: 1.7em;
+  margin-bottom: .3em;
+}
+.carousel .slide .text a{
+  text-decoration: underline;
+  color: #000;
+  font-size: 17px;
+  font-weight: 300;
+}
+.carousel .slide .carousel-items img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+.carousel .carousel-buttons{
+  z-index: 2;
+  border: none;
+  position: absolute;
+  background: none;
+  font-size: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+.carousel .carousel-buttons:focus{
+  outline: none;
+}
+.carousel  .prev{
+  left: 1em;
+}
+.carousel .next{
+  right: 1em;
+}
+.carousel .carousel-buttons:hover{
+  color: #454545;
+}
+.footer-div{
+    background-color:#57595b;
+    bottom: 0;
+    height: 350px;
+    color: #fff;
+    padding-top: 80px;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-bottom: 20px;
+    margin-top: 1em;
+  }
+  .footer-div .policy-div{
+    width: 25%;
+    float: left;
+  }
+  .footer-div .policy-div h2{
+    font-size: 21px;
+    font-weight: 400;
+  
+    
+  }
+  .footer-div .policy-div ul{
+    list-style: none;
+    margin-top: 1em;
+  }
+  .footer-div .policy-div ul li{
+    line-height: 1.5em;
+  }
+  .footer-div .policy-div ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 200;
+  }
+  .footer-div .help-div{
+    width: 25%;
+    float: left;
+  }
+  .footer-div .help-div h2{
+    font-size: 21px;
+    font-weight: 400;
+  
+    
+  }
+  .footer-div .help-div ul{
+    list-style: none;
+    margin-top: 1em;
+  }
+  .footer-div .help-div ul li{
+    line-height: 1.5em;
+  }
+  .footer-div .help-div ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 200;
+  }
+  .footer-div .about-div{
+    width: 15%;
+    float: left;
+  }
+  .footer-div .about-div h2{
+    font-size: 21px;
+    font-weight: 400;
+  
+    
+  }
+  .footer-div .about-div ul{
+    list-style: none;
+    margin-top: 1em;
+  }
+  .footer-div .about-div ul li{
+    line-height: 1.5em;
+  }
+  .footer-div .about-div ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 200;
+  }
+  .footer-div .contact-div{
+    width: 35%;
+    float: left;
+    text-align: center;
+  
+  }
+  .footer-div .contact-div h2{
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .footer-div .contact-div .input{
+    margin-top: 1.5em;
+    width: 100%;
+  
+  }
+  .footer-div .contact-div .input input[type='text']{
+    width: 70%;
+    padding: 20px ;
+    border: none;
+    font-size: 11px;
+    font-weight: 100;
+  }
+  .footer-div .contact-div .input input[type='submit']{
+    width: 15%;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 18px 10px;
+    margin-left: -1em;
+  }
+  .footer-div .contact-div .input input[type='submit']:hover,.footer-div .contact-div .input input[type='text']:focus{
+    outline: none;
+    
+  }
+  .footer-div .contact-div .input input[type='submit']:hover{
+    background-color: #316142;
+  }
+  .footer-div .contact-div .social-media{
+    margin-top: 4em;
+  }
+  .footer-div .contact-div .social-media a{
+    text-decoration: none;
+    font-size: 38px;
+    color: #ccc;
+  }
+  
+  .footer-div .contact-div .social-media .social-links{
+    margin-left: 2em;
+  
+  }
+  .footer-div .copyright{
+    text-align: center;
+  }
+  .footer-div .copyright h4{
+    margin-top: 22em;
+    font-size: 13px;
+    font-weight: 200;
+  }
