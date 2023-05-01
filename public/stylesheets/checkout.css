@@ -1,0 +1,377 @@
+.checkoutParentDiv{
+    padding: 0 0 0 200px;
+    height: 975px;
+}
+.checkoutParentDiv .windows{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;
+    width: 100%;
+}
+.checkoutParentDiv .windows .leftWindow{
+    float: left;
+    background: #fff;
+    border-right: 2px solid #eae3e3;
+    padding: 85px 0px;
+    width: 100%;
+
+}
+
+.checkoutParentDiv .windows .leftWindow .brand h2 a{
+    font-family: 'League Spartan', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    color: #000;
+}
+.checkoutParentDiv .windows .leftWindow .brand h2 a span{
+    font-weight: 400;
+}
+.checkoutParentDiv .order-summary{
+    display: none;
+    background: #fafafa;
+    width: 100%;
+    margin-top: 1em;
+    margin-left: -85px;
+    width: auto;
+    padding: 55px;
+}
+.checkoutParentDiv .order-summary .header{
+    display: flex;
+    width: 100%;
+    height: 30px;
+}
+.checkoutParentDiv .order-summary .header .order-txt{
+    font-weight: 500;
+    font-size: 30px;
+    float: left;
+    width: 35%;
+}
+.checkoutParentDiv .order-summary .header .btns{
+    width: 55%;
+}
+.checkoutParentDiv .order-summary .header .btns button{
+    background: none;
+    border: none;
+    outline: none;
+    color: #000;
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: .5em;
+    margin-top: .1em;
+    display: none;
+}
+.checkoutParentDiv .order-summary .header .btns #showOrderSummary{
+    display: block;
+}
+
+.checkoutParentDiv .order-summary .header .price{
+    width: 10%;
+    font-size: 30px;
+    margin-top: .1em;
+}
+.checkoutParentDiv .order-summary .item-details{
+    display: none;
+}
+.checkoutParentDiv .order-summary .item-details .items{
+    width: 100%;
+    height: 200px;
+    margin-top: 3em;
+    margin-left: -2em;
+}
+.checkoutParentDiv .order-summary .item-details .items .item{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 30% 45% 30%;
+    width: 100%;
+}
+.checkoutParentDiv .order-summary .item-details .items .item .pro-img{
+    border: 1px solid #ccc;
+    height: 150px;
+    width: 150px;
+    border-radius: 4px;
+    margin-left: 2em;
+    display: flex;
+    justify-content: center;
+}
+.checkoutParentDiv .order-summary .item-details .items .item .pro-img img{
+    height:  150px;
+    aspect-ratio: 4/5;
+}
+.checkoutParentDiv .order-summary .item-details .items .item .pro-name{
+    margin-left: -3em;
+    padding-top: 1.5em;
+}
+.checkoutParentDiv .order-summary .item-details .items .item .pro-name .name{
+    font-weight: 600;
+    font-size: 26px;
+}
+.checkoutParentDiv .order-summary .item-details .items .item .pro-name .size{
+
+    font-weight: 600;
+    font-size: 22px;
+    color: #9ba0a5;
+    margin-top: .5em;
+}
+.checkoutParentDiv .order-summary .item-details .items .item .pro-name .size span{
+    font-weight: 500;
+    
+}
+.checkoutParentDiv .order-summary .item-details .items .item .pro-price{
+    margin-left: 10.5em;
+    padding-top: 2.5em;
+}
+.checkoutParentDiv .order-summary .item-details .items .item .pro-price .price{
+    font-weight: 600;
+    font-size: 28px;
+}
+.checkoutParentDiv .order-summary .item-details .total-div{
+    width: 90%;
+}
+.checkoutParentDiv .order-summary .item-details .total-div h5{
+    font-weight: 600;
+    font-size: 26px;
+}
+.checkoutParentDiv .order-summary .item-details .total-div .totals{
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 75% 25%;
+    position: relative; 
+    margin-left: 1em;  
+    margin-top: 2em; 
+}
+.checkoutParentDiv .order-summary .item-details .total-div .totals .total-text h4{
+    float: left;
+    font-size: 26px;
+    font-weight: 500;
+    color: #9ba0a5;
+}
+.checkoutParentDiv .order-summary .item-details .total-div .totals .total{
+    right: -55px;
+    position: absolute;
+}
+.checkoutParentDiv .order-summary .item-details .total-div .totals .total .free-text{
+    font-weight: 500;
+    font-size: 26px;
+    color: #9ba0a5;
+}
+.checkoutParentDiv .windows .leftWindow .redirected{
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 2em;
+    
+}
+.checkoutParentDiv .windows .leftWindow .redirected .within-spans{
+    margin-left: 1em;
+}
+.checkoutParentDiv .windows .leftWindow .redirected .last-spans{
+    color: #57595b;
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options{
+    padding-bottom: 1em;
+    height: 115px;
+    width: 105%;
+    position: relative;
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options h6{
+    font-size: 18px;
+    font-weight: 600;
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options .payment-option{
+    width: 220px;
+    padding: 15px 10px;
+    border-radius: 4px;
+    float: left;
+    margin-top: 2em;
+    margin-right: 1em;
+    text-align: center;
+}
+.st0{fill:#3395FF;}
+.st1{fill:#072654;}
+.checkoutParentDiv .windows .leftWindow .checkout-options .online-payment svg{
+    height: 28px;
+    margin-top: .1em;
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options .online-payment{
+    background:  #54c3d6;
+    padding: 10px 10px;
+    
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options .online-payment:hover{
+    background:  #3ab6cc;
+
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options .on-delivery{
+    background: #eae6af;
+    position: absolute;
+    right: -12px;
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options .on-delivery:hover{
+    background: #f5ed80;
+
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options .payment-option h5{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+.checkoutParentDiv .windows .leftWindow .shipping-options {
+    width: 85%;
+    margin-top: 2em;
+    padding-bottom: 1em;   
+}
+.checkoutParentDiv .windows .leftWindow .shipping-options h4{
+    font-weight: 600;
+    font-size: 20px;
+    
+}
+.checkoutParentDiv .windows .leftWindow .shipping-options form{
+    margin-top: 2em;
+}
+.checkoutParentDiv .windows .leftWindow .shipping-options form .input{
+    width: 100%;
+    position: relative;
+}
+.checkoutParentDiv .windows .leftWindow .shipping-options form .input .double-inputs{
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 50% 50%;
+    gap: 1em;
+}
+.checkoutParentDiv .windows .leftWindow .shipping-options form .input .double-inputs .input{
+    width: 93%;
+}
+.checkoutParentDiv .windows .leftWindow .shipping-options form .input input{
+    border-radius: 4px;
+    border: 2px solid #ccc;
+    padding: 15px 5px 5px 10px;
+    width: 100%;
+    margin-bottom: 2em;
+    margin-top: 1em;
+    height: 30px;
+    font-size: 12px;
+    font-weight: 300;
+}
+.checkoutParentDiv .windows .leftWindow .shipping-options form .input label{
+    position: absolute;
+    bottom: 4.8em;
+    left: 10px;
+    color: #9ba0a5;
+    font-size: 12px;
+}
+.checkoutParentDiv .windows .leftWindow .shipping-options form .input input:focus{
+    outline: none;
+}
+.checkoutParentDiv .windows .leftWindow .shipping-options .input .btns button{
+    width: 200px;
+    background: none;
+    border: none;
+    padding: 15px 10px;
+    outline: none;
+   font-family:"Be Vietnam Pro", sans-serif;
+   font-size: 15px;
+
+}
+.checkoutParentDiv .windows .leftWindow .shipping-options .input .btns .goback{
+    position: absolute;
+    left: 0;
+}
+.checkoutParentDiv .windows .leftWindow .shipping-options .input .btns .continue{
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    right: -20px;
+}
+.checkoutParentDiv .windows .rightWindow{
+    background: #fafafa;
+    padding: 85px 200px 85px 0;
+}
+.checkoutParentDiv .windows .rightWindow .items{
+    width: 100%;
+    height: 200px;
+
+}
+.checkoutParentDiv .windows .rightWindow .items .item{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 30% 45% 30%;
+    width: 100%;
+    gap: 3em;
+}
+.checkoutParentDiv .windows .rightWindow .items .item .pro-img{
+    border: 1px solid #ccc;
+    height: 80px;
+    width: 80px;
+    border-radius: 4px;
+    margin-left: 2em;
+    display: flex;
+    justify-content: center;
+}
+.checkoutParentDiv .windows .rightWindow .items .item .pro-img img{
+    height:  80px;
+    aspect-ratio: 4/5;
+}
+.checkoutParentDiv .windows .rightWindow .items .item .pro-name{
+    margin-left: -3em;
+    padding-top: 1.5em;
+    margin-right: -5em;
+}
+.checkoutParentDiv .windows .rightWindow .items .item .pro-name .name{
+    font-weight: 600;
+    font-size: 16px;
+}
+.checkoutParentDiv .windows .rightWindow .items .item .pro-name .size{
+    font-weight: 500;
+    font-size: 14px;
+    color: #9ba0a5;
+    margin-top: .5em;
+}
+.checkoutParentDiv .windows .rightWindow .items .item .pro-price{
+    margin-left: 5em;
+    padding-top: 2.5em;
+}
+.checkoutParentDiv .windows .rightWindow .items .item .pro-price .price{
+    font-weight: 600;
+    font-size: 20px;
+}
+.checkoutParentDiv .windows .rightWindow .total-div{
+    margin-top: 1em;
+    width: 105%;
+}
+.checkoutParentDiv .windows .rightWindow .total-div h5{
+    font-weight: 600;
+    font-size: 24px;
+    margin-left: 1.5em;
+    margin-bottom: 2em;
+}
+.checkoutParentDiv .windows .rightWindow .total-div .totals{
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 75% 25%;
+    position: relative; 
+    margin-left: 2.5em;  
+    margin-top: 1em; 
+}
+.checkoutParentDiv .windows .rightWindow .total-div .totals .total-text h4{
+    float: left;
+    font-size: 20px;
+    font-weight: 500;
+    color: #9ba0a5;
+}
+.checkoutParentDiv .windows .rightWindow .total-div .totals .total{
+    position: absolute;
+    right: -55px;
+    font-weight: 500;
+    font-size: 26px;
+}
+.checkoutParentDiv .windows .rightWindow .total-div .totals .total .free-text{
+    font-weight: 500;
+    font-size: 20px;
+    color: #9ba0a5;
+}
+
+

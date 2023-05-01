@@ -1,0 +1,253 @@
+.cartParentDiv{
+    width: 100%;
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    z-index: 1;
+    display: none;
+}
+.cartParentDiv .hiddenDiv{
+    position: fixed;
+    background: rgba(90, 90, 90, 0.5);
+    z-index: 9999;
+    width: 65%;
+    animation: fade .8s ease-in-out;
+    height: 100vh;
+}
+.cartParentDiv .showableDiv{
+    right: 0;
+    width: 35%;
+    height: 100vh;
+    background: #fafafa;
+    animation: fade 1s ease-in-out;
+    position: fixed;
+    z-index: 1;
+}
+.cartParentDiv .showableDiv .header{
+    width: 100%;
+    height: 25px;
+    padding: 30px;
+display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 85% 15%;
+    border-bottom: 2px solid #ccc ;
+}
+.cartParentDiv .showableDiv .header .cart-items h5{
+    font-size: 24px;
+    font-weight: 500;
+}
+.cartParentDiv .showableDiv .header .close-btn{
+    position: absolute;
+    right: 45px;
+}
+.cartParentDiv .showableDiv .header .close-btn button{
+    background: none;
+    border: none;
+    outline:none ;
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cartParentDiv .showableDiv .products{
+    padding: 30px;
+    min-height: 200px;
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+}
+.cartParentDiv .showableDiv .products .empty-cart{
+    display: none;
+}
+.cartParentDiv .showableDiv .products .empty-cart h5{
+    font-size: 18px;
+    font-weight: 500;
+}
+.cartParentDiv .showableDiv .products .cart-items{
+    display: grid;
+    grid-auto-columns: 20% 50% 30%;
+    grid-auto-flow: column;
+    gap: 1em;
+    height: 130px;
+    margin-top: 1em;
+}
+.cartParentDiv .showableDiv .products .cart-items .pro-img{
+    height: 125px;
+    float: left;
+}
+.cartParentDiv .showableDiv .products .cart-items .pro-img img{
+    height: 125px;
+    width: 100px;
+}
+.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-name{
+    font-size: 18px;
+    font-weight: 600;
+}
+.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-color{
+    margin-top: .5em;
+    font-size: 16px;
+    font-weight: 500;
+    color: #898484;
+}
+.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-color span{
+    color: #000;
+}
+.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-size{
+    margin-top: 0.5em;
+    font-size: 16px;
+    font-weight: 500;
+    color: #898484;
+}
+.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-size span{
+    color: #000;
+}
+.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 70px;
+    margin-top: 0.5em;
+}
+.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity .btns{
+    border: none;
+    outline: none;
+    border-radius: 25px 0px 0px 25px;
+    background: none;
+    padding: 5px 10px;
+    font-size: 18px;
+    height: 30px;
+    margin-top: 5px;
+    border: 1px solid #898484;
+    cursor: pointer;
+}
+.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity .btns:hover , .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity .btns:focus{
+    background: #898484;
+    color: #fff;
+}
+.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity .number{
+    padding: 4px 10px;
+    font-size: 16px;
+    border: 1px solid #898484;
+    margin-top: 5px;
+    border-left: none;
+    border-right: none;
+}
+.cartParentDiv .showableDiv .products .cart-items .item-details{
+    float: right;
+    position: relative;
+}
+.cartParentDiv .showableDiv .products .cart-items .item-details .delete-pro{
+    position: absolute;
+    right: 85px;
+    top: -15px;
+}
+.cartParentDiv .showableDiv .products .cart-items .item-details .delete-pro button{
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: inherit;
+    margin-top: 10px;
+    color: #DC3545;
+    cursor: pointer;
+}
+.cartParentDiv .showableDiv .products .cart-items .item-details .delete-pro button:hover ,.cartParentDiv .showableDiv .products .cart-items .item-details .delete-pro button:focus{
+    color: #e75160;
+    outline: none;
+
+}
+.cartParentDiv .showableDiv .products .cart-items .item-details .price{
+    padding-top: 4em;
+    position: absolute;
+    right: 85px;
+}
+.cartParentDiv .showableDiv .products .cart-items .item-details .price h5{
+    font-size: 18px;
+    font-weight: 600;
+}
+.cartParentDiv .showableDiv .products .cart-items .item-details .price h5 span{
+    font-size: 20px;
+}
+
+.cartParentDiv .showableDiv .total-div{
+    padding: 30px;
+    height: 50px;
+    position: absolute;
+    bottom: 180px;
+    width: 100%;
+    
+}
+.cartParentDiv .showableDiv .total-div .totals{
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    width: 90%;
+}
+
+.cartParentDiv .showableDiv .total-div .totals .total{
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 75% 15%;
+    margin-top: 1em;
+}
+.cartParentDiv .showableDiv .total-div .totals .total .text{
+    color: #898484;
+    font-size: 15px;
+    font-weight: 500;
+    
+}
+.cartParentDiv .showableDiv .total-div .totals .total .price{
+    font-size: 15px;
+    position: absolute;
+    right: 90px;
+    
+}
+.cartParentDiv .showableDiv .total-div .totals .total .price span{
+    font-size: 17px;
+}
+
+.cartParentDiv .showableDiv .total-div .final-total{
+    margin-top: 1em;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 75% 25%;
+}
+.cartParentDiv .showableDiv .total-div .final-total .text{
+    
+    font-size: 20px;
+
+}
+.cartParentDiv .showableDiv .total-div .final-total .price{
+    font-size: 18px;
+    position: absolute;
+    right: 90px;
+}
+.cartParentDiv .showableDiv .total-div .final-total .price span{
+    font-size: 20px;
+}
+.cartParentDiv .showableDiv .checkout-btn{
+    position: absolute;
+    bottom: 10px;
+    padding: 30px;
+    width: 100%;
+}
+.cartParentDiv .showableDiv .checkout-btn button{
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    width: 90%;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 18px;
+    
+}
+.cartParentDiv .showableDiv .checkout-btn button:hover , .cartParentDiv .showableDiv .checkout-btn button:focus{
+    outline: none;
+    background: #333333;
+
+}
+
+
+

@@ -1,0 +1,481 @@
+
+.links{
+    color: #000;
+
+}
+.return-policy{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background: #242323;
+    text-align: center;
+    width: 100%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    display: none;
+}
+.return-policy h5{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    
+}
+.mobile-nav{
+    display: none;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 6.5em;
+    background: #fff;
+    left: 0;
+    z-index: 99;
+    color: #fff;
+    transition: .5s ease-in-out;
+}
+.mobile-nav .nav-items{
+    margin-top: 1em;
+    z-index: 1;
+}
+.mobile-nav .nav-items .menu{
+    padding-left: 2em;
+    width: 25%;
+    float: left;
+    height: 100%;
+}
+.mobile-nav .nav-items .menu .menu-btn{
+    display: block;
+    background: none;
+    border: none;
+    font-size: 65px;
+    cursor: pointer;
+    position: fixed;
+}
+.mobile-nav .nav-items .menu .menu-btn i{
+    transition: .8s ease-in-out;
+}
+
+.mobile-nav  .nav-brand{
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    display: block;
+    top: 30px;
+    
+}
+.mobile-nav  .nav-brand h2 a{
+    font-size: 65px;
+}
+.mobile-nav .nav-items .right-opts{
+    padding-left: 2em;
+    width: 25%;
+    position: absolute;
+    right: -35px;
+}
+.mobile-nav .nav-items .right-opts button{
+    background: none;
+    border: none;
+    font-size: 65px;
+    cursor: pointer;
+    margin-left: 25px;
+    color: #fff;
+}
+
+.mobile-nav .menus{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% 18%;
+}
+.mobile-nav .side-menu{
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    color: #000;
+    height: 100vh;
+    animation: fade .8s ease-in-out;
+    top: 0;
+    left: 0;
+    display: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.mobile-nav .side-menu::-webkit-scrollbar{
+    display: none;
+}
+
+.mobile-nav .side-menu .header{
+    height: 7%;
+    width: 100%;
+    margin-top: 1em;
+}
+.mobile-nav .side-menu .close{
+    width: 20%;
+    padding-left: 2em;
+    float: left;
+    margin-top: .5em;
+}
+.mobile-nav .side-menu .close .close-btn{
+    border: none;
+    background: none;
+    font-size: 55px;
+
+}
+.mobile-nav .side-menu .nav-brand{
+    display: block;
+}
+.mobile-nav .side-menu .right-opts{
+    width: 20%;
+    float: right;
+    margin-top: .5em;
+    position: absolute;
+    right: -35px;
+}
+
+.mobile-nav .side-menu .right-opts button{
+    border: none;
+    background: none;
+    font-size: 55px;
+    margin-left: 10px;
+}
+.mobile-nav .side-menu .link{
+    color: #000;
+
+}
+.mobile-nav .side-menu .options{
+    height: 55px;
+    width: 94%;
+    margin-top: 1em;
+    border-top: 2px solid #8c8b8b;
+    border-bottom: 2px solid #8c8b8b;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 2em;
+}
+.mobile-nav .side-menu .options li{
+    width: 18%;
+    list-style: none;
+    font-size: 30px;
+    line-height: 2em;
+    font-weight: 500;
+    float: left;
+    margin-left: 4em;
+    margin-right: 4em;
+    
+}
+.mobile-nav .side-menu .options li:first-child{
+    margin-left: 1.5em;
+    margin-right: 1em;
+}
+.mobile-nav .side-menu .options li:nth-child(2){
+  margin-left: 4em;
+}
+.mobile-nav .side-menu .options li:nth-child(3){
+    margin-right: 0em !important;
+    width: 19%;
+    margin-left: 3em;
+}
+.mobile-nav .side-menu .options .active{
+    background: #000;
+    border: 1px solid #000;
+    padding: 10px 25px;
+    border-radius: 25px;
+    margin-top: -5px;
+    color: #fff;
+    margin-left: -1em;
+}
+
+.mobile-nav .side-menu .hoverOpts .MobOption{
+    width: 100%;
+    margin-top: 1em;
+    padding: 10px  20px;
+    display: none;
+    animation: .8s fade ease-in-out;
+}
+.mobile-nav .side-menu .hoverOpts .activeOpts{
+    display: block;
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-div{
+    display: grid;
+    grid-auto-flow: row;
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options{
+    width: 94%;
+    border-bottom: 2px solid #8c8b8b;
+    padding: 35px 0 35px 20px;
+    position: relative;
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options .category{
+    width: 100%;
+    float: left;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 15px;
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options button{
+    position: absolute;
+    right: 55px;
+    background: none;
+    border: none;
+    font-size: 37px;
+    font-weight: 600;
+    margin-left: -2px;
+    color: #000;
+}
+
+
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options  .items-list{
+    width: 100%;
+    float: left;
+    padding: 1em 4em;
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options  .items-list li{
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 3em;
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options  .items-list li a{
+    text-decoration: none;
+    color: #57595B;
+    font-weight: 500;
+    font-size: 30px;
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options  .items-list li:first-child{
+    margin-top: 2em;
+}
+
+
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options .img-opts{
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options .img-opts img{
+    object-fit: cover;
+    aspect-ratio: 16/11;
+    width: 100%;
+    filter: grayscale(80%);
+    margin-left: -1.5em;
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options .img-opts .opts{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options .img-opts .opts .opt{ 
+    font-size: 42px;
+    font-weight: 600;
+    
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options .img-opts .opts .to-link{
+    border-radius: 35px;
+    border: 3px solid #fff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-left: 10px;
+    margin-top: 3em;
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options .img-opts .opts .more-link{
+    text-decoration: none;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+}
+.mobile-nav .side-menu .hoverOpts .MobOption .items-options .img-opts .opts .more-link i{
+    margin-left: .5em;
+
+}
+
+.mobile-nav .side-menu .footer{
+    height: 5%;
+    margin-top: 2em;
+    position: relative;
+    width: 100%;
+    bottom: 0em;
+
+}
+.mobile-nav .side-menu .footer .social-media{
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+.mobile-nav .side-menu .footer .social-media a{
+    text-decoration: none;
+    font-size: 45px;
+    color: #57595B;
+}
+.mobile-nav .side-menu .footer .social-media .social-links{
+    margin-left: 2em;
+}
+
+.navbar{
+   z-index: 1;
+    display: block;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 5em;
+    background-color: #fff;
+    left: 0;
+    z-index: 1;
+    transition: .7s ease-in-out;
+    cursor: pointer;
+}
+
+
+.navbar .nav-items{
+   margin-top: .7em;
+}
+.navbar .nav-brand{
+    width: 22%;
+    padding:17px 65px 5px;
+    float: left;
+}
+.nav-brand h2 a{
+    font-family: 'League Spartan', sans-serif;
+    font-size: 34px;
+    font-weight: 600;
+}
+.nav-brand h2 a span{
+    font-weight: 400;
+}
+.navbar .nav-options{
+    width:40%;
+    padding: 18px 0;
+    float: left;
+    margin-left: 3em;
+}
+.navbar .nav-options li{
+    list-style: none;
+    float: left;
+    margin-right: 4.5em;
+    
+}
+
+
+.navbar .nav-options a{
+    font-size: 20px;
+    color: #000;
+}
+.navbar .nav-user{
+    width:22%;
+    padding: 16px ;
+    float: right;
+    margin-right: -3.5em;
+}
+.navbar .nav-user li{
+    list-style: none;
+    float: left;
+    margin-right: 2.5em;
+    
+}
+.navbar .nav-user a i{
+    font-size: 32px;
+    font-weight: 600;
+}
+.navbar .hover-options{
+    padding: 50px 65px;
+    width: 100%;
+    float: left;
+    display: none;
+    grid-auto-flow:column ;
+    cursor: context-menu;
+    animation: fade 1.5s ease-in-out;
+}
+
+.navbar .hover-options .items .options{
+
+    margin-top: 2em;
+}
+.navbar .shop-opts .items .options{
+    margin-top: 4em;
+}
+
+.navbar .hover-options .items .options .option{
+    font-size: 15px;
+    font-weight: 500;
+    color: #ccc;
+    text-decoration: none;
+    line-height: 3em;
+}
+.navbar .hover-options .items .options .option:hover{
+    cursor: pointer;
+    color: #000;
+    text-decoration: underline;
+}
+.navbar .hover-options .category{
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+}
+.navbar .hover-options .items .image-opts{
+    max-width: 500px;
+    max-height: 500px;
+    
+}
+
+.navbar .hover-options .items .image-opts img{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 300px;
+    opacity: 60%
+}
+.navbar .hover-options .items .image-opts .opts{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 330px;
+    opacity: 70%;
+    
+
+}
+.navbar .shop-opts .items .image-opts img{
+    width: 400px;
+    display: none;
+    opacity: 100%;
+}
+.navbar .hover-options .items .image-opts .details{
+    width: 100%;
+  
+    opacity: 100%;
+    padding-top:100px ;
+}
+.navbar .hover-options .items .image-opts .details .options{
+   text-align: center;
+    color: #fff;
+    width: 100%;
+}
+.navbar .hover-options .items .image-opts .details .options h4{ 
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+.navbar .hover-options .items .image-opts .to-link{
+    border-radius: 35px;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+    width: 60%;
+    margin-left: 70px;
+    margin-top: 3em;
+}
+.navbar .hover-options .items .image-opts .more-link{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+.navbar .hover-options .items .image-opts .more-link i{
+    margin-left: .5em;
+
+}
+.navbar .shop-opts .items .image-opts img[data-img-active]{
+    display: block;
+}

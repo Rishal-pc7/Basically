@@ -1,0 +1,557 @@
+
+@media only screen and  (max-width:991px){
+    .hero-section{
+        height: 1360px;
+    }
+    .hero{
+        position: absolute;
+        background:url('/images/french\ home.jpg') ;
+        height: 1350px;
+        filter: contrast(75%);
+    }
+    .hero-content{
+        width: 100%;
+        float: left;
+        z-index: 2;
+        padding-top: 45em;
+    }
+    .hero .hero-content .content{
+        text-align: center;
+    }
+    .hero-content .content h3{
+        margin-left: 255px;
+        font-size: 30px !important;
+    }
+    .hero-content .content h2{
+        margin-top: 0.2em;
+        font-weight: 400;
+        font-size: 25px;
+        margin-left: 80px;
+    }
+    .hero-content .buttons{
+         margin-left: 30px;
+         display: grid;
+    }
+    .hero-content .buttons div{
+        width: 95%;
+        margin-left: 155px;
+    }
+    .hero-content button{
+        margin-top: 4em;
+        background: none;
+        
+        width: 50%;
+    }
+    .hero-content .shop-btn , .hero-content .more-btn{
+        padding: 20px 40px;
+        margin-left: 0;
+    }
+    .hero-content .shop-btn a , .hero-content .more-btn a{
+        font-size: 28px;
+    }
+    .hero-content button a{
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    .hero .hero-content{
+        padding-top: 60em;
+    }
+    .hero-2{
+        filter: contrast(75%);
+        background:url('/images/blacl-150.jpg') ;
+        height: 1200px;
+    }
+    .hero-2 .hero-content{
+        padding-top: 450px;
+    }
+    .hero-2 .hero-content h3{
+        margin-left: 115px;
+        font-size: 30px !important;
+
+    }
+    .hero-2 .hero-content h1{
+        margin-left: -65px;
+        font-size: 55px;
+    }
+    .hero-2 .hero-content h2{
+        margin-left: -30px !important;
+        margin-top: 0.5em;
+        font-weight: 400;
+        font-size: 25px;
+
+    }
+    .hero-2 .hero-content .buttons{
+        margin-left: -55px;
+    }
+    .hero-2 .hero-content h4{
+        margin-left: 95px;
+        margin-top: 13em;
+    }
+}
+@media only screen and (min-width:200px) and (max-width:1250px){
+    .mobile-nav{
+        display: block;
+    }
+    .navbar{
+        display: none;
+    }
+    .mob-view{
+        display: block !important;
+    }
+    .footer-div{
+        padding-left: 40px;
+        padding-right: 40px;
+        height: 520px;
+    }
+    .cartParentDiv .hiddenDiv{
+        display: none;
+    }
+    .cartParentDiv .showableDiv{
+        width: 100%;
+    }
+    .cartParentDiv .showableDiv .header{
+        height: 45px;
+    }
+    .cartParentDiv .showableDiv .header .cart-items h5{
+        font-size: 36px;
+    }
+    .cartParentDiv .showableDiv .header .close-btn{
+        right: 20px;
+    }
+    .cartParentDiv .showableDiv .header .close-btn button{
+        font-size: 46px;
+    }
+    .cartParentDiv .showableDiv .products .empty-cart h5{
+       font-size: 30px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items{
+        height: 260px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .pro-img{
+        height: 250px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .pro-img img{
+        height: 250px;
+        width: 225px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .pro-details{
+        margin-left: 2em;
+
+    }
+    .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-name{
+        font-size: 34px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-color{
+        font-size: 30px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-size{
+        font-size: 30px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity{
+        margin-top: 1em;
+        width: 150px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity .btns{
+        padding: 10px 20px;
+        height: 55px;
+        font-size: 34px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity .number{
+        font-size: 32px;
+        padding: 4px 25px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .item-details .delete-pro{
+        top: -10px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .item-details .delete-pro button{
+        font-size: 55px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .item-details .price{
+        padding-top: 7em;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .item-details .price h5{
+        font-size: 32px;
+    }
+    .cartParentDiv .showableDiv .products .cart-items .item-details .price h5 span{
+        font-size: 34px;
+
+    }
+    .cartParentDiv .showableDiv .total-div{
+        bottom: 475px;
+    }
+    .cartParentDiv .showableDiv .total-div .totals{
+        width: 95%;
+    }
+    .cartParentDiv .showableDiv .total-div .totals .total .text{
+        font-size: 30px;
+    }
+    .cartParentDiv .showableDiv .total-div .totals .total .price{
+        font-size: 28px;
+    }
+    .cartParentDiv .showableDiv .total-div .totals .total .price span{
+        font-size: 30px;
+    }
+    .cartParentDiv .showableDiv .total-div .final-total .text{
+        font-size: 35px;
+    }
+    .cartParentDiv .showableDiv .total-div .final-total .price{
+        font-size: 30px;
+    }
+    .cartParentDiv .showableDiv .total-div .final-total .price span{
+        font-size: 32px;
+    }
+    .cartParentDiv .showableDiv .checkout-btn{
+        bottom: 150px;
+    }
+    .cartParentDiv .showableDiv .checkout-btn button{
+        padding: 15px 0;
+        width: 95%;
+        border-radius: 35px;
+        font-size: 28px;
+    }
+
+
+    .mob-contact{
+        width: 100% !important;
+        margin-bottom: 3em;
+    }
+    .footer-div .contact-div{
+        display: none;
+    }
+    .footer-div .contact-div .social-media{
+        display: none;
+    }
+    .footer-div .contact-div h2{
+        font-size: 24px;
+    }
+    .footer-div .contact-div .input input[type='text']{
+        border-radius: 15px 0px 15px 15px;
+        font-size: 20px;
+    }
+    .footer-div .contact-div .input input[type='submit']{
+        border-radius: 0px 15px 15px 0px;
+        font-size: 20px;
+        padding: 22px !important;
+    }
+    .footer-div .copyright h4{
+        margin-top: 1em;
+    }
+    .footer-div .mob-opts{
+        display: block;
+      }
+    .footer-div .des-opts{
+        display: none;
+      }
+    .chat-widget .chat-btn .chat-txt{
+        display: none;
+    }
+    .chat-widget .chat-btn{
+        padding:10px 15px ;
+    }
+    
+    .collections{
+        padding: 60px 45px;
+    }
+    .collections .product-cards{
+       margin-top: 5em;
+
+    }
+    .collections .product-cards::-webkit-scrollbar{
+        display: block;
+    }
+    .collections .btns{
+        display: none;
+    }
+    .collections .product-cards .product-card .product-details .product-name a{
+        font-size: 21px;
+    }
+    .collections .collection-text{
+        font-size: 38px;
+    }
+    .collections .product-cards .product-card .product-details .product-color span{
+        font-size: 21px;
+    }
+   
+    .transparency-section .learn-more{
+        width: 25%;
+        padding: 20px;
+    }
+    .transparency-section .more-link{
+        font-size: 28px;
+    }
+    .page-content .quote{
+        margin-left: -4em;    
+    }
+    .about-section{
+        display: none;
+    }
+    .mob-abt-section{
+        display: block;
+    }
+
+    .our-story{
+        height: 700px;
+
+    }
+    .return-policy{
+        padding-top: 1.1em;
+        padding-bottom: 1em;
+    }
+    .return-policy h5{
+        font-size: 24px;
+    }
+    .productParentDiv{
+        padding: 55px;
+    }
+    
+    .products{
+        display: block;
+        height: 2100px;
+    }
+    .des-pro-image{
+        display: none;
+    }
+    .mob-carousel-section{
+        display: block;
+        margin: -100px -60px;
+    }
+
+    .pro-details{
+        width: 100%;
+        padding: 10px;
+    }
+    .pro-details .name{
+        font-size: 50px;
+    }
+    .pro-details .price{
+        margin-top: 1em;
+        font-size: 38px;
+    }
+    .pro-details .price span{
+        font-size: 42px;
+    } 
+    .pro-details .color-div{
+        padding-top: 2em;
+    }
+    .pro-details .color-div .pro-color{
+        font-size: 32px;
+    }
+    .pro-details .color-div .colors .buttons button i{
+        font-size: 40px;
+    }
+    .pro-details .size-section{
+        margin-top: 3em;
+    }
+    .pro-details .size-section a{
+        font-size: 30px;
+    }
+    .pro-details .size-section .size-div .size-text h5{
+        font-size: 28px;
+    }
+    .pro-details .size-section .size-div .sizes{
+        right: 40px;
+        width: 68%;
+    }
+    .pro-details .add-to {
+        margin-top: 4em;
+    }
+    .pro-details .add-to button{
+        margin-left: 0;
+        width: 100%;
+        padding: 25px 185px;
+        border-radius: 35px;
+        font-weight: 600;
+        font-size: 30px;
+    }
+                
+    .pro-details .size-section .size-div .sizes button{
+        padding: 10px 35px;
+        border-radius: 35px;
+        font-size: 28px;
+    }
+    .product-details {
+        height: 850px;
+    }
+    .product-details h5{
+        font-size: 38px;
+    }
+    .product-details .details-div{
+        height: 690px;
+        grid-template-columns: 100%;
+    }
+    .product-details .details-div .about-product .options .option{
+        margin-left: 11em;
+    }
+    .product-details .details-div .about-product .options .option h5{
+        font-size: 26px;
+    }
+    .product-details .details-div .image-div{
+        display: none;
+    }
+    .product-details .details-div .about-product .details-options-div .subheadings{
+        font-size: 26px;
+    }
+    .product-details .details-div .about-product .details-options-div .subdetails{
+        font-size: 22px;
+    }
+    .product-details .details-div .about-product .details-options-div ul li{
+        font-size: 22px;
+    }
+    
+    .our-ethics-section {
+        margin-top: 8em;
+    }
+    .our-ethics-section h5{
+        font-size: 36px;
+    }
+    .our-ethics-section .item-grids{
+        overflow-x: scroll;
+        grid-template-columns: 90% 90%;
+    }
+    .our-ethics-section .item-grid .item-description .sub-heading{
+        font-size: 26px;
+    }
+    .our-ethics-section .item-grid .item-description .ethics-description{
+        font-size: 19px;
+    }
+    .our-ethics-section .item-grid .item-description a{
+        font-size: 24px;
+    }
+    .clothing {
+        transform: translateX(-11%);
+        height: 650px;
+    }
+    .clothing img{
+        height: 575px;
+    }
+    .clothing .description{
+        top: 40%;
+        left: 5%;
+        transform: translate(8%,-25%);
+    }
+    .clothing .description p{
+        font-size: 24px;
+        
+    }
+    .checkoutParentDiv{
+        padding: 0 0 0 85px !important;
+        height: 2040px !important;
+    }
+    .checkoutParentDiv .windows{
+        display: block !important;
+    }
+    .checkoutParentDiv .windows .leftWindow .shipping-options h4{
+        font-size: 28px !important;
+    }
+    .checkoutParentDiv .windows .leftWindow .shipping-options form .input input{
+        height: 50px !important;
+        font-size: 18px !important;
+        padding: 25px 5px 5px 10px !important;
+    }
+    .checkoutParentDiv .windows .leftWindow .shipping-options form .input label{
+        font-size: 20px !important;
+        bottom: 4.5em !important;
+    }
+    .checkoutParentDiv .windows .leftWindow .shipping-options form .input .double-inputs{
+        display: block !important;
+    }
+    .checkoutParentDiv .windows .leftWindow .shipping-options form .input .double-inputs .input{
+        width: 100% !important;
+    }
+    .checkoutParentDiv .windows .leftWindow .checkout-options{
+        padding-bottom: 3em !important;
+        margin-top: 2em !important;
+    }
+    .checkoutParentDiv .windows .leftWindow .checkout-options h6{
+        font-size: 28px !important;
+    }
+    .checkoutParentDiv .windows .leftWindow .shipping-options .input .btns button{
+        position: relative !important;
+        width: 100% !important;
+        margin-top: 1em !important;
+        font-size: 22px !important;
+    }
+    .checkoutParentDiv .windows .rightWindow{
+        display: none;
+    }
+    .checkoutParentDiv .windows .leftWindow .order-summary{
+        display: block !important;
+    }
+    .accountsParentDiv .accounts-heading{
+        font-size: 40px;
+    }
+    .accountsParentDiv .windows{
+        grid-auto-flow: row;
+        grid-template-columns: none;
+    }
+    .accountsParentDiv .windows .leftWindow ul li{
+        width: 100%;
+        font-size: 26px;
+        padding: 10px 15px;
+    }
+    .accountsParentDiv .windows .leftWindow ul li i{
+        font-size: 38px;
+    }
+    .accountsParentDiv .windows .leftWindow ul #acntsDetail i{
+        font-size: 34px;
+    }
+    .accountsParentDiv .windows .leftWindow ul #acntsOut i{
+        font-size: 28px;
+    }
+    .accountsParentDiv .windows .rightWindow .mainHeading{
+        font-size: 28px;
+    }
+    .accountsParentDiv .windows .rightWindow .heading-div .subHeading{
+           font-size: 22px;
+    }
+    .accountsParentDiv .windows .rightWindow .info .qoute-div h5{
+        font-size: 18px;
+    }
+    .accountsParentDiv .windows .rightWindow .info .form-div .inputs{
+        display: block;
+    }
+    .accountsParentDiv .windows .rightWindow .info .form-div .input{
+        width: auto !important;
+        margin-top: 1em;
+        font-size: 18px;
+        
+        
+    }
+    .accountsParentDiv .windows .rightWindow .info .form-div .input input{
+        font-size: 20px !important;
+        width: 90% !important;
+    }
+    .accountsParentDiv .windows .rightWindow .info .form-div .input input[type='submit']{
+        width: 25% !important;
+    }
+    .accountsParentDiv .windows .rightWindow .orders .pro-details .pro-name{
+        font-size: 24px;
+    }
+    .accountsParentDiv .windows .rightWindow .orders .pro-details .pro-about{
+        font-size: 18px;
+    }
+    .accountsParentDiv .windows .rightWindow .orders .pro-details .order-status{
+        font-size: 18px;
+    }
+    .accountsParentDiv .windows .rightWindow .orders .pro-price .price{
+        font-size: 22px;
+    }
+    .accountsParentDiv .windows .rightWindow .orders .pro-price .price span{
+        font-size: 24px;
+    }
+    .accountsParentDiv .windows .rightWindow .logout-div h5{
+        font-size: 30px;
+    }
+    .accountsParentDiv .windows .rightWindow .logout-div .btns{
+        width: 280px;
+    }
+    .accountsParentDiv .windows .rightWindow .logout-div .btns button{
+        font-size: 26px;
+    }
+    .accountsParentDiv .windows .rightWindow .logout-div .btns button a{
+        font-size: 26px;
+
+    }
+
+}

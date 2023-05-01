@@ -1,0 +1,412 @@
+<link rel="stylesheet" href="/stylesheets/header.css">
+<link rel="stylesheet" href="/stylesheets/responsive.css">
+<link rel="stylesheet" href="/stylesheets/cart.css">
+<div class="return-policy" id="returnPolicy">
+  <h5>Hassle Free Returns & Replacements for 7 days</h5>
+</div>
+<div class="mobile-nav" id="mob-nav">
+    <div class="menus">
+        <div class="side-menu" id="mobSideBar">
+           <div class="header">
+            <div class="close">
+                <button class="close-btn" id="menuCloseBtn"><i class="las la-times"></i></button>
+            </div>
+            <div class="nav-brand">
+               <h2><a href="/" class="link">basic<span>ally</span>.</a></h2>
+            </div>
+            <div class="right-opts">
+               <button class=""><a href="/accounts" style="color: #000;"><i class="las la-user" ></i></a></button>
+               <button class="" onclick="showCart()"><i class="las la-shopping-bag"></i></button>
+               
+            </div>
+           </div>
+           <div class="options">
+            <ul>
+                <li class="" ><a id="shopMobOpt" onclick="changeActiveOption(this)" class="active link">Shop</a></li>
+                <li class="" ><a id="transMobOpt" onclick="changeActiveOption(this)" class="link">Transparency</a></li>
+                <li class="" ><a id="abtMobOpt" onclick="changeActiveOption(this)" class="link">About us</a></li>
+            </ul>
+           </div>
+           <div class="hoverOpts">
+            <div class="MobOption activeOpts" id="shopMobOpts">
+                <div class="items-div">
+                    <div class="items-options">
+                       <h5 class="category">T-SHIRTS</h5>
+                        <button disabled><i class="fa-solid fa-chevron-up"></i></button>
+                       <button></button>
+                       <div class="items-list" >
+                            <ul>
+                                <li><a href="">The Premium-weight T-shirt</a></li>
+                                <li><a href="">The Lightweight T-shirt</a></li>
+                               
+                            </ul>
+                        </div>
+                    
+                        
+                    
+                    
+                       </div>
+                    
+                    <div class="items-options" style="border-bottom: none;">
+                       <div class="img-opts" style="margin-top: 3em;">
+                        <img src="/images/our-story-resized.jpg" alt="">
+                        <div class="opts">
+                            <h5 class="opt">OUR STORY</h5>
+                            <div class="to-link"><a href="" class="more-link">LEARN MORE  <i class="fa-solid fa-chevron-right"></i></a></div>
+                        </div>
+                       </div>
+                </div>
+                </div>
+                
+            </div>
+            <div class="MobOption" id="transpMobOpts">
+                <div class="items-div">
+                    <div class="items-options" style="border-bottom: none;">
+                       
+                       <h5 class="category">TRANSPARENCY</h5>
+                        <button disabled><i class="fa-solid fa-chevron-up"></i></button>
+                        <div class="items-list " >
+                            <ul>
+                                <li><a href="">Fair Pay</a></li>
+                                <li><a href="">Transparent Supply</a></li>
+                                <li><a href="">Transparent Pricing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="items-options" style="border-bottom: none;">
+                       <div class="img-opts" >
+                        <img src="/images/fair-pay.jpg" alt="">
+                        <div class="opts">
+                            <h5 class="opt">FAIR PAY.FAIR TRADE</h5>
+                            <div class="to-link"><a href="" class="more-link">LEARN MORE  <i class="fa-solid fa-chevron-right"></i></a></div>
+                        </div>
+                       </div>
+                </div>
+                </div>
+                
+            </div>
+            <div class="MobOption" id="abtMobOpts">
+                <div class="items-div">
+                    <div class="items-options" style="border-bottom: none;">
+                       <h5 class="category">ABOUT US</h5>
+                       <button disabled><i class="fa-solid fa-chevron-up"></i></button>
+                        <div class="items-list" >
+                            <ul>
+                                <li><a href="">Sustainable Fashion</a></li>
+                                <li><a href="">Sustainable basics</a></li>
+                                <li><a href="">Our Factories</a></li>
+                                <li><a href="">Our Story</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="items-options" style="border-bottom: none;">
+                       <div class="img-opts">
+                        <img src="/images/slim-fashion.jpg" alt="">
+                        <div class="opts">
+                            <h5 class="opt" style="margin-left: -1em;">SUSTAINABLE BASICS</h5>
+                            <div class="to-link"><a href="" class="more-link">LEARN MORE  <i class="fa-solid fa-chevron-right"></i></a></div>
+                        </div>
+                       </div>
+                </div>
+                    <div class="items-options" style="border-bottom: none;">
+                       <div class="img-opts">
+                        <img src="/images/factories.png" alt="">
+                        <div class="opts">
+                            <h5 class="opt">FACTOURISM</h5>
+                            <div class="to-link"><a href="" class="more-link">READ MORE  <i class="fa-solid fa-chevron-right"></i></a></div>
+                        </div>
+                       </div>
+                </div>
+                </div>
+                
+            </div>
+            
+           </div>
+           <div class="footer" id="nav-footer">
+            <div class="social-media">
+                <a href=""><i class="lab la-facebook-f"></i></a>
+                <a href="" class="social-links"><i class="lab la-whatsapp"></i></a>
+                <a href="" class="social-links"><i class="lab la-instagram"></i></a>
+            </div>
+           </div>         
+        </div>
+        </div>
+    <div class="nav-items" id="mobNavItems">
+        <div class="menu">
+            
+           <button class="menu-btn" id="menuBtn"><i class="las la-bars links"></i></button>
+        </div>
+        <div class="nav-brand" id="mobNavBrand">
+           <h2><a href="/" class="links">basic<span>ally</span>.</a></h2>
+        </div>
+        <div class="right-opts">
+            
+           <button class="usr-btn" onclick=""><a href="/accounts"><i class="las la-user links" ></i></a></button>
+           <button class="cart-btn" onclick="showCart()"><i class="las la-shopping-bag links"></i></button>
+        </div>
+    </div>
+
+</div>
+<div class="navbar" onmouseover="onNavHover()" onmouseleave="onNavOut()" id="navbar">
+        <div class="nav-items">
+
+        <div class="nav-brand">
+        <h2><a href="/" class="links">basic<span>ally</span>.</a></h2>
+        </div>
+        <div class="nav-options">
+            <ul>
+                <li onmouseenter="shopOptHover(this)" id="shopOpt"><a href="" class="links">Shop</a></li>
+                <li onmouseenter="transpOptHover(this)" id="transpOpt"><a href="" class="links">Transparency</a></li>
+                <li onmouseenter="abtOptHover(this)" id="abtOpt"><a href="" class="links">About</a></li>
+            </ul>
+        </div>
+        <div class="nav-user">
+            <ul>
+                <li><a href="/accounts" class="links"><i class="las la-user" ></i></a></li>
+                <li onclick="showCart()"><a class="links"><i class="las la-shopping-bag"></i></a></li>
+            </ul>
+        </div>
+        <div class="shop-opts hover-options" id="shopOpts" >
+            <div class="items">
+            <h4><a href="" class="category">Premium-Weighted</a></h4>
+            <div class="options">
+                
+                <div>
+                    <div ><a onmouseover="productHovered('prmweight')" onmouseout="productOut('prmweight')"  href="" class="option">The Premium-Weight Crew SUPIMA | Ivory</a></div>
+                    <div ><a onmouseover="productHovered('prmweight')" onmouseout="productOut('prmweight')"  href="" class="option">The Premium-Weight Crew SUPIMA | Petrol Blue</a></div>
+                    <div ><a onmouseover="productHovered('prmweight')" onmouseout="productOut('prmweight')"  href="" class="option">The Premium-Weight Crew SUPIMA | Emerald Green</a></div>
+                    <div ><a onmouseover="productHovered('prmweight')" onmouseout="productOut('prmweight')"  href="" class="option">The Premium-Weight Crew SUPIMA | White</a></div>
+                    <div ><a onmouseover="productHovered('prmweight')" onmouseout="productOut('prmweight')"  href="" class="option">The Premium-Weight Crew SUPIMA | Black</a></div>
+                    
+
+                </div>
+               
+            </div>
+            </div>
+            <div class="items">
+            <h4><a href="" class="category">Light-Weighted</a></h4>
+            <div class="options">
+                <div>
+                    <div ><a onmouseover="productHovered('lightweight')" onmouseout="productOut('lightweight')"  href="" class="option">The Leightweight Crew TENCEL | Inkpot</a></div>
+                    <div ><a onmouseover="productHovered('lightweight')" onmouseout="productOut('lightweight')"  href="" class="option">The Leightweight Crew TENCEL | Olive</a></div>
+                    <div ><a onmouseover="productHovered('lightweight')" onmouseout="productOut('lightweight')"  href="" class="option">The Leightweight Crew TENCEL | Arabica</a></div>
+                    <div ><a onmouseover="productHovered('lightweight')" onmouseout="productOut('lightweight')"  href="" class="option">The Leightweight Crew TENCEL | White</a></div>
+                </div>
+               
+            </div>
+            </div>
+            <div class="items">
+            <div class="image-opts">
+                <img src="/images/white-ltwt.jpg" id="initialImg" class="pro-images" data-img-active alt="">
+                <img src="/images/arabica-ltwt.jpg" id="ltwtImg" class="pro-images" alt="">
+                <img src="/images/black-premium.jpg" id="prmImg" class="pro-images" alt="">
+               
+            </div>
+            </div>
+        </div>
+        <div class="transp-opts hover-options" id="transpOpts" >
+            <div class="items">
+           
+            <div class="options">
+                
+                <div>
+                    <div ><a  href="" class="option">Fair Pay</a></div>
+                    <div ><a  href="" class="option">Transparent Supply</a></div>
+                    <div ><a  href="" class="option">Transparent Pricing</a></div>
+                    <div ><a  href="" class="option">Cotton Clear Transparency</a></div>
+                    
+
+                </div>
+               
+            </div>
+            </div>
+            <div class="items">
+            <div class="image-opts">
+                <div class="opts" style="background: url('/images/cotton-clear.jpg');">
+                <div class="details">
+                    <div class="options">
+
+                 <h4>CLEAR COTTON</h4>
+                    </div>
+                <div class="to-link">
+                     
+                    <a href="" class="more-link">LEARN MORE  <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+                </div>
+                </div>
+               
+            </div>
+            </div>
+            <div class="items">
+            <div class="image-opts">
+                <div class="opts" style="background: url('/images/fair-pay.jpg');">
+                <div class="details">
+                    <div class="options">
+
+                 <h4>FAIR PAY.FAIR TRADE</h4>
+                    </div>
+                <div class="to-link">
+                     
+                    <a href="" class="more-link">LEARN MORE  <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+                </div>
+                </div>
+               
+            </div>
+            </div>
+            <div class="items">
+            <div class="image-opts">
+                <div class="opts" style="background: url('/images/fair-pay.jpg');">
+                <div class="details">
+                    <div class="options">
+
+                 <h4>FAIR PAY.FAIR TRADE</h4>
+                    </div>
+                <div class="to-link">
+                     
+                    <a href="" class="more-link">LEARN MORE  <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+                </div>
+                </div>
+               
+            </div>
+            </div>
+            
+        </div>
+        <div class="abt-opts hover-options" id="abtOpts" >
+            <div class="items">
+            <h4><a href="" class="category">About Us</a></h4>
+            <div class="options">
+                
+                <div>
+                    <div ><a   href="" class="option">Slim Fashion</a></div>
+                    <div ><a   href="" class="option">Substainable Basics</a></div>
+                    <div ><a   href="" class="option">Our Factories</a></div>
+                    <div ><a   href="" class="option">Our Journal</a></div>
+                    
+
+                </div>
+               
+            </div>
+            </div>
+           
+            <div class="items">
+            <div class="image-opts">
+                <div class="opts" style="background: url('/images/slim-fashion.jpg');">
+                <div class="details">
+                    <div class="options">
+
+                 <h4>SLIM FASHION</h4>
+                    </div>
+                <div class="to-link">
+                     
+                    <a href="" class="more-link">LEARN MORE  <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+                </div>
+                </div>
+               
+            </div>
+            </div>
+             <div class="items">
+            <div class="image-opts">
+                <div class="opts" style="background: url('/images/factories.png');">
+                <div class="details">
+                    <div class="options">
+
+                 <h4>FACTOURISM</h4>
+                    </div>
+                <div class="to-link">
+                     
+                    <a href="" class="more-link">LEARN MORE  <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+                </div>
+                </div>
+               
+            </div>
+            </div>
+             <div class="items">
+            <div class="image-opts">
+                <div class="opts" style="background: url('/images/our-story-resized.jpg');">
+                <div class="details">
+                    <div class="options">
+
+                 <h4>OUR STORY</h4>
+                    </div>
+                <div class="to-link">
+                     
+                    <a href="" class="more-link">LEARN MORE  <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+                </div>
+                </div>
+               
+            </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+{{!-- Cart Page Starts --}}
+
+<div class="cartParentDiv" id="cart">
+    <div class="hiddenDiv"></div>
+    <div class="showableDiv">
+
+   <div class="header">
+    <div class="cart-items">
+        <h5>Your Cart (0)</h5>
+    </div>
+    <div class="close-btn">
+        <button id="cartCloseBtn" onclick="hideCart()"><i class="las la-times"></i></button>
+    </div>
+   </div>
+   <div class="products">
+      <div class="empty-cart">
+        <h5>Your Cart is Empty</h5>
+      </div>
+      <div class="cart-items">
+        <div class="pro-img">
+            <img src="/images/arabica-ltwt.jpg" alt="">
+        </div>
+        <div class="pro-details">
+            <h5 class="pro-name">The Leightweight Crew</h5>
+            <h5 class="pro-color">Color : <span>Arabica</span></h5>
+            <h5 class="pro-size">Size : <span>XS</span></h5>
+            <div class="pro-quantity">
+                  <button class="btns"><i class="las la-plus"></i></button>
+                  <h5 class="number">1</h5>
+    
+                  <button class="btns" style="border-radius: 0px 25px 25px 0px;"><i class="las la-minus"></i></button>
+                </div>
+        </div>
+        <div class="item-details">
+            <div class="delete-pro">
+                    <button><i class="las la-trash"></i></button>
+            </div>
+            <div class="price">
+                <h5><i class="fa-solid fa-indian-rupee-sign"></i> <span>1,855</span></h5>
+            </div>
+
+        </div>
+      </div>
+   </div>
+   <div class="total-div">
+    <div class="totals">
+        <div class="total">
+            <h5 class="text">Sub Total</h5>
+            <h5 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> <span>855</span></h5>
+        </div>
+        <div class="total">
+            <h5 class="text">Delivery Fee</h5>
+            <h5 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> <span>0</span></h5>
+        </div>
+    </div>
+    <div class="final-total">
+        <h5 class="text">Total</h5>
+        <h5 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> <span>855</span></h5>
+    </div>
+   </div>
+   <div class="checkout-btn">
+    <button>CHECKOUT</button>
+   </div>
+    </div>
+</div>

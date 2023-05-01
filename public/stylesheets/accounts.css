@@ -1,0 +1,214 @@
+.accountsParentDiv{
+    padding: 90px;
+    background: #fafafa;;
+}
+.accountsParentDiv .accounts-heading{
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 1.5em;
+}
+.accountsParentDiv .windows{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 20% 75%;
+    margin-top: 2em;
+    position: relative;
+    gap: 2em;
+}
+.accountsParentDiv .windows .leftWindow{
+    float: left;
+    overflow: hidden;
+}
+.accountsParentDiv .windows .leftWindow ul li{
+    list-style: none;
+    width: 250px;
+    padding: 10px;
+    margin-top: 1em;
+    font-weight: 600;
+    font-size: 16px;
+}
+.accountsParentDiv .windows .leftWindow ul li i{
+    margin-right: .5em;
+    font-size: 28px;
+}
+.accountsParentDiv .windows .leftWindow ul #acntsDetail i{
+    font-size: 24px;
+}
+.accountsParentDiv .windows .leftWindow ul #acntsOrder i{
+    margin-right: .3em;
+}
+.accountsParentDiv .windows .leftWindow ul #acntsOut i{
+    font-size: 18px;
+    margin-right: .8em;
+}
+
+.accountsParentDiv .windows .leftWindow ul .activeAcnts{
+    background: #24a0ed;
+    color: #fff;
+}
+
+.accountsParentDiv .windows .leftWindow ul li:hover , .accountsParentDiv .windows .leftWindow ul li:focus{
+    background: #24a0ed;
+    color: #fff;
+    
+}
+.accountsParentDiv .windows .leftWindow ul li:nth-child(2):hover , .accountsParentDiv .windows .leftWindow ul li:nth-child(2):focus{
+    margin-left: 5px;
+}
+.accountsParentDiv .windows .rightWindow{
+    background: #fff;
+    margin-top: 1em;
+    padding: 15px 35px;
+    min-height: 80vh;
+}
+.accountsParentDiv .windows .rightWindow .options{
+    display: none;
+}
+.accountsParentDiv .windows .rightWindow .activeAcntsOpts{
+    display: block;
+}
+.accountsParentDiv .windows .rightWindow .mainHeading{
+    font-weight: 700;
+    font-size: 22px;
+}
+.accountsParentDiv .windows .rightWindow .heading-div{
+    margin-top: 2em;
+    padding-bottom: 1em;
+    width: 100%;
+    border-bottom: 3px solid #e3e3e3;
+}
+.accountsParentDiv .windows .rightWindow .heading-div h5{
+   font-weight: 600;
+   font-size: 18px;
+}
+.accountsParentDiv .windows .rightWindow .info{
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 25% 75%;
+    gap: 1.5em;
+    margin-top: 2em;
+    
+}
+.accountsParentDiv .windows .rightWindow .info .qoute-div h5{
+    color: #ccc;
+    font-size: 15px;
+    font-weight: 500;
+}
+.accountsParentDiv .windows .rightWindow .info .form-div .inputs{
+    display: grid;
+    grid-auto-flow: column;
+}
+.accountsParentDiv .windows .rightWindow .info .form-div .input{
+    font-size: 15px;
+    font-weight: 600;
+}
+.accountsParentDiv .windows .rightWindow .info .form-div .input input{
+    
+    display: block;
+    border: none;
+    background: #e3e3e3;
+    padding: 10px 15px;
+    width: 70%;
+    font-size: 15px;
+    outline: none;
+    font-weight: 500;
+    font-family: inherit;
+    margin-top: 0.5em;
+}
+.accountsParentDiv .windows .rightWindow .info .form-div .input input[type='submit']{
+    
+    display: block;
+    border: none;
+    background: #24a0ed;
+    padding: 10px 15px;
+    width: 10%;
+    font-size: 15px;
+    outline: none;
+    font-weight: 500;
+    font-family: inherit;
+    color: #ffff;    
+}
+.accountsParentDiv .windows .rightWindow .info .form-div .input input[type='submit']:focus , .accountsParentDiv .windows .rightWindow .info .form-div .input input[type='submit']:hover{
+    background: #0766a1;
+}
+
+.accountsParentDiv .windows .rightWindow .orders{
+    height: 180px;
+    width: 100%;
+    margin-top: 1em;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 20% 70% 25%;
+}
+.accountsParentDiv .windows .rightWindow .orders .pro-img img{
+    width: 125px;
+    aspect-ratio: 3/4;
+}
+.accountsParentDiv .windows .rightWindow .orders .pro-details .pro-name{
+    font-size: 22px;
+    font-weight: 600;
+}
+.accountsParentDiv .windows .rightWindow .orders .pro-details .pro-about{
+    margin-top: 0.5em;
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 500;
+}
+.accountsParentDiv .windows .rightWindow .orders .pro-details .pro-about span{
+    color: #000;
+}
+.accountsParentDiv .windows .rightWindow .orders .pro-details .order-status{
+    font-size: 16px;
+    font-weight: 500;
+    color: #cdcccc;
+    margin-top: 1em;
+}
+.accountsParentDiv .windows .rightWindow .orders .pro-price .price{
+    margin-top: 2em;
+    font-size: 18px;
+}
+.accountsParentDiv .windows .rightWindow .orders .pro-price .price span{
+    font-size: 20px;
+}
+.accountsParentDiv .windows .rightWindow .logout-div{
+    
+    margin-top: 3.5em;
+}
+.accountsParentDiv .windows .rightWindow .logout-div h5{
+    font-size: 22px;
+    font-weight: 600;
+}
+.accountsParentDiv .windows .rightWindow .logout-div .btns{
+    width: 200px;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1em;
+    margin-top: 2em;
+}
+.accountsParentDiv .windows .rightWindow .logout-div .btns button{
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    background: #24a0ed;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+.accountsParentDiv .windows .rightWindow .logout-div .btns button a{
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+
+
+.accountsParentDiv .windows .rightWindow .logout-div .btns button:hover,.accountsParentDiv .windows .rightWindow .logout-div .btns button:focus{
+    background: #0766a1;
+}
+
+
+
+
