@@ -182,7 +182,6 @@ proImages.addEventListener('scroll',(e)=>{
 if(x.matches){
     links.forEach((link) => {
         link.style.color='#FFFF'
-        
     })               
 }
 }

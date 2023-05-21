@@ -553,5 +553,33 @@
         font-size: 26px;
 
     }
+    .loginParentDiv .loginDiv{
+        width: 45em;
+        min-width: 30em;
+    }
+    .loginParentDiv .loginDiv .header .logo h2 a{
+        font-size: 55px;
+    }
+    .loginParentDiv .loginDiv .inputs input{
+        padding: 20px;
+        width: 95%;
+        font-size: 25px;
+    }
+    .loginParentDiv .loginDiv  p{
+        font-size: 22px;
+    }
+    .loginParentDiv .loginDiv  input[type='submit']{
+        width: 33em;
+        font-size: 22px;
+    }
+    .loginParentDiv .loginDiv  .signup-div h5{
+        font-size: 20px;
+    }
+    
+
+
+
+
+
 
 }
