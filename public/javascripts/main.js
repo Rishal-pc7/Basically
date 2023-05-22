@@ -169,7 +169,6 @@ document.getElementById('pro-images').focus()
 document.getElementById('returnPolicy').style.display='block'
 mobNav.style.top='50px'
 mobNav.style.background='transparent'
-navbar.style.background='transparent'
 navbar.style.top='40px'
 let proImages=document.getElementById('pro-images')
 var x = window.matchMedia("(max-width: 991px)")
@@ -258,13 +257,26 @@ window.onscroll=(e)=>{
                 
             })
         }else{
-            navbar.style.backgroundColor='#FFFF'
-            mobNav.style.backgroundColor='#FFFF'
-            mobNav.style.paddingTop='0'
-            links.forEach((link) => {
-                link.style.color='black'
+            if(location.pathname === '/product-page' && x.matches){
+                navbar.style.backgroundColor='#FFFF'
+                mobNav.style.backgroundColor='transparent'
+                mobNav.style.paddingTop='0'
+                links.forEach((link) => {
+                    link.style.color='#FFFF'
+                    
+                })
                 
-            })
+
+            }else{
+
+                navbar.style.backgroundColor='#FFFF'
+                mobNav.style.backgroundColor='#FFFF'
+                mobNav.style.paddingTop='0'
+                links.forEach((link) => {
+                    link.style.color='black'
+                    
+                })
+            }
 
         }
             if(location.pathname === '/product-page'){

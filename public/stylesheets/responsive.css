@@ -400,14 +400,14 @@
     }
     
     .our-ethics-section {
-        margin-top: 8em;
+        margin-top: 1em;
     }
     .our-ethics-section h5{
         font-size: 36px;
     }
     .our-ethics-section .item-grids{
         overflow-x: scroll;
-        grid-template-columns: 90% 90%;
+        grid-template-columns: 45% 45% 45%;
     }
     .our-ethics-section .item-grid .item-description .sub-heading{
         font-size: 26px;
@@ -421,6 +421,7 @@
     .clothing {
         transform: translateX(-11%);
         height: 650px;
+        margin-top: 2em;
     }
     .clothing img{
         height: 575px;

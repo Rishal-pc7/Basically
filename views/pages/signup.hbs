@@ -9,12 +9,17 @@
 
         </div>
         <div class="form-div">
-            <form action="">
+            <form action="/signup" method="post">
                 <div class="inputs">
 
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email address">
-                <input type="password" placeholder="Password">
+                <input type="text" name="name" placeholder="Name" required>
+                {{#if emailUsed}}
+                <input type="email" name="email" placeholder="Email address" style="border: 1px solid rgb(245, 54, 54);color:1px solid rgb(245, 54, 54) ;margin-bottom: .5em;" required>
+                <p class="danger-text">Email already used</p>
+                {{else}}
+                <input type="email" name="email" placeholder="Email address" required>
+                {{/if}}
+                <input type="password" name="password" placeholder="Password" minlength="8" required>
                 </div>
                 <div class="btn">
                     <input type="submit" value="Sign Up">

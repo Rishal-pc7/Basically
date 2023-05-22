@@ -9,11 +9,16 @@
 
         </div>
         <div class="form-div">
-            <form action="">
+            <form action="/login" method="post">
                 <div class="inputs">
-
-                <input type="email" placeholder="Email address">
-                <input type="password" placeholder="Password">
+                {{#if loginErr}}
+                <input type="email" name="email" placeholder="Email address" style="border: 1px solid rgb(245, 54, 54);color:1px solid rgb(245, 54, 54) ;" required>
+                <input type="password" name="password" placeholder="Password" style="border: 1px solid rgb(245, 54, 54);color:1px solid rgb(245, 54, 54) ;margin-bottom: .5em;" minlength="8" required>
+                <p class="danger-text">{{#if usrErr }} Invalid user! {{else}} {{#if passErr}} Your password is incorrect {{/if}} {{/if}}</p>
+                {{else}}
+                <input type="email" name="email" placeholder="Email address" required>
+                <input type="password" name="password" placeholder="Password" minlength="8" required>
+                {{/if}}
                 </div>
                 <p>Forgot your password?</p>
                 <div class="btn">
