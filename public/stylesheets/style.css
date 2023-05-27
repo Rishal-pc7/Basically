@@ -20,17 +20,18 @@
   margin: 0;
   padding: 0;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   font-family:"Be Vietnam Pro", sans-serif;
   scroll-behavior: smooth;
   animation: fade .8s ease-in-out;
-  scroll-snap-type: y mandatory;
   overflow-y: scroll;
   
 }
 section{
-  scroll-snap-align: start;
+  scroll-behavior: smooth;
 }
 .mob-view{
   display: none;
@@ -49,7 +50,7 @@ a {
 }
 .chat-widget .chat-btn{
   border: none;
-  background: #aabcbf;
+  background: #c0c0c0;
   border-radius: 25px;
   padding: 15px 40px;
   color: #fff;
@@ -134,17 +135,18 @@ a {
   height: 900px;
 }
 .hero{
-    background:url('/images/blacl-194_edited.jpg') ;
+    background:url('/images/home-des.jpg') ;
     width: 100%;
     height: 840px;
     position: fixed;
     top: 0;
     overflow-y: hidden;
     z-index: 0;
+    aspect-ratio: 16/9;
 }
 .hero-content{
   width: 100%;
-  padding-top: 400px;
+  padding-top: 300px;
   display: flex;
   justify-self: center;
   opacity: 100%;
@@ -154,61 +156,39 @@ a {
 .hero-content .content{
   color: #fff;
   margin: auto;
+  text-align: center;
+  position: relative;
+  height: 400px;
 }
-.hero-content h3{
-  font-weight: 400;
-  margin-left: 300px;
-}
+
 .hero-content h1{
  margin-top: .5em;
- margin-left: 20px;
- font-weight: 600;
+ font-weight: 500;
  font-size: 50px;
 }
 .hero-content h2{
-  margin-top: 1.5em;
- font-weight: 600;
- font-size: 19px;
- margin-left: 140px;
+  margin-top: 10px;
+ font-weight: 500;
+ font-size: 17px;
+ margin-left: 5px;
 }
-.hero-content .buttons{
-  margin-left: 190px;
+.hero-content .shop-link{
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-20%);
 }
-.hero-content .shop-btn{
-  float: left;
-  margin-top: 2em;
-  border: none;
-  padding: 10px 25px;
-  background: #fff;
-  transition: .5s ease-in-out;
-}
-.hero-content .more-btn{
-  margin-top: 2em;
-  border: 2px solid #fff;
-  margin-left: 2em;
-  padding: 10px 25px;
-  background: transparent;
-  transition: .5s ease-in-out;
-}
-.hero-content button a{
-  text-decoration: none;
-  font-size: 15px;
+.hero-content .shop-link a{
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  color: #fff;
+  font-size: 16px;
   font-weight: 400;
-  font-family: "Be Vietnam Pro",sans-serif;
-}
-
-.hero-content .shop-btn a{
-  color: #000; 
-  
-}
-.hero-content .more-btn a{
-  color: #fff; 
-  
 }
 
 .collections{
   position: relative;
-  height: 750px;
+  height: 600px;
   padding: 50px 90px;
   animation: fade .8s ease-in-out;
   background: #fff;
@@ -251,7 +231,7 @@ a {
   grid-auto-flow: column;
   grid-template-areas: 'a b c d';
   overflow-y: hidden;
-  margin-top: 3em;
+  margin-top: 4em;
   gap: 1em;
   scroll-behavior: smooth;
 }
@@ -266,7 +246,7 @@ a {
 }
 .collections .product-cards .product-card{
   width: 380px;
-  height: 570px;
+  height: 590px;
   transition: .5s ease-in-out;
 }
 .collections .product-cards .product-card img{
@@ -281,102 +261,51 @@ a {
 }
 .collections .product-cards .product-card .product-details .product-name a{
   font-weight: 500;
-  color: #8c8b8b;
+  color: #000;
   font-size: 15px;
   text-decoration: none;
 }
-.collections .product-cards .product-card .product-details .product-color{
+.collections .product-cards .product-card .product-details .colors{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
   margin-top: 1em;
 }
-.collections .product-cards .product-card .product-details .product-color span{
-  color: #8c8b8b;
-  font-weight: 500;
-  font-size: 15px;
+.collections .product-cards .product-card .mob-colors{
+  display: none;
 }
-.collections .product-cards .product-card .product-details .product-color i{
-  padding: 3px;
-  border: 2px solid black;
-  border-radius: 15px;
+.collections .product-cards .product-card .des-colors{
+  display: block;
+}
+.collections .product-cards .product-card .colors button{
+  background: none;
+  border: none;
+  margin-left: .5em;
+}
+.collections .product-cards .product-card .colors button[data-selected]{
+  border: 2px solid #000;
+  border-radius: 25px;
+  padding: 3px 3px 1px 3px;
+}
+.collections .product-cards .product-card .colors button i{
   font-size: 18px;
-  margin-right: .5em;
 }
-.collections .product-cards .product-card .product-details .product-color i:hover{
+.collections .product-cards .product-card .colors .product-color{
+  color: #000;
+  font-size:16px;
+  margin-left: 10px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.collections .product-cards .product-card .product-details .colors button i:hover{
   transform: scale(0.9);
 }
 
-.hero-2{
-  opacity: 100%;
-    background: url('/images/blacl-150_edited.jpg') ;
-    height: 840px;
-    width: 100%;
-    z-index: 99;
-}
-.hero-2 .hero-content{
-  padding-top:380px ;
 
-}
-.hero-2 .hero-content h3{
-  margin-left: 170px;
-}
-.hero-2 .hero-content h1{
-  margin-left: 0;
-}
-.hero-2 .hero-content h2{
-  font-weight: 400;
-  margin-left: 80px;
-}
-.hero-2 .hero-content h4{
-  font-weight: 300;
-  margin-left: 140px;
-  margin-top: 5em;
-}
-.hero-2 .hero-content .buttons{
-  margin-left: 110px;
-}
-.transparency-section{
-  background:url('/images/basically\ fsctory-11.jpg');
-  
-  width: 100%;
-  height: 700px;
-}
-
-.transparency-section .transparency-text{
-  display: flex;
-  justify-content: center;
-  opacity: 100%;
-  padding-top: 315px;
-}
-.transparency-section .transparency-text h4{
-  font-weight: 600;
-  font-size: 42px;
-  color: #fff;
-}
-.transparency-section .learn-more{
-  display: flex;
-  justify-content: center;
-  opacity: 100%;
-  padding: 10px;
-  border: 2px solid #fff;
-  border-radius: 35px;
-  width: 13%;
-  position: absolute;
-  left: 50%;
-  margin-top: 3em;
-  transform: translateX(-50%);
-}
-.transparency-section .more-link{
-  font-weight: 600;
-  font-size: 20px;
-  color: #fff;
-  text-decoration: none;
-}
-.transparency-section .learn-more:hover{
-  border: 2px solid #fff;
-  background: #57595B;
-}
 .about-section{
   position: relative;
-  height: 750px;
+  height: 620px;
   padding: 50px 90px;
   animation: fade .8s ease-in-out;
   background: #fff;
@@ -392,76 +321,49 @@ a {
   overflow: hidden;
   display: grid;
   grid-auto-flow: column;
-  margin-top: 7em;
-  gap: 1em;
+  margin-top: 4em;
+  gap: 2em;
+  grid-template-columns: 33% 33% 33%;
 }
 .about-section .about-grids .about-grid{
-  width: 48%;
-  height: 800px;
+  height: 620px;
   transition: .5s ease-in-out;
   float: left;
 }
 .about-section .about-grids .about-grid  img{
-  aspect-ratio: 3/2;  
+  aspect-ratio: 1/1;  
   display: block;
   object-fit: cover;
   object-position: center;
   height: 450px;
 }
 .about-section .about-grids .about-grid .about-descriptions{
-  margin-top: 2em;
-  padding: 10px 90px;
-  width: 100%;
+    text-align: center;
+    padding: 25px;
 }
-.about-section .about-grids .about-grid .about-descriptions .about {
-  transform: translateX(45%);
-}
-.about-section .about-grids .about-grid .about-descriptions .sust-about {
-  transform: translateX(30%);
-
-}
-.about-section .about-grids .about-grid .about-descriptions .about a{
+.about-section .about-grids .about-grid .about-descriptions h5 a{
+  font-size: 16px;
   font-weight: 600;
-  color: #000;
-  font-size: 20px;
   text-decoration: none;
-}
-.about-section .about-grids .about-grid .about-descriptions .description{
-  margin-top: 1em;
-  color: #8c8b8b;
-  font-weight: 500;
-  font-size: 16px;
-  margin-left: -35px;
-  line-height: 1.5em;
-  width: 510px;
-}
-.about-section .about-grids .about-grid .about-descriptions .slwfshn-des{
-  
-  display: block;
-}
-.about-section .about-grids .about-grid .about-descriptions  .slwfshn-mob{
-  display: none;
-}
-.about-section .about-grids .about-grid .about-descriptions .slwfshn-mob span{
-  margin-left: 35px;
-}
-.about-section .about-grids .about-grid .about-descriptions .description span{
-  margin-left: 60px;
-}
-.about-section .about-grids .about-grid .about-descriptions .read-more {
-  padding-left: 10em;
-  padding-top: 2em;
-}
-.about-section .about-grids .about-grid .about-descriptions .slow-read-more {
-  padding-top: 3em;
-
-}
-.about-section .about-grids .about-grid .about-descriptions .more-link {
-  text-decoration: underline;
   color: #000;
-  font-weight: 600;
-  font-size: 16px;
 }
+.about-section .about-grids .about-grid .about-descriptions p{
+  font-size: 13px;
+  color: #716f6f;
+  margin-top: 1em;    font-size: 13px;
+  color: #716f6f;
+  margin-top: 1em;
+}
+.about-section .about-grids .about-grid .about-descriptions .read-more{
+  margin-top: .5em;
+}
+.about-section .about-grids .about-grid .about-descriptions .read-more .more-link{
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: #000;
+  font-size: 15px;
+}
+
 .mob-abt-section{
   position: relative;
   height: 1100px;
@@ -536,14 +438,14 @@ a {
   z-index: 99;
   background-color: #fff;
   animation: fade .8s ease-in;
-  height: 300px;
-  margin-top: 4em;
+  height: 180px;
   margin-bottom: 5em;
 }
 .page-content .quote{
   width: 100%;
   float: left;
   margin-top: 5em;
+  text-align: center;
 }
 .page-content .quote h1{
   font-weight: 500;
@@ -552,8 +454,8 @@ a {
 }
 .page-content .quote h5{
   font-weight: 100;
-  font-size: 20px;
-  margin-left: 46%;
+  font-size: 16px;
+  margin-left: 40%;
   margin-top: 1em;
 }
 .page-content .quote .first-line{
@@ -580,14 +482,14 @@ a {
   text-align: center;
   color: #fff;
   width: 100%;
-  height: 1100px;
+  height: 660px;
 }
 .our-story img{
   object-fit: cover;
   aspect-ratio: 16/11;
   width: 100%;
   filter: grayscale(80%);
-  margin-left: -1.5em;
+  height: 650px;
 }
 .our-story .opts{
   position: absolute;
@@ -596,7 +498,7 @@ a {
   transform: translate(-50%,-50%);
 }
 .our-story .opts .opt{ 
-  font-size: 42px;
+  font-size: 30px;
   font-weight: 600;
   
 }
@@ -606,12 +508,12 @@ a {
   display: flex;
   justify-content: center;
   padding: 10px;
-  margin-top: 3em;
+  margin-top: 1em;
 }
 .our-story .opts .more-link{
   text-decoration: none;
   color: #fff;
-  font-size: 28px;
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
 }

@@ -24,24 +24,27 @@
                         <h5>Assertively utilize adaptive customer service for future-proof platforms.Review and update your account details.</h5>
                     </div>
                     <div class="form-div">
+                        <form action="/change-user-details" method="post">
+
                         <div class="inputs">
                             <div class="input">
                                <label for="">FIRST NAME</label>
-                               <input type="text" value="Rishal">
+                               <input type="text" name="fname" value="{{userDetails.fname}}">
                             </div>
                             <div class="input">
                                <label for="">LAST NAME</label>
-                               <input type="text" value="Richu">
+                               <input type="text" name="lname" value="{{userDetails.lname}}">
                             </div>
                         </div>
                         <div class="input" style="margin-top: 1em;">
                            <label for="">E-MAIL</label>
-                           <input style="width: 85%;" type="email" value="rishal454554@gmail.com">
+                           <input style="width: 85%;" type="email" name="email" value="{{userDetails.email}}">
                         </div>
                         <div class="input" style="margin-top: 1em;">
-                           <input type="submit" value="SAVE">
+                           <input type="submit" value="EDIT DETAILS">
                         </div>
 
+                       </form>
                     </div>                   
                 </div>
             </div>

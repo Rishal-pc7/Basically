@@ -11,8 +11,11 @@
         <div class="form-div">
             <form action="/signup" method="post">
                 <div class="inputs">
+                 <div class="name-inputs">
 
-                <input type="text" name="name" placeholder="Name" required>
+                  <input type="text" name="fname" placeholder="First Name" required>
+                  <input type="text" name="lname" placeholder="Last Name" required>
+                 </div>
                 {{#if emailUsed}}
                 <input type="email" name="email" placeholder="Email address" style="border: 1px solid rgb(245, 54, 54);color:1px solid rgb(245, 54, 54) ;margin-bottom: .5em;" required>
                 <p class="danger-text">Email already used</p>
@@ -28,5 +31,8 @@
 
             </form>
         </div>
-            </div>
+        <div class="signup-div">
+            <h5>Already have an account?<a href="/login">Login now</a></h5>
+        </div>
+    </div>
 </div>

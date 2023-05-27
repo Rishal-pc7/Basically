@@ -1,0 +1,69 @@
+.addParentDiv{
+    min-height: 800px;
+    padding: 115px 85px;
+
+}
+.addParentDiv h5{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+.addParentDiv .form-div{
+    width: 50%;
+    position: relative;
+    
+}
+.addParentDiv .form-div input{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 1em;
+}
+.addParentDiv .form-div .sizes{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1em;
+}
+.addParentDiv .form-div .size-div h5{
+    font-size: 20px;
+    font-weight: 500;
+}
+.addParentDiv .form-div .sizes .radio input{
+    height: 22px;
+    font-size: 22px
+    
+}
+.addParentDiv .form-div .sizes .radio label{
+    font-size: 15px;
+    margin-left: 5px;
+}
+.addParentDiv .form-div .sizes .radio{
+    display: flex;
+    flex-wrap:nowrap ;
+}
+.addParentDiv .form-div .image h5{
+    font-size: 20px;
+    font-weight: 500;
+}
+.addParentDiv .form-div .image p{
+    font-size: 15px;
+    color: #666464;
+    margin-top: -10px;
+    margin-bottom: 1em;
+}
+
+.addParentDiv .form-div input[type='submit']{
+    background: #000;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 5px;
+    color: #fff;
+    width: 5em;
+}
+.addParentDiv .form-div input[type='submit']:focus , .addParentDiv .form-div input[type='submit']:hover {
+    background: #232323;
+}

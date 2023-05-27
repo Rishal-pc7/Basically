@@ -3,11 +3,11 @@
 
 <div class="productParentDiv">
      <div class="product-category-details">
-      <h5>Home / Men / The Premium Weight Crew</h5>
+      <h5>Home / Men / The Perfect Tee</h5>
      </div>
      <div class="sticky-btn">
      <div class="add-to">
-      <button disabled>Add to cart</button>
+      <button disabled id="stickyAddToCart">Add to cart</button>
      </div>
    </div>
   <div class="products" id="products">
@@ -19,32 +19,19 @@
           <button class="ellipsis-btn"><i class="fa-solid fa-circle"></i></button>
           <button class="ellipsis-btn"><i class="fa-solid fa-circle"></i></button>
           <button class="ellipsis-btn"><i class="fa-solid fa-circle"></i></button>
-          <button class="ellipsis-btn"><i class="fa-solid fa-circle"></i></button>
-          <button class="ellipsis-btn"><i class="fa-solid fa-circle"></i></button>
         </div>
         <li class="slides-res">
 
-        <img src="/images/french home.jpg" alt="">
+        <img src="/images/black.jpg" alt="">
         </li>
         <li class="slides-res">
-
-        <img src="/images/french home.jpg" alt="">
+        <img src="/images/black.jpg" alt="">
         </li>
         <li class="slides-res">
-
-        <img src="/images/french home.jpg" alt="">
+        <img src="/images/black.jpg" alt="">
         </li>
         <li class="slides-res">
-
-        <img src="/images/french home.jpg" alt="">
-        </li>
-        <li class="slides-res">
-
-        <img src="/images/french home.jpg" alt="">
-        </li>
-        <li class="slides-res">
-
-        <img src="/images/french home.jpg" alt="">
+        <img src="/images/black.jpg" alt="">
         </li>
        </ul>
     </div>
@@ -54,15 +41,7 @@
       <div class="end-img">
         <img src="/images/white-premium.jpg" alt="">
       </div>
-      <div class="mid-rows">
-      <div class="mid-img">
-        <img src="/images/white-premium.jpg" alt="">
-      </div>
-      <div class="mid-img">
-        <img src="/images/white-premium.jpg" alt="">
-      </div>
       
-      </div>
       <div class="mid-rows">
       <div class="mid-img">
         <img src="/images/white-premium.jpg" alt="">
@@ -78,7 +57,7 @@
     </div>
   </div>
   <div class="pro-details">
-    <h3 class="name">The Premium Weight Crew</h3>
+    <h3 class="name">The Perfect Tee</h3>
     <h4 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> <span>855</span></h4>
      <div class="color-div">
       <div class="color-text">
@@ -104,19 +83,20 @@
         </div>
         <div class="sizes">
           <div class="button-group">
-            <button name="size" value="XS">XS</button>
-            <button name="size" value="S">S</button>
-            <button name="size" value="M">M</button>
-            <button name="size" value="L">L</button>
-            <button name="size" value="XL">XL</button>
-            <button name="size" value="XL">XL</button>
-            <button name="size" value="XL">XL</button>
+            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="XS">XS</button>
+            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="S">S</button>
+            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="M">M</button>
+            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="L">L</button>
+            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="XL">XL</button>
+            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="XXL">XXL</button>
+            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="3XL">3XL</button>
           </div>
+          <input type="text"  name="" id="selectedSize" hidden>
         </div>
       </div>
     </div>
     <div class="add-to">
-      <button disabled>Add to cart</button>
+      <button disabled id="addToCart">Add to cart</button>
     </div>
   </div>
 </div>
@@ -217,17 +197,22 @@
       <div class="image-div">
         <img src="/images/white-premium.jpg" alt="">
 
-      </div>
+      </div> 
    </div>
   </div>
   <div class="clothing">
-     <img src="/images/worlds-finest-cotton.jpg" alt="">
+     <img src="/images/breakdown.svg" alt="">
      <div class="description">
-       <h5 class="heading">WORLD'S FINEST COTTON</h5>
-       <p class="text">Not all cotton is born equal. All our t-shirts are crafted from American grown SUPIMA cotton of the highest grade and quality. Picked for its long staple fiber, the cotton is spun with our signature knit into a smooth yet strong yarn which lends durability to the finished garment and prevents piling.</p>
+       <h5 class="heading">Transparency</h5>
+       <h6 class="sub-heading">Fair Pay.Fair Trade</h6>
+       <p class="text">When you choose basically you get exactly what you pay for.
+        <br>We believe that being sustainable requires having transparent 
+        <br>supply chain and knowing the whole story behind our staples
+        <br>We love to share our production journey with you! 
+       </p>
        <div class="to-link">
 
-         <a href="">READ MORE</a>
+         <a href="">Learn More</a>
        </div>
       </div>
     </div>
@@ -235,9 +220,9 @@
      <h5>Our Ethics</h5>
      <div class="item-grids">
         <div class="item-grid">
-          <img src="/images/slim-fashion-abt.jpg" alt="">
+          <img src="/images/supima.png" alt="">
           <div class="item-description">
-            <h5 class="sub-heading">Slow Fashion</h5>
+            <h5 class="sub-heading">SUPIMA Cotton</h5>
             <p class="ethics-description">We produce in small batches with the finest materials to make them last longer</p>
             <a href="">Read More</a>
           </div>
@@ -245,13 +230,13 @@
         <div class="item-grid">
           <img src="/images/slim-fashion-abt.jpg" alt="">
           <div class="item-description">
-            <h5 class="sub-heading">Transparency</h5>
+            <h5 class="sub-heading">Handcrafted</h5>
             <p class="ethics-description">We only work with small factories that share our ethics of fair wages and high labour standards</p>
             <a href="">Read More</a>
           </div>
         </div>
         <div class="item-grid">
-          <img src="/images/slim-fashion-abt.jpg" alt="">
+          <img src="/images/superior-q.jpg" alt="">
           <div class="item-description">
             <h5 class="sub-heading">Superior quality</h5>
             <p class="ethics-description">We only use the world's finest fabrics.Our basics stay fit and more comfortable than your typical t-shirt</p>
@@ -268,21 +253,38 @@
       <button class="grid-btns nextBtn" onclick="showMoreBasicallies(this)"><i class="fa-solid fa-chevron-right"></i></button>
       <button class="grid-btns prevBtn" id="basic-prev-btn" onclick="showLessBasicallies(this)"><i class="fa-solid fa-chevron-left"></i></button>
       <div class="basicallies">
-        <img src="/images/french home.jpg" alt="">
+          <img src="/images/home-mob.jpg" alt="">
+
       </div>
       <div class="basicallies">
-        <img src="/images/french home.jpg" alt="">
+          <img src="/images/home-mob.jpg" alt="">
+
       </div>
       <div class="basicallies">
-        <img src="/images/french home.jpg" alt="">
+          <img src="/images/home-mob.jpg" alt="">
+
       </div>
       <div class="basicallies">
-        <img src="/images/french home.jpg" alt="">
+          <img src="/images/home-mob.jpg" alt="">
       </div>
       <div class="basicallies">
-        <img src="/images/french home.jpg" alt="">
+        <img src="/images/home-mob.jpg" alt="">
       </div>
     </div>
   </div>
 </div>
 <script src="/javascripts/carousel.js"></script>
+
+<script>
+  function getSize(elm){
+    console.log(elm.value)
+    document.getElementById('selectedSize').value=elm.value
+    document.getElementById('addToCart').removeAttribute('disabled')
+    document.getElementById('stickyAddToCart').removeAttribute('disabled')
+  }
+  function clearSize(elm){
+    document.getElementById('selectedSize').value=null
+    document.getElementById('addToCart').setAttribute('disabled',true)
+    document.getElementById('stickyAddToCart').setAttribute('disabled',true)
+  }
+</script>

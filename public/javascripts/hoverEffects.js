@@ -292,7 +292,7 @@ function hideCart(){
     document.getElementById('chat-wid').style.display='block'
     body.style.overflow='auto'
     mobNav.style.zIndex='99'
-    document.getElementById('hero-content').style.zIndex='2'
+    document.getElementById('hero-content').style.zIndex='none'
 }
 function changeAcntsOpts(elm){
     let activeAcnts=document.getElementsByClassName('activeAcnts')

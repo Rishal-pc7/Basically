@@ -23,6 +23,39 @@
     position: fixed;
     z-index: 1;
 }
+.cartParentDiv .showableDiv .login-redirect{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-30%, -50%);
+}
+.cartParentDiv .showableDiv .login-redirect h5{
+    font-size: 17px;
+    font-weight: 600;
+}
+.cartParentDiv .showableDiv .login-redirect .btns{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;   
+}
+.cartParentDiv .showableDiv .login-redirect .btns a{
+    background: #333;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    font-family: inherit;
+    
+}
+.cartParentDiv .showableDiv .login-redirect .btns a:hover,.cartParentDiv .showableDiv .login-redirect .btns a:focus{
+    background: #171717;
+}
+
+
+
+
+
 .cartParentDiv .showableDiv .header{
     width: 100%;
     height: 25px;
@@ -230,20 +263,21 @@ display: grid;
     padding: 30px;
     width: 100%;
 }
-.cartParentDiv .showableDiv .checkout-btn button{
+.cartParentDiv .showableDiv .checkout-btn a{
     background: #000;
     color: #fff;
     padding: 15px;
     text-align: center;
-    width: 90%;
+    width: 85%;
     border: none;
     outline: none;
     border-radius: 25px;
     font-family: inherit;
     font-size: 18px;
-    
+    text-decoration: none;
+    display: block;
 }
-.cartParentDiv .showableDiv .checkout-btn button:hover , .cartParentDiv .showableDiv .checkout-btn button:focus{
+.cartParentDiv .showableDiv .checkout-btn a:hover , .cartParentDiv .showableDiv .checkout-btn a:focus{
     outline: none;
     background: #333333;
 

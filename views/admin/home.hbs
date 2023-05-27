@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+<link rel="stylesheet" href="/stylesheets/admin/home.css">
+<div class="adminHomeParentDiv">
+<div class="header">
+    <div class="btn">
+        <a href="/admin/add-product">Add Product</a>
+    </div>
+</div>
+<table id="mytable" class="display">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Color</th>
+            <th>Available Sizes</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="/images/ivory.jpg"  alt=""></td>
+            <td>The Perfect Tee</td>
+            <td class="price"><i class="las la-rupee-sign"></i>855</td>
+            <td>Ivory</td>
+            <td>S/M/L/XL/XXL</td>
+            <td><a href="/admin/update-product-sizes">Update Sizes</a></td>
+            <td><a href="/admin/remove-product" class="del-pro"><i class="las la-trash"></i></a></td>
+        </tr>
+        
+    </tbody>
+</table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<script>
+$(document).ready(function () {
+        $('#mytable').DataTable()
+});
+</script>

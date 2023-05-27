@@ -12,17 +12,16 @@
     <script src="https://kit.fontawesome.com/da8fffc24f.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    {{#if user}}
+    {{#if clientPage}}
     {{>user-header}}
-    {{/if}}
     <div class="chat-widget" id="chat-wid">
-      <button id="chatBtn" class="chat-btn"><i class="las la-comment"></i> <span class="chat-txt">Let's Chat</span></button>
+      <button id="chatBtn" onclick="chatBtnClicked()" class="chat-btn"><i class="las la-comment"></i> <span class="chat-txt">Let's Chat</span></button>
       <div class="chat" id="chatPopup">
         <div class="header">
           <h2>basically</h2>
           <span class="dot">&#8226;</span>
           <h3><span class="text">We'll reply as soon as we can</span></h3>
-          <span class="icon" id="closeBtn"><i class="las la-times"></i></span>
+          <span class="icon" onclick="chatCloseBtnClicked()" id="closeBtn"><i class="las la-times"></i></span>
         </div>
         <div class="messages"></div>
         <div class="input">
@@ -36,7 +35,13 @@
         </div>
       </div>
     </div>
-    <div class="parentDiv" id="parentDiv">
+    {{else}}
+    {{#if adminPage}}
+    {{>admin-header}}
+    {{/if}}
+    {{/if}}
+    
+     <div class="parentDiv" id="parentDiv">
     {{{body}}}
     </div>
     {{>footer}}
@@ -45,3 +50,4 @@
 
 <script src="/javascripts/main.js"></script>
 <script src="/javascripts/hoverEffects.js"></script>
+

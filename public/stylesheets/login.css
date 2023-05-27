@@ -40,6 +40,12 @@
 .loginParentDiv .loginDiv .header .logo h2 a span{
     font-weight: 400;
 }
+.loginParentDiv .loginDiv .inputs .name-inputs{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 46% 46%;
+    gap: 2em;
+}
 .loginParentDiv .loginDiv .inputs input{
     border: 1px solid #ccc;
     padding: 10px;
@@ -49,10 +55,14 @@
     outline: none;
     font-family: inherit;
 }
-.loginParentDiv .loginDiv p{
+.loginParentDiv .loginDiv a{
     font-size: 14px;
     font-weight: 300;
     color: #afa7a7;
+    text-decoration: underline;
+}
+.loginParentDiv .loginDiv a:hover{
+    color: #333333;
 }
 .loginParentDiv .loginDiv  input[type='submit']{
     width: 28em;

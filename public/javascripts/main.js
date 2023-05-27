@@ -21,7 +21,7 @@ let body=document.getElementsByTagName('BODY')[0]
 let id = null
 let screenL=window.screenLeft
 var links = [].slice.call(linksColl);
-menuBtn.addEventListener('click',()=>{
+function menuBtnClicked(){
 
     menuBtn.style.display='none'
     document.getElementById('mobNavItems').style.display='none'
@@ -34,18 +34,18 @@ menuBtn.addEventListener('click',()=>{
     body.style.overflowY='hidden'
     
     
-})
-chatBtn.addEventListener('click',()=>{
+}
+function chatBtnClicked(){
     chatPopup.style.display='block'
     chatBtn.style.display='none'
-})
-closeBtn.addEventListener('click',()=>{
+}
+function chatCloseBtnClicked(){
     chatPopup.style.display='none'
     chatBtn.style.display='block'
     
-})
+}
 
-menuCloseBtn.addEventListener('click',()=>{
+function menuCloseBtnCLicked(){
     mobSideBar.style.animationName='unfade'
     mobSideBar.style.animationDuration='.8s'
     mobSideBar.style.animationTimingFunction='ease-in-out'
@@ -59,22 +59,22 @@ menuCloseBtn.addEventListener('click',()=>{
     
     
     
-})
+}
 
 
 
 
-function onNavHover(){
+function onNavHover(elm){
     navHovered=true
     links.forEach((link) => {
         link.style.color='#000'
         
     });
-    navbar.style.backgroundColor='#FFFF'
+    elm.style.backgroundColor='#FFFF'
     
 }
 
-function onNavOut(){
+function onNavOut(elm){
 
     shopOptOut()
     transpOptOut()
@@ -88,13 +88,13 @@ function onNavOut(){
             link.style.color='black'
             
         });
-        navbar.style.backgroundColor='#FFFF'
+        elm.style.backgroundColor='#FFFF'
     }else{
         links.forEach((link) => {
             link.style.color='#FFFF'
             
         });
-        navbar.style.backgroundColor='transparent'
+        elm.style.backgroundColor='transparent'
 
     }
     
@@ -199,7 +199,7 @@ function isInViewport(el) {
     );
 }
 let proImgSeen=false
-window.onscroll=(e)=>{
+window.onscroll=()=>{
     if(!optionsHovered.status){
         document.getElementById('shopOpts').style.display='none'
         document.getElementById('transpOpts').style.display='none'

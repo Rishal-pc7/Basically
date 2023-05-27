@@ -1,0 +1,50 @@
+.adminHomeParentDiv{
+    height: 800px;
+    padding: 115px 85px;
+}
+.adminHomeParentDiv .header{
+    width: 100%;
+}
+.adminHomeParentDiv .header .btn{
+    display: flex;
+    justify-content: end;
+}
+.adminHomeParentDiv .header .btn a{
+    background: #000;
+    color: #fff;
+    padding: 15px 37px;
+    border-radius: 5px;
+    margin-bottom: 2em;
+}
+.adminHomeParentDiv .header .btn a:hover{
+    background: #353434;
+}
+.adminHomeParentDiv table td img{
+    aspect-ratio: 3/4;
+    width: 85px;
+    margin-left: 10px;
+}
+.adminHomeParentDiv table .price{
+    font-size: 19px;
+}
+.adminHomeParentDiv table .price i{
+    font-size: 20px;
+}
+.adminHomeParentDiv table a{
+    text-decoration: underline;
+    color: #000;
+    text-underline-offset: 5px;
+    
+}
+.adminHomeParentDiv table .del-pro{
+    text-decoration: none;
+    color: #DC3545;
+    font-size: 28px;
+}
+.adminHomeParentDiv table .del-pro:hover{
+    color: #ed5967;
+    
+}
+.adminHomeParentDiv table a:hover{
+    color: #505050;
+}

@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="/stylesheets/admin/add-product.css">
+
+<div class="addParentDiv">
+    <h5>Add Product</h5>
+    <div class="form-div">
+
+    <form  action="/admin/add-product" method="post" enctype="multipart/form-data" onsubmit="formSubmitted()">
+        <input type="text" name="category" placeholder="Enter Product Category(This name will be shown as product name)" required>
+        <input type="text" name="price" placeholder="Enter Product Price" required>
+        <input type="text" name="color" placeholder="Enter Product Color" required>
+        <input type="text" name="color-code" placeholder="Enter Product Color Code(in Hex)" required>
+        <div class="size-div">
+
+        <h5>Add Available Sizes</h5>
+         <div class="sizes">
+            <div class="radio">
+               <input type="radio" name="XS" value="XS" id="" class="radios">
+               <label for="XS">XS</label>
+            </div>
+            <div class="radio">
+               <input type="radio" name="S" value="S" id="" class="radios">
+               <label for="S">S</label>
+            </div>
+            <div class="radio">
+               <input type="radio" name="M" value="M" id="" class="radios">
+               <label for="M">M</label>
+            </div>
+            <div class="radio">
+               <input type="radio" name="L" value="L" id="" class="radios">
+               <label for="L">L</label>
+            </div>
+            <div class="radio">
+               <input type="radio" name="XL" value="XL" id="" class="radios">
+               <label for="XL">XL</label>
+            </div>
+            <div class="radio">
+               <input type="radio" name="XXL" value="XXL" id="" class="radios">
+               <label for="XXL">XXL</label>
+            </div>
+            <div class="radio">
+               <input type="radio" name="3XL" value="3XL" id="" class="radios">
+               <label for="">3XL</label>
+            </div>
+            <input type="text" hidden name="sizes" id="sizes">
+         </div>
+        </div>
+        <div class="image">
+            <h5>Cover Image</h5>
+           <input type="file" name="coverImage">
+            <p>*Upload a file that should be seen in shop page (aspect-ratio=3:4)</p>  
+        </div>
+        <div class="image">
+            <h5>Product Page Image <p class="disabled" style="margin-top: 10px;">*Min. 2 images required</p></h5>
+           <input type="file" name="proImage" required> 
+           <input type="file" name="proImage" required>
+           <input type="file" name="proImage">
+           <input type="file" name="proImage">
+           <input type="file" name="proImage">
+        </div>
+         <input type="submit" value="ADD">
+    </form>
+    </div>
+</div>
+
+<script>
+     function formSubmitted(){
+        let inputs = document.getElementsByTagName('input')
+        let sizeInput=document.getElementById('sizes')
+        let size=[]
+        for(let i in inputs ){
+            if(inputs[i].type === 'radio'){
+                if(inputs[i].checked){
+                     size.push(inputs[i].value)
+
+                }
+            }
+             
+        }
+            sizeInput.value=size
+            console.log(sizeInput.value)
+
+
+    }
+</script>

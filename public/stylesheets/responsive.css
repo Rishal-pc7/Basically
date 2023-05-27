@@ -1,13 +1,13 @@
 
 @media only screen and  (max-width:991px){
     .hero-section{
-        height: 1360px;
+        height: 1610px;
     }
     .hero{
+        background: url('/images/home-mob.jpg');
         position: absolute;
-        background:url('/images/french\ home.jpg') ;
-        height: 1350px;
-        filter: contrast(75%);
+        height: 1600px;
+        aspect-ratio: 9/16;
     }
     .hero-content{
         width: 100%;
@@ -21,6 +21,7 @@
     .hero-content .content h3{
         margin-left: 255px;
         font-size: 30px !important;
+        margin-top: 3em;
     }
     .hero-content .content h2{
         margin-top: 0.2em;
@@ -28,66 +29,16 @@
         font-size: 25px;
         margin-left: 80px;
     }
-    .hero-content .buttons{
-         margin-left: 30px;
-         display: grid;
+    .hero-content .content .shop-link{
+        bottom: -225px;
     }
-    .hero-content .buttons div{
-        width: 95%;
-        margin-left: 155px;
-    }
-    .hero-content button{
-        margin-top: 4em;
-        background: none;
-        
-        width: 50%;
-    }
-    .hero-content .shop-btn , .hero-content .more-btn{
-        padding: 20px 40px;
-        margin-left: 0;
-    }
-    .hero-content .shop-btn a , .hero-content .more-btn a{
-        font-size: 28px;
-    }
-    .hero-content button a{
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: 300;
+    .hero-content .content .shop-link a{
+        font-size: 24px;
     }
     .hero .hero-content{
         padding-top: 60em;
     }
-    .hero-2{
-        filter: contrast(75%);
-        background:url('/images/blacl-150.jpg') ;
-        height: 1200px;
-    }
-    .hero-2 .hero-content{
-        padding-top: 450px;
-    }
-    .hero-2 .hero-content h3{
-        margin-left: 115px;
-        font-size: 30px !important;
-
-    }
-    .hero-2 .hero-content h1{
-        margin-left: -65px;
-        font-size: 55px;
-    }
-    .hero-2 .hero-content h2{
-        margin-left: -30px !important;
-        margin-top: 0.5em;
-        font-weight: 400;
-        font-size: 25px;
-
-    }
-    .hero-2 .hero-content .buttons{
-        margin-left: -55px;
-    }
-    .hero-2 .hero-content h4{
-        margin-left: 95px;
-        margin-top: 13em;
-    }
+    
 }
 @media only screen and (min-width:200px) and (max-width:1250px){
     .mobile-nav{
@@ -109,6 +60,31 @@
     }
     .cartParentDiv .showableDiv{
         width: 100%;
+    }
+    .cartParentDiv .showableDiv .login-redirect{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .cartParentDiv .showableDiv .login-redirect h5{
+        font-size: 27px;
+        font-weight: 600;
+    }
+    .cartParentDiv .showableDiv .login-redirect .btns{
+        display: flex;
+        justify-content: center;
+        margin-top: 4em;   
+    }
+    .cartParentDiv .showableDiv .login-redirect .btns a{
+        background: #333;
+        padding: 20px 50px;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 24px;
+        font-family: inherit;
+        
     }
     .cartParentDiv .showableDiv .header{
         height: 45px;
@@ -204,7 +180,7 @@
     .cartParentDiv .showableDiv .checkout-btn{
         bottom: 150px;
     }
-    .cartParentDiv .showableDiv .checkout-btn button{
+    .cartParentDiv .showableDiv .checkout-btn a{
         padding: 15px 0;
         width: 95%;
         border-radius: 35px;
@@ -252,6 +228,7 @@
     
     .collections{
         padding: 60px 45px;
+        height: 670px;
     }
     .collections .product-cards{
        margin-top: 5em;
@@ -263,15 +240,63 @@
     .collections .btns{
         display: none;
     }
+    .collections .product-cards .product-card{
+        height: 640px;
+    }
+    .collections .product-cards .product-card .product-details{
+        height: auto;
+        margin-top: 0;
+    }
     .collections .product-cards .product-card .product-details .product-name a{
         font-size: 21px;
+        margin-top: 0;
     }
-    .collections .collection-text{
+    .collections .product-cards .product-card .product-details .product-color{
+        margin-top: 0;
+    }
+    .collections .product-cards .product-card .product-details .more-colors p {
+        margin-top: 15px;
+        font-size: 20px;
+        color: #817f7f;
+    }
+    .collections .product-cards .product-card .product-details .colors{
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+        margin-top: 1em;
+      }
+      .collections .product-cards .product-card .colors button{
+        background: none;
+        border: none;
+        margin-left: .5em;
+      }
+      .collections .product-cards .product-card .colors button[data-selected]{
+        border: 2px solid #000;
+        border-radius: 25px;
+        padding: 3px 3px 1px 3px;
+      }
+      .collections .product-cards .product-card .colors button i{
+        font-size: 22px;
+      }
+      .collections .product-cards .product-card .colors .product-color{
+         color: #000;
+         font-size:22px;
+         margin-left: 10px;
+         font-weight: 400;
+      }
+      .collections .product-cards .product-card .mob-colors{
+          display: block;
+        }
+        .collections .product-cards .product-card .des-colors{
+            display: none;
+        }
+      .collections .product-cards .product-card .product-details .colors button i:hover{
+        transform: scale(0.9);
+      }
+      .collections .collection-text{
         font-size: 38px;
-    }
-    .collections .product-cards .product-card .product-details .product-color span{
-        font-size: 21px;
-    }
+      }
+    
    
     .transparency-section .learn-more{
         width: 25%;
@@ -280,8 +305,8 @@
     .transparency-section .more-link{
         font-size: 28px;
     }
-    .page-content .quote{
-        margin-left: -4em;    
+    .page-content {
+        margin-top: 10em;
     }
     .about-section{
         display: none;
@@ -407,7 +432,7 @@
     }
     .our-ethics-section .item-grids{
         overflow-x: scroll;
-        grid-template-columns: 45% 45% 45%;
+        grid-template-columns: 65% 65% 65%;
     }
     .our-ethics-section .item-grid .item-description .sub-heading{
         font-size: 26px;
@@ -419,22 +444,21 @@
         font-size: 24px;
     }
     .clothing {
-        transform: translateX(-11%);
-        height: 650px;
+        height: 750px;
         margin-top: 2em;
+        display: flex;
+        justify-content: center;
+        padding: 70px;
     }
     .clothing img{
-        height: 575px;
+        height: 720px;
+        position: relative;
+        right: 0;
     }
     .clothing .description{
-        top: 40%;
-        left: 5%;
-        transform: translate(8%,-25%);
+        display: none;
     }
-    .clothing .description p{
-        font-size: 24px;
-        
-    }
+    
     .checkoutParentDiv{
         padding: 0 0 0 85px !important;
         height: 2040px !important;
@@ -524,7 +548,7 @@
         width: 90% !important;
     }
     .accountsParentDiv .windows .rightWindow .info .form-div .input input[type='submit']{
-        width: 25% !important;
+        width: 30% !important;
     }
     .accountsParentDiv .windows .rightWindow .orders .pro-details .pro-name{
         font-size: 24px;
@@ -561,12 +585,15 @@
     .loginParentDiv .loginDiv .header .logo h2 a{
         font-size: 55px;
     }
+    .loginParentDiv .loginDiv .inputs .name-inputs{
+        display: block;
+    }
     .loginParentDiv .loginDiv .inputs input{
         padding: 20px;
         width: 95%;
         font-size: 25px;
     }
-    .loginParentDiv .loginDiv  p{
+    .loginParentDiv .loginDiv  a{
         font-size: 22px;
     }
     .loginParentDiv .loginDiv  input[type='submit']{
