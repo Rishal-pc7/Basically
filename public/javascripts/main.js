@@ -200,34 +200,38 @@ function isInViewport(el) {
 }
 let proImgSeen=false
 window.onscroll=()=>{
-    if(!optionsHovered.status){
-        document.getElementById('shopOpts').style.display='none'
-        document.getElementById('transpOpts').style.display='none'
-        document.getElementById('abtOpts').style.display='none'
-    }
-    var x = window.matchMedia("(max-width: 991px)")
+    let path=location.pathname
+    let splitPath=path.split("/")
+    if(splitPath.indexOf('admin') ===  -1){
+        var x = window.matchMedia("(max-width: 991px)")
     scrollTop=document.documentElement.scrollTop
-    if(location.pathname === '/product-page'){
+     if(location.pathname === '/product-page'){
 
-    proImgSeen= isInViewport(document.getElementById('products'))    
+      proImgSeen= isInViewport(document.getElementById('products'))    
     if(proImgSeen){
             document.getElementById('pro-images').focus()
          }   
     }
-    if(document.body.scrollTop > 750 || document.documentElement.scrollTop >750){
-        
-        let herDIv=document.getElementById('hero')
-        if(!x.matches)
-            herDIv.style.position='relative'
+    if(location.pathname === '/'){
 
-        
-    }else{
-         if(!x.matches){
-             
-             document.getElementById('hero').style.position='fixed'
-         }
+        if(document.body.scrollTop > 750 || document.documentElement.scrollTop >750){
+            
+            let herDIv=document.getElementById('hero')
+            if(!x.matches){
+                herDIv.style.position='relative'
+            }
+            
+        }else{
+            if(!x.matches){
+                
+                document.getElementById('hero').style.position='fixed'
+            }
+            
+        }
         
     }
+    
+    
     if(document.body.scrollTop > 40 || document.documentElement.scrollTop >40){
         scrolled=true
         
@@ -244,10 +248,11 @@ window.onscroll=()=>{
             
         });
     }else{
-        if(!optionsHovered.status){
+        
+        if(optionsHovered.status == false){
 
             scrolled=false
-
+        
         if(location.pathname === '/'){
             navbar.style.backgroundColor='transparent'
             mobNav.style.backgroundColor='transparent'
@@ -285,9 +290,10 @@ window.onscroll=()=>{
                 
             }
         }
-        
-    }
+    }  
     
 }
+}    
+
 
 

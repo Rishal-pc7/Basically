@@ -4,11 +4,11 @@
     <h5>Add Product</h5>
     <div class="form-div">
 
-    <form  action="/admin/add-product" method="post" enctype="multipart/form-data" onsubmit="formSubmitted()">
+    <form action="/admin/add-product" method="post" enctype="multipart/form-data" onsubmit="formSubmitted()" id="addForm">
         <input type="text" name="category" placeholder="Enter Product Category(This name will be shown as product name)" required>
         <input type="text" name="price" placeholder="Enter Product Price" required>
         <input type="text" name="color" placeholder="Enter Product Color" required>
-        <input type="text" name="color-code" placeholder="Enter Product Color Code(in Hex)" required>
+        <input type="text" name="colorCode" placeholder="Enter Product Color Code(in Hex)" required>
         <div class="size-div">
 
         <h5>Add Available Sizes</h5>
@@ -41,9 +41,12 @@
                <input type="radio" name="3XL" value="3XL" id="" class="radios">
                <label for="">3XL</label>
             </div>
-            <input type="text" hidden name="sizes" id="sizes">
+            <input type="text" hidden name="sizes" id="sizes" value=null>
          </div>
         </div>
+        {{#if sizeNotSelected}}
+         <p id="size-danger-text">!Sizes are not selected</p>
+         {{/if}}
         <div class="image">
             <h5>Cover Image</h5>
            <input type="file" name="coverImage">
@@ -61,10 +64,15 @@
     </form>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
+   
      function formSubmitted(){
+        
         let inputs = document.getElementsByTagName('input')
+        
         let sizeInput=document.getElementById('sizes')
         let size=[]
         for(let i in inputs ){
@@ -76,8 +84,13 @@
             }
              
         }
-            sizeInput.value=size
-            console.log(sizeInput.value)
+        if(size[0] == null){
+         sizeInput.value=null
+        }else{
+ 
+          sizeInput.value=size
+        }
+        
 
 
     }

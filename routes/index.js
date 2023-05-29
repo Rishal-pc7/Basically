@@ -57,7 +57,7 @@ router.post('/login', function(req, res, next) {
 router.get('/forgot-password', function(req, res, next) {
   res.render('pages/forgot-password',{clientPage:true,accErr:req.session.forgotAccErr})
   req.session.forgotAccErr=false
-})
+}) 
 router.post('/forgot-password', function(req, res, next) {
   userHelper.changePassword(req.body).then((response)=>{
     if(response.accErr){

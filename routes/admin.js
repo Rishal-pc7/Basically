@@ -8,12 +8,21 @@ router.get('/', function(req, res, next) {
   res.render('admin/home',{adminPage:true})
 });
 router.get('/add-product', function(req, res, next) {
-  res.render('admin/add-product',{adminPage:true})
+  res.render('admin/add-product',{adminPage:true,sizeNotSelected:req.session.adminNotSelectedSize})
+  req.session.adminNotSelectedSize=false
 });
 router.post('/add-product', async function(req, res, next) {
-  adminHelper.convertToBase64(req.files,req.body.category,req.body.color).then((response)=>{
+  
+  if(req.body.sizes === ""){
+    req.session.adminNotSelectedSize=true
+    res.redirect('/admin/add-product')    
+  }else{
 
-  })
+      let images = await adminHelper.convertToBase64(req.files,req.body.category,req.body.color)
+      adminHelper.addProduct(req.body,images).then((response)=>{
+        console.log(response);
+      })
+    }
 
 });
 

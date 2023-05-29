@@ -67,3 +67,9 @@
 .addParentDiv .form-div input[type='submit']:focus , .addParentDiv .form-div input[type='submit']:hover {
     background: #232323;
 }
+.addParentDiv #size-danger-text{
+    color: rgb(245, 54, 54); ;
+    margin-top: -15px;
+    margin-bottom: 1em;
+    font-size: 15px;
+}
