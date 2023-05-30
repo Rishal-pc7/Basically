@@ -16,18 +16,22 @@
             <th>Available Sizes</th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
+        {{#each products}}
         <tr>
-            <td><img src="/images/ivory.jpg"  alt=""></td>
-            <td>The Perfect Tee</td>
-            <td class="price"><i class="las la-rupee-sign"></i>855</td>
-            <td>Ivory</td>
-            <td>S/M/L/XL/XXL</td>
-            <td><a href="/admin/update-product-sizes">Update Sizes</a></td>
-            <td><a href="/admin/remove-product" class="del-pro"><i class="las la-trash"></i></a></td>
+            <td><img src={{this.coverImage}}  alt=""></td>
+            <td>{{this.category}}</td>
+            <td class="price"><i class="las la-rupee-sign"></i>{{this.price}}</td>
+            <td>{{this.color}}</td>
+            <td>{{#each this.sizes}}{{this}}/{{/each}}</td>
+            <td><a href="/admin/update-product-sizes/{{this._id}}">Update Sizes</a></td>
+            <td><a href="/admin/edit-product/{{this._id}}">Edit Product</a></td>
+            <td><a href="/admin/remove-product/{{this._id}}" class="del-pro"><i class="las la-trash"></i></a></td>
         </tr>
+        {{/each}}
         
     </tbody>
 </table>
@@ -39,4 +43,5 @@
 $(document).ready(function () {
         $('#mytable').DataTable()
 });
+
 </script>

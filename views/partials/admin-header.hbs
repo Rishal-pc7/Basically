@@ -9,15 +9,21 @@
         </div>
         <div class="nav-options">
             <ul>
-                <li><a class="links">Home</a></li>
+                <li><a href="/admin" class="links">Home</a></li>
                 <li><a class="links">View Orders</a></li>
-                <li><a class="links">Coupons</a></li>
+                <li><a href="/admin/view-coupons" class="links">Coupons</a></li>
             </ul>
         </div>
         <div class="nav-user">
             <ul>
-                <li><a href="/accounts" class="links"><i style="margin-top: 5px;" class="las la-user-check" ></i></a></li>
-                <li><a href="/accounts" class="links"><i class="las la-user" ></i></a></li>
+                {{#if admin}}
+                   
+                <li><a class="links"><i style="margin-top: 5px;" class="las la-user-check" ></i></a></li>
+                <li><a href="/admin/logout" class="links" title="logout"><i style="margin-top: 5px;" class="las la-sign-out-alt"></i></a></li>
+                {{else}}
+                   
+                <li><a class="links"><i class="las la-user" ></i></a></li>
+                {{/if}}
             </ul>
         </div>
         

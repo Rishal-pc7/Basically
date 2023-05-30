@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="/stylesheets/admin/add-product.css">
+
+<div class="addParentDiv">
+    <h5>Add Product</h5>
+    <div class="form-div">
+
+    <form action="/admin/edit-product" method="post" enctype="multipart/form-data" onsubmit="formSubmitted()" id="addForm">
+        <input type="text" name="category" placeholder="Enter Product Category(This name will be shown as product name)" value="{{product.category}}" required>
+        <input type="text" name="price" placeholder="Enter Product Price" value="{{product.price}}"  required>
+        <input type="text" name="color" placeholder="Enter Product Color" value="{{product.color}}"  required>
+        <input type="text" name="colorCode" placeholder="Enter Product Color Code(in Hex)" value="{{product.colorCode}}"  required>
+        <div class="size-div">
+
+        <h5>Add Available Sizes</h5>
+
+         <div class="sizes">
+        {{#each sizes.availableSizes}}
+
+            <div class="radio">
+               <input type="radio" name="{{this}}" value="{{this}}" id="" checked class="radios">
+               <label for="{{this}}">{{this}}</label>
+            </div>
+        {{/each}}    
+        {{#each sizes.unavail}}
+
+            <div class="radio">
+               <input type="radio" name="{{this}}" value="{{this}}" id="" class="radios">
+               <label for="{{this}}">{{this}}</label>
+            </div>
+        {{/each}}    
+         
+            <input type="text" hidden name="proId" value="{{proId}}">
+            <input type="text" hidden name="sizes" id="sizes">
+         </div>
+        </div>
+        
+         <input type="submit" value="EDIT">
+    </form>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+     
+     function formSubmitted(){
+        
+        let inputs = document.getElementsByTagName('input')
+        
+        let sizeInput=document.getElementById('sizes')
+        let size=[]
+        for(let i in inputs ){
+            if(inputs[i].type === 'radio'){
+                if(inputs[i].checked){
+                     size.push(inputs[i].value)
+
+                }
+            }
+             
+        }
+        if(size[0] == null){
+         sizeInput.value=sizeInput.value
+        }else{
+ 
+          sizeInput.value=size
+        }
+        
+
+
+    }
+</script>

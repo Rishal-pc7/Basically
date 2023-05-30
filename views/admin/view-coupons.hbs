@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+<link rel="stylesheet" href="/stylesheets/admin/home.css">
+<div class="adminHomeParentDiv">
+<div class="header">
+    <div class="btn">
+        <a href="/admin/add-coupon">Add Coupon</a>
+    </div>
+</div>
+<table id="couponsTable" class="display">
+    <thead>
+        <tr>
+            <th>Coupon Code</th>
+            <th>Discounted Percentage</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each coupons}}
+        <tr>
+            <td>{{this.details.couponCode}}</td>
+            <td>{{this.details.discountedPercentage}}%</td>
+            <td><a href="/admin/remove-coupon/{{this._id}}">Remove Coupon</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<script>
+$(document).ready(function () {
+        $('#couponsTable').DataTable()
+});
+
+</script>

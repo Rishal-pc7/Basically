@@ -1,7 +1,9 @@
+import imageCompression from "browser-image-compression"
 function showMoreImages(e){
     let scrollLeft=e.scrollLeft.toFixed()
     let btns=document.getElementsByClassName('ellipsis-btn')
     let activeEllipse=document.getElementsByClassName('active-ellipse')
+    
     if(scrollLeft <900){
         activeEllipse[0].classList.replace('active-ellipse','.')
         btns[0].className +=' active-ellipse'

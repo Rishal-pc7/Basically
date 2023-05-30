@@ -26,18 +26,19 @@
     <div id="prem-product-cards" class="product-cards">
   
         
+        {{#each products}}
         <div class="product-card">
-            <a href="/product-page"><img src="/images/brown.jpg" alt=""></a>
+            <a href="/product-page"><img src={{this.proImages.[0]}} alt=""></a>
             <div class="product-details">
-                <h5 class="product-name"><a href="/product-page">The Premium-Weight Crew SUPIMA</a></h5>
+                <h5 class="product-name"><a href="/product-page">{{this.category}}</a></h5>
                 <div class="mob-colors">
 
                 <div class="colors">
 
                    <button class="" ><i class="fa-solid fa-circle" style="color: #000;"></i></button>
-                   <button class="" data-selected><i class="fa-solid fa-circle" style="color: #f5f5f5;"></i></button>
+                   <button class="" data-selected><i class="fa-solid fa-circle" style="color:{{this.colorCode}}"></i></button>
                    <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
-                   <h5 class="product-color">White</h5>
+                   <h5 class="product-color">{{this.color}}</h5>
                 </div>
                 <div class="more-colors">
                     <p>+2 Colors</p>
@@ -52,12 +53,13 @@
                    <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
                    <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
                    <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
-                   <h5 class="product-color">White</h5>
+                   <h5 class="product-color">{{this.color}}</h5>
                 </div>
                 
                 </div>
             </div>
         </div>
+        {{/each}}
         <div class="product-card">
             <a href="/product-page"><img src="/images/pista.jpg" alt=""></a>
             <div class="product-details">

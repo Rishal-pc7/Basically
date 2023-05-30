@@ -55,6 +55,11 @@
     margin-top: -10px;
     margin-bottom: 1em;
 }
+.addParentDiv .form-div .image p a{
+    text-decoration: underline;
+    margin-left: 5px;
+    
+}
 
 .addParentDiv .form-div input[type='submit']{
     background: #000;

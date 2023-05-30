@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/stylesheets/login.css">
+
+<div class="loginParentDiv">
+    <div class="loginDiv">
+        <div class="header">
+            <div class="logo">
+                <h2><a href="/admin" class="link">basic<span>ally</span>.</a></h2>
+            </div>
+
+        </div>
+        <div class="form-div">
+            <form action="/admin/login" method="post">
+                <div class="inputs">
+                {{#if loginErr}}
+                <input type="email" name="email" placeholder="Email address" style="border: 1px solid rgb(245, 54, 54);color:1px solid rgb(245, 54, 54) ;" required>
+                <input type="password" name="password" placeholder="Password" style="border: 1px solid rgb(245, 54, 54);color:1px solid rgb(245, 54, 54) ;margin-bottom: .5em;" minlength="8" required>
+                <p class="danger-text">{{#if adminErr }} Invalid Admin! {{else}} {{#if passErr}} Your password is incorrect {{/if}} {{/if}}</p>
+                {{else}}
+                <input type="email" name="email" placeholder="Email address" required>
+                <input type="password" name="password" placeholder="Password" minlength="8" required>
+                {{/if}}
+                </div>
+                <div class="btn">
+                    <input type="submit" value="Sign In">
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

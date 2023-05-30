@@ -49,16 +49,17 @@
          {{/if}}
         <div class="image">
             <h5>Cover Image</h5>
-           <input type="file" name="coverImage">
+           <input type="file" accept=".jpg,.jpeg" name="coverImage">
             <p>*Upload a file that should be seen in shop page (aspect-ratio=3:4)</p>  
         </div>
         <div class="image">
             <h5>Product Page Image <p class="disabled" style="margin-top: 10px;">*Min. 2 images required</p></h5>
-           <input type="file" name="proImage" required> 
-           <input type="file" name="proImage" required>
-           <input type="file" name="proImage">
-           <input type="file" name="proImage">
-           <input type="file" name="proImage">
+            <p class="disabled" style="margin-top: 10px;">*Please compress image to less than 300kb/s before uploading<a target="_blank" href="https://imageresizer.com/image-compressor">You can compress image from here</a></p>
+            <p class="disabled" style="margin-top: 10px;"></p>
+           <input type="file" accept=".jpg,.jpeg" name="proImage"  required> 
+           <input type="file" accept=".jpg,.jpeg" name="proImage"  required>
+           <input type="file" accept=".jpg,.jpeg" name="proImage">
+           <input type="file" accept=".jpg,.jpeg" name="proImage">
         </div>
          <input type="submit" value="ADD">
     </form>
@@ -68,7 +69,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-   
+     
      function formSubmitted(){
         
         let inputs = document.getElementsByTagName('input')

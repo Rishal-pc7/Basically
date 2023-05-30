@@ -10,8 +10,9 @@ const verifyLogin =(req,res,next)=>{
     res.redirect('/login')
   }
 }
-router.get('/', function(req, res, next) {
-  res.render('index', { clientPage:true,user:req.session.user});
+router.get('/',async function(req, res, next) {
+  let products=await userHelper.getProducts()
+  res.render('index', { clientPage:true,user:req.session.user,products});
 });
 
 router.get('/product-page', function(req, res, next) {

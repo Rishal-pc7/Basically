@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="/stylesheets/admin/add-product.css">
+
+<div class="addParentDiv">
+    <h5>Update Sizes</h5>
+    <div class="form-div">
+
+    <form action="/admin/update-product-sizes" method="post" enctype="multipart/form-data" onsubmit="formSubmitted()" id="updateSizeForm">
+        <input type="text" name="proId" value={{proId}} hidden>
+        <div class="size-div" style="margin-top: 3em;">
+
+        <h5>Available Sizes</h5>
+         <div class="sizes">
+        {{#each sizes.availableSizes}}
+            <div class="radio">
+               <input type="checkbox" value={{this}} checked class="radios available">
+               <label for="XS">{{this}}</label>
+            </div>
+            {{/each}}
+            
+         </div>
+        </div>
+        <div class="size-div">
+
+        <h5>Update Sizes</h5>
+         <div class="sizes">
+            <div class="radio">
+               <input type="radio" name="XS" value="XS" id="" class="radios">
+               <label for="XS">XS</label>
+            </div>
+            <div class="radio">
+               <input type="radio" name="S" value="S" id="" class="radios">
+               <label for="S">S</label>
+            </div>
+            <div class="radio">
+               <input type="radio" name="M" value="M" id="" class="radios">
+               <label for="M">M</label>
+            </div>
+            <div class="radio">
+               <input type="radio" name="L" value="L" id="" class="radios">
+               <label for="L">L</label>
+            </div>
+            <div class="radio">
+               <input type="radio" name="XL" value="XL" id="" class="radios">
+               <label for="XL">XL</label>
+            </div>
+            <div class="radio">
+               <input type="radio" name="XXL" value="XXL" id="" class="radios">
+               <label for="XXL">XXL</label>
+            </div>
+            <div class="radio">
+               <input type="radio" name="3XL" value="3XL" id="" class="radios">
+               <label for="">3XL</label>
+            </div>
+            <input type="text" hidden name="sizes" id="updatabaleSizes" value=null>
+         </div>
+        </div>
+        
+         <input type="submit" value="ADD">
+    </form>
+    </div>
+</div>
+
+<script>
+     
+     function formSubmitted(){
+        
+        let inputs = document.getElementsByTagName('input')
+        
+        let sizeInput=document.getElementById('updatabaleSizes')
+        let size=[]
+        for(let i in inputs ){
+            if(inputs[i].type === 'radio'){
+
+                if(inputs[i].checked){
+                     size.push(inputs[i].value)
+
+                }
+            }
+             
+        }
+        if(size[0] == null){
+         sizeInput.value=null
+        }else{
+         console.log(size)
+
+          sizeInput.value=size
+        }
+        
+
+
+    }
+</script>
