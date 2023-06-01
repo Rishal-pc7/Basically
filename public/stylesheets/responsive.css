@@ -1,12 +1,12 @@
 
 @media only screen and  (max-width:991px){
     .hero-section{
-        height: 1610px;
+        height: 1760px;
     }
     .hero{
         background: url('/images/home-mob.jpg');
         position: absolute;
-        height: 1600px;
+        height: 1750px;
         aspect-ratio: 9/16;
     }
     .hero-content{
@@ -98,58 +98,58 @@
     .cartParentDiv .showableDiv .header .close-btn button{
         font-size: 46px;
     }
-    .cartParentDiv .showableDiv .products .empty-cart h5{
+    .cartParentDiv .showableDiv .cart-products .empty-cart h5{
        font-size: 30px;
     }
-    .cartParentDiv .showableDiv .products .cart-items{
+    .cartParentDiv .showableDiv .cart-products .cart-items{
         height: 260px;
     }
-    .cartParentDiv .showableDiv .products .cart-items .pro-img{
+    .cartParentDiv .showableDiv .cart-products .cart-items .pro-img{
         height: 250px;
     }
-    .cartParentDiv .showableDiv .products .cart-items .pro-img img{
+    .cartParentDiv .showableDiv .cart-products .cart-items .pro-img img{
         height: 250px;
         width: 225px;
     }
-    .cartParentDiv .showableDiv .products .cart-items .pro-details{
+    .cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details{
         margin-left: 2em;
 
     }
-    .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-name{
+    .cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-name{
         font-size: 34px;
     }
-    .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-color{
+    .cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-color{
         font-size: 30px;
     }
-    .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-size{
+    .cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-size{
         font-size: 30px;
     }
-    .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity{
+    .cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-quantity{
         margin-top: 1em;
         width: 150px;
     }
-    .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity .btns{
+    .cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-quantity .btns{
         padding: 10px 20px;
         height: 55px;
         font-size: 34px;
     }
-    .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity .number{
+    .cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-quantity .number{
         font-size: 32px;
         padding: 4px 25px;
     }
-    .cartParentDiv .showableDiv .products .cart-items .item-details .delete-pro{
+    .cartParentDiv .showableDiv .cart-products .cart-items .item-details .delete-pro{
         top: -10px;
     }
-    .cartParentDiv .showableDiv .products .cart-items .item-details .delete-pro button{
+    .cartParentDiv .showableDiv .cart-products .cart-items .item-details .delete-pro button{
         font-size: 55px;
     }
-    .cartParentDiv .showableDiv .products .cart-items .item-details .price{
+    .cartParentDiv .showableDiv .cart-products .cart-items .item-details .price{
         padding-top: 7em;
     }
-    .cartParentDiv .showableDiv .products .cart-items .item-details .price h5{
+    .cartParentDiv .showableDiv .cart-products .cart-items .item-details .price h5{
         font-size: 32px;
     }
-    .cartParentDiv .showableDiv .products .cart-items .item-details .price h5 span{
+    .cartParentDiv .showableDiv .cart-products .cart-items .item-details .price h5 span{
         font-size: 34px;
 
     }
@@ -265,18 +265,20 @@
         gap: 10px;
         margin-top: 1em;
       }
-      .collections .product-cards .product-card .colors button{
+      .collections .product-cards .product-card .colors a{
         background: none;
         border: none;
         margin-left: .5em;
+        text-decoration: none;
       }
-      .collections .product-cards .product-card .colors button[data-selected]{
-        border: 2px solid #000;
+      .collections .product-cards .product-card .colors a[data-selected]{
+        border: 3px solid #000;
         border-radius: 25px;
-        padding: 3px 3px 1px 3px;
+        padding: 3px 4px 3px 5px;
+        margin-top: -6px;
       }
-      .collections .product-cards .product-card .colors button i{
-        font-size: 22px;
+      .collections .product-cards .product-card .colors a i{
+        font-size: 30px;
       }
       .collections .product-cards .product-card .colors .product-color{
          color: #000;
@@ -362,7 +364,11 @@
     .pro-details .color-div .pro-color{
         font-size: 32px;
     }
-    .pro-details .color-div .colors .buttons button i{
+    .pro-details .color-div .colors .buttons a[data-selected]{
+        padding: 23px 4px 5px 5px ;
+        border: 3px solid #000;
+    }
+    .pro-details .color-div .colors .buttons a i{
         font-size: 40px;
     }
     .pro-details .size-section{

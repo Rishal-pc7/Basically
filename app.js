@@ -7,6 +7,7 @@ var session = require('express-session')
 var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 var hbs=require('express-handlebars')
+var handlebars = hbs.create({})
 var app = express();
 const db=require('./config/connection')
 var fileUpload = require('express-fileupload')
@@ -32,6 +33,18 @@ app.use(session({
   saveUninitialized: true,
   cookie:{maxAge:31*24*3600000},
 }))
+//handlebars helpers
+handlebars.handlebars.registerHelper('if_eq', function(arg1,arg2,options) {
+  return(arg1 == arg2)?options.fn(this) : options.inverse(this)
+})
+handlebars.handlebars.registerHelper('if_lt', function(arg1,arg2,options) {
+  return(arg1 <= arg2)?options.fn(this) : options.inverse(this)
+})
+handlebars.handlebars.registerHelper('if_gt0_ltVal', function(arg1,arg2,options) {
+  return(arg1 <= arg2 && arg1 > 0)?options.fn(this) : options.inverse(this)
+})
+
+
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
 

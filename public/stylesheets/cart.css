@@ -81,20 +81,20 @@ display: grid;
     font-weight: 500;
     cursor: pointer;
 }
-.cartParentDiv .showableDiv .products{
+.cartParentDiv .showableDiv .cart-products{
     padding: 30px;
     min-height: 200px;
     width: 100%;
     border-bottom: 2px solid #ccc;
 }
-.cartParentDiv .showableDiv .products .empty-cart{
+.cartParentDiv .showableDiv .cart-products .empty-cart{
     display: none;
 }
-.cartParentDiv .showableDiv .products .empty-cart h5{
+.cartParentDiv .showableDiv .cart-products .empty-cart h5{
     font-size: 18px;
     font-weight: 500;
 }
-.cartParentDiv .showableDiv .products .cart-items{
+.cartParentDiv .showableDiv .cart-products .cart-items{
     display: grid;
     grid-auto-columns: 20% 50% 30%;
     grid-auto-flow: column;
@@ -102,43 +102,43 @@ display: grid;
     height: 130px;
     margin-top: 1em;
 }
-.cartParentDiv .showableDiv .products .cart-items .pro-img{
+.cartParentDiv .showableDiv .cart-products .cart-items .pro-img{
     height: 125px;
     float: left;
 }
-.cartParentDiv .showableDiv .products .cart-items .pro-img img{
+.cartParentDiv .showableDiv .cart-products .cart-items .pro-img img{
     height: 125px;
     width: 100px;
 }
-.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-name{
+.cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-name{
     font-size: 18px;
     font-weight: 600;
 }
-.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-color{
+.cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-color{
     margin-top: .5em;
     font-size: 16px;
     font-weight: 500;
     color: #898484;
 }
-.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-color span{
+.cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-color span{
     color: #000;
 }
-.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-size{
+.cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-size{
     margin-top: 0.5em;
     font-size: 16px;
     font-weight: 500;
     color: #898484;
 }
-.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-size span{
+.cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-size span{
     color: #000;
 }
-.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity{
+.cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-quantity{
     display: flex;
     flex-wrap: nowrap;
     width: 70px;
     margin-top: 0.5em;
 }
-.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity .btns{
+.cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-quantity .btns{
     border: none;
     outline: none;
     border-radius: 25px 0px 0px 25px;
@@ -150,11 +150,11 @@ display: grid;
     border: 1px solid #898484;
     cursor: pointer;
 }
-.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity .btns:hover , .cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity .btns:focus{
+.cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-quantity .btns:hover , .cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-quantity .btns:focus{
     background: #898484;
     color: #fff;
 }
-.cartParentDiv .showableDiv .products .cart-items .pro-details .pro-quantity .number{
+.cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-quantity .number{
     padding: 4px 10px;
     font-size: 16px;
     border: 1px solid #898484;
@@ -162,16 +162,16 @@ display: grid;
     border-left: none;
     border-right: none;
 }
-.cartParentDiv .showableDiv .products .cart-items .item-details{
+.cartParentDiv .showableDiv .cart-products .cart-items .item-details{
     float: right;
     position: relative;
 }
-.cartParentDiv .showableDiv .products .cart-items .item-details .delete-pro{
+.cartParentDiv .showableDiv .cart-products .cart-items .item-details .delete-pro{
     position: absolute;
     right: 85px;
     top: -15px;
 }
-.cartParentDiv .showableDiv .products .cart-items .item-details .delete-pro button{
+.cartParentDiv .showableDiv .cart-products .cart-items .item-details .delete-pro button{
     background: none;
     outline: none;
     border: none;
@@ -182,21 +182,21 @@ display: grid;
     color: #DC3545;
     cursor: pointer;
 }
-.cartParentDiv .showableDiv .products .cart-items .item-details .delete-pro button:hover ,.cartParentDiv .showableDiv .products .cart-items .item-details .delete-pro button:focus{
+.cartParentDiv .showableDiv .cart-products .cart-items .item-details .delete-pro button:hover ,.cartParentDiv .showableDiv .cart-products .cart-items .item-details .delete-pro button:focus{
     color: #e75160;
     outline: none;
 
 }
-.cartParentDiv .showableDiv .products .cart-items .item-details .price{
+.cartParentDiv .showableDiv .cart-products .cart-items .item-details .price{
     padding-top: 4em;
     position: absolute;
     right: 85px;
 }
-.cartParentDiv .showableDiv .products .cart-items .item-details .price h5{
+.cartParentDiv .showableDiv .cart-products .cart-items .item-details .price h5{
     font-size: 18px;
     font-weight: 600;
 }
-.cartParentDiv .showableDiv .products .cart-items .item-details .price h5 span{
+.cartParentDiv .showableDiv .cart-products .cart-items .item-details .price h5 span{
     font-size: 20px;
 }
 

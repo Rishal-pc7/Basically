@@ -1,3 +1,4 @@
+
 @keyframes fade {
   0%{
       opacity: 0;
@@ -23,14 +24,11 @@
 
 body {
   font-family:"Be Vietnam Pro", sans-serif;
-  scroll-behavior: smooth;
   animation: fade .8s ease-in-out;
   overflow-y: scroll;
   
 }
-section{
-  scroll-behavior: smooth;
-}
+
 .mob-view{
   display: none;
 }
@@ -275,17 +273,17 @@ a {
 .collections .product-cards .product-card .des-colors{
   display: block;
 }
-.collections .product-cards .product-card .colors button{
+.collections .product-cards .product-card .colors a{
   background: none;
   border: none;
   margin-left: .5em;
 }
-.collections .product-cards .product-card .colors button[data-selected]{
+.collections .product-cards .product-card .colors a[data-selected]{
   border: 2px solid #000;
   border-radius: 25px;
-  padding: 3px 3px 1px 3px;
+  padding: 0 3px;
 }
-.collections .product-cards .product-card .colors button i{
+.collections .product-cards .product-card .colors a{
   font-size: 18px;
 }
 .collections .product-cards .product-card .colors .product-color{

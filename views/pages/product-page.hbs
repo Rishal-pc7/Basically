@@ -3,7 +3,7 @@
 
 <div class="productParentDiv">
      <div class="product-category-details">
-      <h5>Home / Men / The Perfect Tee</h5>
+      <h5>Home / Men / {{product.category}}</h5>
      </div>
      <div class="sticky-btn">
      <div class="add-to">
@@ -15,67 +15,109 @@
     <div class="mob-carousel">
        <ul class="slides" id="slides" onscroll="showMoreImages(this)" data-carousel-items>
         <div class="ellipsis">
+          {{#each product.proImages}}
+          {{#if_eq @index 0}}
           <button class="ellipsis-btn active-ellipse"><i class="fa-solid fa-circle"></i></button>
+          {{else}}
           <button class="ellipsis-btn"><i class="fa-solid fa-circle"></i></button>
-          <button class="ellipsis-btn"><i class="fa-solid fa-circle"></i></button>
-          <button class="ellipsis-btn"><i class="fa-solid fa-circle"></i></button>
+          {{/if_eq}}
+          {{/each}}
         </div>
+        {{#each product.proImages}}
+           
         <li class="slides-res">
 
-        <img src="/images/black.jpg" alt="">
+        <img data-src="{{this}}" width="980" alt="">
         </li>
-        <li class="slides-res">
-        <img src="/images/black.jpg" alt="">
-        </li>
-        <li class="slides-res">
-        <img src="/images/black.jpg" alt="">
-        </li>
-        <li class="slides-res">
-        <img src="/images/black.jpg" alt="">
-        </li>
+        {{/each}}
+        
        </ul>
     </div>
     </div>
+  
   <div class="des-pro-image">
     <div class="pro-images" id="pro-images" tabindex="1">
+      {{#if_lt product.proImages.length 2}}
+      {{#each product.proImages}}
+         
       <div class="end-img">
-        <img src="/images/white-premium.jpg" alt="">
+        <img data-src="{{this}}" alt="">
       </div>
-      
+      {{/each}}
+      {{else}}
+      {{#if_eq product.proImages.length 3}}
+
+      {{#each product.proImages}}
+      {{#if_eq @index 0}}
+      <div class="end-img">
+        <img data-src="{{this}}" alt="">
+      </div>
+      {{/if_eq}}
+      {{/each}}
       <div class="mid-rows">
+      {{#each product.proImages}}
+      {{#if_gt0_ltVal @index 2}}
       <div class="mid-img">
-        <img src="/images/white-premium.jpg" alt="">
+        <img data-src="{{this}}" alt="">
       </div>
-      <div class="mid-img">
-        <img src="/images/white-premium.jpg" alt="">
+      {{/if_gt0_ltVal}}
+      {{/each}}
       </div>
-      
-      </div>
+      {{else}}
+      {{#each product.proImages}}
+      {{#if_eq @index 0}}
       <div class="end-img">
-        <img src="/images/white-premium.jpg" alt="">
+        <img data-src="{{this}}" alt="">
       </div>
+      {{/if_eq}}
+      {{/each}}
+      <div class="mid-rows">
+      {{#each product.proImages}}
+      {{#if_gt0_ltVal @index 2}}
+      <div class="mid-img">
+        <img data-src="{{this}}" alt="">
+      </div>
+      {{/if_gt0_ltVal}}
+      {{/each}}
+      </div>
+      {{#each product.proImages}}
+      {{#if_eq @index 3}}
+      <div class="end-img">
+        <img data-src="{{this}}" alt="">
+      </div>
+      {{/if_eq}}
+      {{/each}}
+      {{/if_eq}}
+         
+      {{/if_lt}}
+
     </div>
   </div>
   <div class="pro-details">
-    <h3 class="name">The Perfect Tee</h3>
-    <h4 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> <span>855</span></h4>
+    <h3 class="name">{{product.category}}</h3>
+    <h4 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> <span>{{product.price}}</span></h4>
      <div class="color-div">
       <div class="color-text">
-      <h4 class="pro-color">Color <span>| White</span></h4>
+      <h4 class="pro-color">Color <span>| {{product.color}}</span></h4>
       </div>
       <div class="colors">
 
         <div class="buttons">
-
-      <button class="" ><i class="fa-solid fa-circle" style="color: #000;"></i></button>
-      <button class="" data-selected><i class="fa-solid fa-circle" style="color: #f5f5f5;"></i></button>
-      <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
-      <button class=""><i class="fa-solid fa-circle" style="color: #06458d;"></i></button>
-      <button class=""><i class="fa-solid fa-circle" style="color: #087f73;"></i></button>
+        {{#each colors}}
+            {{#if_eq ../product.colorCode this.color}}
+                <a class=""  data-selected><i class="fa-solid fa-circle" style="color: {{this.color}};"></i></a>
+            {{else}}
+                <a class="" href="/product-page/{{this.id}}" ><i class="fa-solid fa-circle" style="color: {{this.color}}"></i></a>
+            {{/if_eq}}
+        {{/each}}
         </div>
       </div>
      </div>
-    <div class="size-section">
+      {{#if_lt product.sizes.length 4}}
+        <div class="size-section"  style="height: 110px;">
+      {{else}}
+         <div class="size-section" style="height: 185px;">
+        {{/if_lt}}
       <a href="">Size Chart</a>
       <div class="size-div">
         <div class="size-text">
@@ -83,20 +125,17 @@
         </div>
         <div class="sizes">
           <div class="button-group">
-            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="XS">XS</button>
-            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="S">S</button>
-            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="M">M</button>
-            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="L">L</button>
-            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="XL">XL</button>
-            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="XXL">XXL</button>
-            <button name="size" onclick="getSize(this)" onblur="clearSize(this)" value="3XL">3XL</button>
+            {{#each product.sizes}}
+               
+                <button name="size" onclick="getSize(this)"  value={{this}}>{{this}}</button>
+            {{/each}}
           </div>
           <input type="text"  name="" id="selectedSize" hidden>
         </div>
       </div>
     </div>
     <div class="add-to">
-      <button disabled id="addToCart">Add to cart</button>
+      <button disabled id="addToCart" onclick="addToCart('{{product._id}}',1)">Add to cart</button>
     </div>
   </div>
 </div>
@@ -195,7 +234,7 @@
       </div>
     </div>
       <div class="image-div">
-        <img src="/images/white-premium.jpg" alt="">
+        <img data-src="{{product.coverImage}}" alt="">
 
       </div> 
    </div>
@@ -273,11 +312,43 @@
     </div>
   </div>
 </div>
+</div>
 <script src="/javascripts/carousel.js"></script>
+  <script>
+   
+   let images=document.querySelectorAll('[data-src]')
+   let imgOptions={}
+   
+   function preLoadImage(img){
+    const src=img.getAttribute("data-src")
+    if(!src){
+        return;
+    }
+    img.src=src
 
+   }
+
+   let imgObserver=new IntersectionObserver((entries,imgObserver)=>{
+    entries.forEach(entry =>{
+        if(!entry.isIntersecting){
+            return;
+        }else{
+            preLoadImage(entry.target)
+            imgObserver.unobserve(entry.target)
+        }
+    })
+   })
+    images.forEach(image =>{
+        imgObserver.observe(image)
+    })
+</script>
 <script>
   function getSize(elm){
-    console.log(elm.value)
+    let selected=document.querySelectorAll('[data-size]')
+    selected.forEach(size =>{
+      delete size.dataset.size
+    })
+    elm.dataset.size=true
     document.getElementById('selectedSize').value=elm.value
     document.getElementById('addToCart').removeAttribute('disabled')
     document.getElementById('stickyAddToCart').removeAttribute('disabled')
@@ -286,5 +357,33 @@
     document.getElementById('selectedSize').value=null
     document.getElementById('addToCart').setAttribute('disabled',true)
     document.getElementById('stickyAddToCart').setAttribute('disabled',true)
+  }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  function addToCart(proId,quantity){
+      let sizeTag=document.querySelectorAll('[data-size]')
+      let size=sizeTag[0].value
+    let proObj={
+                proId:proId,
+                quantity:1,
+                size:size
+            }
+            let cartObj={
+                user:"Guest",
+                products:[proObj]
+            }
+              
+      $.ajax({
+        url:'/addToCart/'+proId+"/"+size,
+        method:"GET",
+        success:((response)=>{
+          if(response.status){
+            let obj
+            obj=window.localStorage.getItem("cartObj")
+            console.log(obj.user)
+          }
+        })
+      })
   }
 </script>

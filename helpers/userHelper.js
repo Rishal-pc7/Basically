@@ -82,5 +82,96 @@ module.exports={
             let products= await db.get().collection(collection.PRODUCT_COLLECTION).find().toArray()
             resolve(products)
         })
+    },
+    getProductColors:(category)=>{
+       return new Promise(async(resolve, reject) => {
+        let colors=[]
+        let products=await db.get().collection(collection.PRODUCT_COLLECTION).find({category:category}).toArray()
+        for(i in products){
+            let proColor={}
+            proColor.id=products[i]._id
+            proColor.color=products[i].colorCode
+           colors.push(proColor)
+        }
+        resolve(colors)
+       })
+    },
+    getProductDetails:(proId)=>{
+        return new Promise(async(resolve, reject) => {
+            db.get().collection(collection.PRODUCT_COLLECTION).findOne({_id:new objectId(proId)}).then((product)=>{
+                resolve(product)
+            })
+        })
+    },
+    addToCart:(proId,size,user,isGuest)=>{
+        return new Promise(async(resolve, reject) => {
+            let total=0
+            let userCart
+            let proObj={
+                proId:proId,
+                quantity:1,
+                size:size
+            }
+            let priceObj=await db.get().collection(collection.PRODUCT_COLLECTION).aggregate([
+                {$match:{_id:new objectId(proId)}},
+                {$project:{_id:1,price:1}},
+                {$limit:1}
+            ]).toArray()
+            let price=parseInt(priceObj[0].price)
+            if(isGuest){
+                userCart=await db.get().collection(collection.CART_COLLECTION).findOne({user:user})
+            }else{
+                userCart=await db.get().collection(collection.CART_COLLECTION).findOne({user:new objectId(user)})
+            }
+            if(userCart){
+                let proExist=userCart.products.findIndex(product => product.proId == proId)
+                total=userCart.total+price
+                if(proExist > -1){
+                    let sizeChanged=userCart.products.findIndex(product => product.size === size)
+                    if(sizeChanged === -1){
+                        db.get().collection(collection.CART_COLLECTION).updateOne({_id:new objectId(userCart._id),"products.proId":proId},{
+                            $set:{"products.$.size":size,total:price}
+                        }).then((data)=>{
+                            
+                            resolve(data)
+                        })
+
+                    }else{
+                        db.get().collection(collection.CART_COLLECTION).updateOne({_id:new objectId(userCart._id),"products.proId":proId},{
+                            $inc:{'products.$.quantity':1},
+                            $set:{total:total}
+                        }).then((data)=>{
+                            
+                            resolve(data)
+                        })
+
+                    }
+                }else{
+
+                    db.get().collection(collection.CART_COLLECTION).updateOne({_id:new objectId(userCart._id)},
+                    {
+                    $set:{total:total},
+                    $push:{
+                        products:proObj
+                    }
+                }
+                ).then((data)=>{
+                  resolve(data)
+                })
+            }
+            }else{
+
+                total += price 
+                let cartObj={
+                    user:user,
+                products:[proObj],
+                total:total
+            }
+            db.get().collection(collection.CART_COLLECTION).insertOne(cartObj).then(async(data)=>{
+                let cartData=await db.get().collection(collection.CART_COLLECTION).findOne({_id:new objectId(data.insertedId)})
+                resolve(cartData)
+            })
+        }
+        })
     }
 }

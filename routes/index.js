@@ -11,13 +11,33 @@ const verifyLogin =(req,res,next)=>{
   }
 }
 router.get('/',async function(req, res, next) {
+  let proCategory='The Perfect Tee'
+  let colors=await userHelper.getProductColors(proCategory)
   let products=await userHelper.getProducts()
-  res.render('index', { clientPage:true,user:req.session.user,products});
+  res.render('index', { clientPage:true,user:req.session.user,products,colors});
 });
 
-router.get('/product-page', function(req, res, next) {
-  res.render('pages/product-page',{ clientPage:true });
+router.get('/product-page/:id',async function(req, res, next) {
+  userHelper.getProductDetails(req.params.id).then(async(product)=>{
+    let colors=await userHelper.getProductColors(product.category)
+    res.render('pages/product-page',{ clientPage:true,colors,product });
+  })
 });
+router.get('/addToCart/:proId/:size',async function(req,res,next){
+  let user
+  let isGuest=false
+  if(req.session.user){
+  
+    user=req.session.user._id
+  }else{
+    isGuest=true
+    user=req.sessionID
+  }
+  userHelper.addToCart(req.params.proId,req.params.size,user,isGuest).then((result)=>{
+    console.log(result);
+    res.json({status:true})
+  })
+}) 
 router.get('/checkout', function(req, res, next) {
   res.render('pages/checkout',{  });
 });

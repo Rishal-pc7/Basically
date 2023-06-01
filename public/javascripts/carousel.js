@@ -1,4 +1,3 @@
-import imageCompression from "browser-image-compression"
 function showMoreImages(e){
     let scrollLeft=e.scrollLeft.toFixed()
     let btns=document.getElementsByClassName('ellipsis-btn')

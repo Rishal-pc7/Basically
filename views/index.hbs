@@ -28,163 +28,25 @@
         
         {{#each products}}
         <div class="product-card">
-            <a href="/product-page"><img src={{this.proImages.[0]}} alt=""></a>
+            <a href="/product-page/{{this._id}}"><img  alt="{{this.category}}" data-src="{{this.coverImage}}"></a>
             <div class="product-details">
-                <h5 class="product-name"><a href="/product-page">{{this.category}}</a></h5>
-                <div class="mob-colors">
+                <h5 class="product-name"><a href="/product-page/{{this._id}}">{{this.category}}</a></h5>
+                
 
                 <div class="colors">
-
-                   <button class="" ><i class="fa-solid fa-circle" style="color: #000;"></i></button>
-                   <button class="" data-selected><i class="fa-solid fa-circle" style="color:{{this.colorCode}}"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
-                   <h5 class="product-color">{{this.color}}</h5>
-                </div>
-                <div class="more-colors">
-                    <p>+2 Colors</p>
-                </div>
-                </div>
-                <div class="des-colors">
-
-                <div class="colors">
-
-                   <button class="" ><i class="fa-solid fa-circle" style="color: #000;"></i></button>
-                   <button class="" data-selected><i class="fa-solid fa-circle" style="color: #f5f5f5;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
+                   {{#each ../colors}}
+                   {{#if_eq this.color ../this.colorCode}}
+                   <a class="" href="/product-page/{{this.id}}" data-selected><i class="fa-solid fa-circle" style="color: {{this.color}};"></i></a>
+                   {{else}}
+                   <a class="" href="/product-page/{{this.id}}" ><i class="fa-solid fa-circle" style="color: {{this.color}}"></i></a>
+                   {{/if_eq}}
+                   {{/each}}
                    <h5 class="product-color">{{this.color}}</h5>
                 </div>
                 
-                </div>
             </div>
         </div>
         {{/each}}
-        <div class="product-card">
-            <a href="/product-page"><img src="/images/pista.jpg" alt=""></a>
-            <div class="product-details">
-                <h5 class="product-name"><a href="/product-page">The Premium-Weight Crew SUPIMA</a></h5>
-                <div class="mob-colors">
-
-                <div class="colors">
-
-                   <button class="" ><i class="fa-solid fa-circle" style="color: #000;"></i></button>
-                   <button class="" data-selected><i class="fa-solid fa-circle" style="color: #f5f5f5;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
-                   <h5 class="product-color">White</h5>
-                </div>
-                <div class="more-colors">
-                    <p>+2 Colors</p>
-                </div>
-                </div>
-                <div class="des-colors">
-
-                <div class="colors">
-
-                   <button class="" ><i class="fa-solid fa-circle" style="color: #000;"></i></button>
-                   <button class="" data-selected><i class="fa-solid fa-circle" style="color: #f5f5f5;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #0dc823;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #ecdf2b;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #06458d;"></i></button>
-                   <h5 class="product-color">White</h5>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="/images/ivory.jpg" alt="">
-            <div class="product-details">
-                <h5 class="product-name"><a href="">The Premium-Weight Crew SUPIMA</a></h5>
-                <div class="mob-colors">
-                <div class="colors">
-
-                   <button class="" ><i class="fa-solid fa-circle" style="color: #000;"></i></button>
-                   <button class="" data-selected><i class="fa-solid fa-circle" style="color: #f5f5f5;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
-                   <h5 class="product-color">White</h5>
-                </div>
-                <div class="more-colors">
-                    <p>+2 Colors</p>
-                </div>
-                </div>
-                <div class="des-colors">
-
-                <div class="colors">
-
-                   <button class="" ><i class="fa-solid fa-circle" style="color: #000;"></i></button>
-                   <button class="" data-selected><i class="fa-solid fa-circle" style="color: #f5f5f5;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #0dc823;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #ecdf2b;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #06458d;"></i></button>
-                   <h5 class="product-color">White</h5>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="/images/black.jpg" alt="">
-            <div class="product-details">
-                <h5 class="product-name"><a href="">The Premium-Weight Crew SUPIMA</a></h5>
-                <div class="mob-colors">
-                <div class="colors">
-
-                   <button class="" ><i class="fa-solid fa-circle" style="color: #000;"></i></button>
-                   <button class="" data-selected><i class="fa-solid fa-circle" style="color: #f5f5f5;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
-                   <h5 class="product-color">White</h5>
-                </div>
-                <div class="more-colors">
-                    <p>+2 Colors</p>
-                </div>
-                </div>
-                <div class="des-colors">
-
-                <div class="colors">
-
-                   <button class="" ><i class="fa-solid fa-circle" style="color: #000;"></i></button>
-                   <button class="" data-selected><i class="fa-solid fa-circle" style="color: #f5f5f5;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #0dc823;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #ecdf2b;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #06458d;"></i></button>
-                   <h5 class="product-color">White</h5>
-                </div>
-                
-                </div>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="/images/petrol-blue-premium.jpg" alt="">
-            <div class="product-details">
-                <h5 class="product-name"><a href="">The Premium-Weight Crew SUPIMA</a></h5>
-                                <div class="mob-colors">
-
-                <div class="colors">
-
-                   <button class="" ><i class="fa-solid fa-circle" style="color: #000;"></i></button>
-                   <button class="" data-selected><i class="fa-solid fa-circle" style="color: #f5f5f5;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #fbf9df;"></i></button>
-                   <h5 class="product-color">White</h5>
-                </div>
-                <div class="more-colors">
-                    <p>+2 Colors</p>
-                </div>
-                </div>
-                <div class="des-colors">
-
-                <div class="colors">
-
-                   <button class="" ><i class="fa-solid fa-circle" style="color: #000;"></i></button>
-                   <button class="" data-selected><i class="fa-solid fa-circle" style="color: #f5f5f5;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #0dc823;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #ecdf2b;"></i></button>
-                   <button class=""><i class="fa-solid fa-circle" style="color: #06458d;"></i></button>
-                   <h5 class="product-color">White</h5>
-                </div>
-                
-                </div>
-
             </div>
         </div>
         
@@ -279,6 +141,33 @@
 </div>
 
 </div>
+<script>
+   let images=document.querySelectorAll('[data-src]')
+   let imgOptions={}
+   
+   function preLoadImage(img){
+    const src=img.getAttribute("data-src")
+    if(!src){
+        return;
+    }
+    img.src=src
+
+   }
+
+   let imgObserver=new IntersectionObserver((entries,imgObserver)=>{
+    entries.forEach(entry =>{
+        if(!entry.isIntersecting){
+            return;
+        }else{
+            preLoadImage(entry.target)
+            imgObserver.unobserve(entry.target)
+        }
+    })
+   })
+    images.forEach(image =>{
+        imgObserver.observe(image)
+    })
+</script>
 <script> 
     (function(d, s, id) { 
     var js;
@@ -288,4 +177,4 @@
     js.src = "https://embedsocial.com/cdn/ht.js"; 
     d.getElementsByTagName("head")[0].appendChild(js); }
     (document, "script", "EmbedSocialHashtagScript")); 
-    </script>
+</script>

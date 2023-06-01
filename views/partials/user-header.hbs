@@ -40,8 +40,9 @@
                        <button></button>
                        <div class="items-list" >
                             <ul>
-                                <li><a href="/product-page">The Premium-weight T-shirt</a></li>
-                                <li><a href="/product-page">The Lightweight T-shirt</a></li>
+                                {{#each products}}
+                                <li><a href="/product-page/{{this._id}}">{{this.category}} | {{this.color}}</a></li>
+                                {{/each}}
                                
                             </ul>
                         </div>
@@ -154,7 +155,7 @@
     </div>
 
 </div>
-<div class="navbar" onmouseover="onNavHover(this)" onmouseleave="onNavOut(this)" id="navbar">
+<div class="navbar"  id="navbar">
         <div class="nav-items">
 
         <div class="nav-brand">
@@ -183,11 +184,9 @@
             <div class="options">
                 
                 <div>
-                    <div ><a onmouseover="productHovered('prmweight')" onmouseout="productOut('prmweight')"  href="/product-page" class="option">The Premium-Weight Crew SUPIMA | Ivory</a></div>
-                    <div ><a onmouseover="productHovered('prmweight')" onmouseout="productOut('prmweight')"  href="" class="option">The Premium-Weight Crew SUPIMA | Petrol Blue</a></div>
-                    <div ><a onmouseover="productHovered('prmweight')" onmouseout="productOut('prmweight')"  href="" class="option">The Premium-Weight Crew SUPIMA | Emerald Green</a></div>
-                    <div ><a onmouseover="productHovered('prmweight')" onmouseout="productOut('prmweight')"  href="" class="option">The Premium-Weight Crew SUPIMA | White</a></div>
-                    <div ><a onmouseover="productHovered('prmweight')" onmouseout="productOut('prmweight')"  href="" class="option">The Premium-Weight Crew SUPIMA | Black</a></div>
+                    {{#each products}}
+                    <div ><a onmouseover="productHovered('prmweight')" onmouseout="productOut('prmweight')"  href="/product-page/{{this._id}}" class="option">{{this.category}} | {{this.color}}</a></div>
+                    {{/each}}
                     
 
                 </div>
@@ -349,7 +348,6 @@
  <div class="cartParentDiv" id="cart" >
     <div class="hiddenDiv"></div>
     <div class="showableDiv">
-    {{#if user}}
       
    <div class="header">
     <div class="cart-items">
@@ -359,7 +357,7 @@
         <button id="cartCloseBtn" onclick="hideCart()"><i class="las la-times"></i></button>
     </div>
    </div>
-   <div class="products">
+   <div class="cart-products">
       <div class="empty-cart">
         <h5>Your Cart is Empty</h5>
       </div>
@@ -367,7 +365,7 @@
         <div class="pro-img">
             <img src="/images/black.jpg" alt="">
         </div>
-        <div class="pro-details">
+        <div class="cart-pro-details">
             <h5 class="pro-name">The Leightweight Crew</h5>
             <h5 class="pro-color">Color : <span>Arabica</span></h5>
             <h5 class="pro-size">Size : <span>XS</span></h5>
@@ -408,19 +406,6 @@
    <div class="checkout-btn">
     <a href="/checkout"> CHECKOUT</a>
    </div>
-    {{else}}
-    <div class="header">
-    <div class="close-btn">
-        <button id="cartCloseBtn" onclick="hideCart()"><i class="las la-times"></i></button>
-    </div>
-   </div>
-       <div class="login-redirect">
-        <h5>You need to login inorder to use cart</h5>
-        <div class="btns">
-            <a href="/login?ref=cart">Proceed to login</a>
-        </div>
-       </div>
-    {{/if}}
     </div>
 </div>
 

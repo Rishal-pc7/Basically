@@ -284,7 +284,10 @@ function showCart(){
     document.getElementById('chat-wid').style.display='none'
     body.style.overflow='hidden'
     mobNav.style.zIndex='1'
-    document.getElementById('hero-content').style.zIndex='0'
+    if(location.pathname === '/'){
+
+        document.getElementById('hero-content').style.zIndex='0'
+    }
     
 }
 function hideCart(){
@@ -292,7 +295,10 @@ function hideCart(){
     document.getElementById('chat-wid').style.display='block'
     body.style.overflow='auto'
     mobNav.style.zIndex='99'
-    document.getElementById('hero-content').style.zIndex='none'
+    if(location.pathname === '/'){
+
+        document.getElementById('hero-content').style.zIndex='none'
+    }
 }
 function changeAcntsOpts(elm){
     let activeAcnts=document.getElementsByClassName('activeAcnts')

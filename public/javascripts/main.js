@@ -10,7 +10,9 @@ let menuCloseBtn=document.getElementById('menuCloseBtn')
 let menuBtn=document.getElementById('menuBtn')
 let mobNavBrand=document.getElementById('mobNavBrand')
 let mobSideBar=document.getElementById('mobSideBar')
-
+let path=location.pathname
+let splitPath=path.split("/")
+let proPath=path.split("-")
 let scrolled=false
 let shopBtns=document.getElementsByClassName('shop-btn')
 let moreBtns=document.getElementsByClassName('more-btn')
@@ -64,17 +66,19 @@ function menuCloseBtnCLicked(){
 
 
 
-function onNavHover(elm){
+let elm=document.getElementById('navbar')
+elm.onmouseover=()=>{
     navHovered=true
     links.forEach((link) => {
         link.style.color='#000'
         
     });
+    let elm=document.getElementById('navbar')
     elm.style.backgroundColor='#FFFF'
     
 }
 
-function onNavOut(elm){
+elm.onmouseleave=()=>{
 
     shopOptOut()
     transpOptOut()
@@ -164,7 +168,7 @@ if (location.pathname === '/') {
             
         })               
 }
-if(location.pathname === '/product-page'){
+if(proPath.indexOf('/product') >  -1){
 document.getElementById('pro-images').focus()
 document.getElementById('returnPolicy').style.display='block'
 mobNav.style.top='50px'
@@ -184,8 +188,7 @@ if(x.matches){
     })               
 }
 }
-window.onload=()=>{
-}
+
 let xscrolled
 let scrollTop=document.documentElement.scrollTop
 function isInViewport(el) {
@@ -199,13 +202,12 @@ function isInViewport(el) {
     );
 }
 let proImgSeen=false
+
 window.onscroll=()=>{
-    let path=location.pathname
-    let splitPath=path.split("/")
     if(splitPath.indexOf('admin') ===  -1){
         var x = window.matchMedia("(max-width: 991px)")
     scrollTop=document.documentElement.scrollTop
-     if(location.pathname === '/product-page'){
+     if(proPath.indexOf('/product') >  -1){
 
       proImgSeen= isInViewport(document.getElementById('products'))    
     if(proImgSeen){
@@ -237,7 +239,7 @@ window.onscroll=()=>{
         
         navbar.style.backgroundColor='#FFFF'
         mobNav.style.backgroundColor='#FFFF'
-        if(location.pathname === '/product-page'){
+        if(proPath.indexOf('/product') >  -1 && x.matches){
             
             document.getElementsByClassName('sticky-btn')[0].style.display='block'
         }
@@ -248,8 +250,8 @@ window.onscroll=()=>{
             
         });
     }else{
-        
-        if(optionsHovered.status == false){
+        if(optionsHovered){
+        if(!optionsHovered.status){
 
             scrolled=false
         
@@ -261,8 +263,8 @@ window.onscroll=()=>{
                 link.style.color='#FFFF'
                 
             })
-        }else{
-            if(location.pathname === '/product-page' && x.matches){
+        }
+        if(proPath.indexOf('/product') >  -1 && x.matches){
                 navbar.style.backgroundColor='#FFFF'
                 mobNav.style.backgroundColor='transparent'
                 mobNav.style.paddingTop='0'
@@ -271,29 +273,23 @@ window.onscroll=()=>{
                     
                 })
                 
-
-            }else{
-
-                navbar.style.backgroundColor='#FFFF'
-                mobNav.style.backgroundColor='#FFFF'
-                mobNav.style.paddingTop='0'
-                links.forEach((link) => {
-                    link.style.color='black'
-                    
-                })
-            }
-
         }
-            if(location.pathname === '/product-page'){
-                document.getElementsByClassName('sticky-btn')[0].style.display='none'
+    }else{
+          navbar.style.backgroundColor='#FFFF'
+          mobNav.style.paddingTop='0'
+          links.forEach((link) => {
+                link.style.color='black'
                     
-                
-            }
+          })
+    }
+
+    if(proPath.indexOf('/product') > -1){
+            document.getElementsByClassName('sticky-btn')[0].style.display='none'
         }
-    }  
-    
-}
-}    
+     }
+   }
+ }
+}  
 
 
 

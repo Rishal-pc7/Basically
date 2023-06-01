@@ -68,14 +68,14 @@
 .mob-carousel-section{
 
     display: none;
-    height: 1500px;
+    height: 1350px;
 }
 .mob-carousel{
     position: relative;
-    height: 1400px;
+    height: 1250px;
   }
   .mob-carousel .slides{
-    height: 1400px;
+    height: 1220px;
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
@@ -109,11 +109,12 @@
     scroll-snap-align: center;
   }
   .mob-carousel .slides .slide-res img{
-    aspect-ratio: 4/5;
+    width: 980px;
     height: 100%;
   }
+
 .des-pro-image{
-    display: block;
+     display: block;
     position: relative;
     float: left;
 }
@@ -204,17 +205,18 @@
     position: absolute;
     right: 0;
 }
-.pro-details .color-div .colors .buttons button{
+.pro-details .color-div .colors .buttons a{
     background: none;
     border: none;
     margin-left: .5em;
+    text-decoration: none;
 }
-.pro-details .color-div .colors .buttons button[data-selected]{
+.pro-details .color-div .colors .buttons a[data-selected]{
     border: 2px solid #000;
     border-radius: 25px;
-    padding: 3px 3px 1px 3px;
+    padding: 3px 4px 1px 3px;
 }
-.pro-details .color-div .colors .buttons button i{
+.pro-details .color-div .colors .buttons a i{
     font-size: 18px;
 }
 .pro-details .size-section {
@@ -268,7 +270,7 @@
     padding: 10px;
     margin: .2em;
 }
-.pro-details .size-section .size-div .sizes button:hover ,.pro-details .size-section .size-div .sizes button:focus{
+.pro-details .size-section .size-div .sizes button:hover ,.pro-details .size-section .size-div .sizes button:focus,.pro-details .size-section .size-div .sizes button[data-size]{
     background: #3c3c3c;
     color: #fff;
     outline: none;
