@@ -42,7 +42,7 @@ handlebars.handlebars.registerHelper('if_lt', function(arg1,arg2,options) {
 })
 handlebars.handlebars.registerHelper('if_gt0_ltVal', function(arg1,arg2,options) {
   return(arg1 <= arg2 && arg1 > 0)?options.fn(this) : options.inverse(this)
-})
+}) 
 
 
 app.use('/', indexRouter);

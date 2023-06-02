@@ -364,6 +364,7 @@
   function addToCart(proId,quantity){
       let sizeTag=document.querySelectorAll('[data-size]')
       let size=sizeTag[0].value
+      let cartProDiv=document.getElementsByClassName('cart-products')
     let proObj={
                 proId:proId,
                 quantity:1,
@@ -379,11 +380,16 @@
         method:"GET",
         success:((response)=>{
           if(response.status){
-            let obj
-            obj=window.localStorage.getItem("cartObj")
-            console.log(obj.user)
+            if(response.newProduct){
+             
+            let cartlength=parseInt(document.getElementById('cartLength').innerHTML)
+            document.getElementById('cartLength').innerHTML = cartlength+1
+            }
+            
+            showCart()
           }
         })
       })
   }
+  
 </script>

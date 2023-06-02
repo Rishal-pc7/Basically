@@ -60,6 +60,7 @@
     }
     .cartParentDiv .showableDiv{
         width: 100%;
+        height: 100%;
     }
     .cartParentDiv .showableDiv .login-redirect{
         position: absolute;
@@ -103,6 +104,8 @@
     }
     .cartParentDiv .showableDiv .cart-products .cart-items{
         height: 260px;
+        gap: 3em;
+        grid-auto-columns: 20% 50% 33%;
     }
     .cartParentDiv .showableDiv .cart-products .cart-items .pro-img{
         height: 250px;
@@ -113,6 +116,7 @@
     }
     .cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details{
         margin-left: 2em;
+
 
     }
     .cartParentDiv .showableDiv .cart-products .cart-items .cart-pro-details .pro-name{
@@ -154,7 +158,7 @@
 
     }
     .cartParentDiv .showableDiv .total-div{
-        bottom: 475px;
+        bottom: 330px;
     }
     .cartParentDiv .showableDiv .total-div .totals{
         width: 95%;
@@ -178,7 +182,7 @@
         font-size: 32px;
     }
     .cartParentDiv .showableDiv .checkout-btn{
-        bottom: 150px;
+        bottom: 60px;
     }
     .cartParentDiv .showableDiv .checkout-btn a{
         padding: 15px 0;

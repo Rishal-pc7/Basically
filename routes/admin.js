@@ -40,7 +40,7 @@ router.post('/login', function(req, res, next) {
       if(result.status){
         req.session.admin=true
         res.redirect('/admin')
-      }
+      } 
     })
     
   });

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var userHelper = require('../helpers/userHelper'); 
+const { response } = require('../app');
 /* GET home page. */
 const verifyLogin =(req,res,next)=>{
   let user = req.session.user
@@ -11,22 +12,49 @@ const verifyLogin =(req,res,next)=>{
   }
 }
 router.get('/',async function(req, res, next) {
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
   let proCategory='The Perfect Tee'
   let colors=await userHelper.getProductColors(proCategory)
   let products=await userHelper.getProducts()
-  res.render('index', { clientPage:true,user:req.session.user,products,colors});
+  let cart=await userHelper.getCart(user,guestUser)
+  if(!cart){
+    emptyCart=true
+  }
+  res.render('index', { clientPage:true,user:req.session.user,products,colors,emptyCart,cart});
 });
 
 router.get('/product-page/:id',async function(req, res, next) {
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
+  let products=await userHelper.getProducts()
+  let cart=await userHelper.getCart(user,guestUser)
+  if(!cart){
+    emptyCart=true
+  }
   userHelper.getProductDetails(req.params.id).then(async(product)=>{
     let colors=await userHelper.getProductColors(product.category)
-    res.render('pages/product-page',{ clientPage:true,colors,product });
+    res.render('pages/product-page',{ clientPage:true,colors,product,products,colors,emptyCart,cart });
   })
 });
 router.get('/addToCart/:proId/:size',async function(req,res,next){
-  let user
+  let user 
   let isGuest=false
-  if(req.session.user){
+  if(req.session.user){ 
   
     user=req.session.user._id
   }else{
@@ -34,8 +62,7 @@ router.get('/addToCart/:proId/:size',async function(req,res,next){
     user=req.sessionID
   }
   userHelper.addToCart(req.params.proId,req.params.size,user,isGuest).then((result)=>{
-    console.log(result);
-    res.json({status:true})
+    res.json({status:true,newProduct:result.newProduct})
   })
 }) 
 router.get('/checkout', function(req, res, next) {
@@ -93,7 +120,7 @@ router.post('/forgot-password', function(req, res, next) {
 })
 router.get('/signup', function(req, res, next) {
   res.render('pages/signup',{ clientPage:true,user:req.session.user,emailUsed:req.session.userAlreadyUsed });
-  req.session.userAlreadyUsed=false
+  req.session.userAlreadyUsed=false 
 });
 router.post('/signup', function(req, res, next) {
   userHelper.doSignup(req.body).then((result)=>{

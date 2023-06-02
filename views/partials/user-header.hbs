@@ -351,29 +351,32 @@
       
    <div class="header">
     <div class="cart-items">
-        <h5>Your Cart (0)</h5>
+        <h5>Your Cart (<span id="cartLength">{{#if emptyCart}}0{{else}}{{cart.product.length}}{{/if}}</span>)</h5>
     </div>
     <div class="close-btn">
         <button id="cartCloseBtn" onclick="hideCart()"><i class="las la-times"></i></button>
     </div>
    </div>
    <div class="cart-products">
+    {{#if emptyCart}}
       <div class="empty-cart">
         <h5>Your Cart is Empty</h5>
       </div>
+      {{else}}
+      {{#each cart.product}}
       <div class="cart-items">
         <div class="pro-img">
-            <img src="/images/black.jpg" alt="">
+            <img data-src={{this.coverImage}} alt="">
         </div>
         <div class="cart-pro-details">
-            <h5 class="pro-name">The Leightweight Crew</h5>
-            <h5 class="pro-color">Color : <span>Arabica</span></h5>
-            <h5 class="pro-size">Size : <span>XS</span></h5>
+            <h5 class="pro-name">{{this.category}}</h5>
+            <h5 class="pro-color">Color : <span>{{this.color}}</span></h5>
+            <h5 class="pro-size">Size : <span>{{../cart.size}}</span></h5>
             <div class="pro-quantity">
-                  <button class="btns"><i class="las la-plus"></i></button>
-                  <h5 class="number">1</h5>
+                  <button class="btns" onclick="changeProductQuantity('{{this._id}}','{{../cart._id}}','{{../cart.quantity}}',-1)"><i class="las la-plus"></i></button>
+                  <h5 class="number">{{../cart.quantity}}</h5>
     
-                  <button class="btns" style="border-radius: 0px 25px 25px 0px;"><i class="las la-minus"></i></button>
+                  <button class="btns" onclick="changeProductQuantity('{{this._id}}','{{../cart._id}}','{{../cart.quantity}}',-1)" style="border-radius: 0px 25px 25px 0px;"><i class="las la-minus"></i></button>
                 </div>
         </div>
         <div class="item-details">
@@ -381,11 +384,13 @@
                     <button><i class="las la-trash"></i></button>
             </div>
             <div class="price">
-                <h5><i class="fa-solid fa-indian-rupee-sign"></i> <span>1,855</span></h5>
+                <h5><i class="fa-solid fa-indian-rupee-sign"></i> <span>{{this.price}}</span></h5>
             </div>
 
         </div>
       </div>
+      {{/each}}
+      {{/if}}
    </div>
    <div class="total-div">
     <div class="totals">
@@ -406,6 +411,11 @@
    <div class="checkout-btn">
     <a href="/checkout"> CHECKOUT</a>
    </div>
-    </div>
+ </div>
 </div>
 
+<script>
+    function changeProductQuantity(proId,cartId,quantity,value){
+        
+    }
+</script>
