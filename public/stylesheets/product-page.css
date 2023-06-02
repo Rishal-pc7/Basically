@@ -214,7 +214,7 @@
 .pro-details .color-div .colors .buttons a[data-selected]{
     border: 2px solid #000;
     border-radius: 25px;
-    padding: 3px 4px 1px 3px;
+    padding: 2px 3px 1px 3px;
 }
 .pro-details .color-div .colors .buttons a i{
     font-size: 18px;

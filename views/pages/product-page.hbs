@@ -360,6 +360,7 @@
   }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
   function addToCart(proId,quantity){
       let sizeTag=document.querySelectorAll('[data-size]')
@@ -386,7 +387,15 @@
             document.getElementById('cartLength').innerHTML = cartlength+1
             }
             
-            showCart()
+                swal("Product Added to Cart Successfully", {
+                    title:'Congrats!',
+                    text: "Your product has been added to cart successfully,Apply Coupon Code 'FIRSTORDER' to get upto 10% off",
+                    icon: "success",
+                  }).then(()=>{
+                    sessionStorage.setItem('showCart',true)
+                    location.reload()
+
+                  })
           }
         })
       })

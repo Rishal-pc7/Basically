@@ -171,7 +171,7 @@
 }
 .cartParentDiv .showableDiv .cart-products .cart-items .item-details .delete-pro{
     position: absolute;
-    right: 85px;
+    right: 120px;
     top: -15px;
 }
 .cartParentDiv .showableDiv .cart-products .cart-items .item-details .delete-pro button{
@@ -184,6 +184,8 @@
     margin-top: 10px;
     color: #DC3545;
     cursor: pointer;
+    position: absolute;
+    z-index: 1;
 }
 .cartParentDiv .showableDiv .cart-products .cart-items .item-details .delete-pro button:hover ,.cartParentDiv .showableDiv .cart-products .cart-items .item-details .delete-pro button:focus{
     color: #e75160;

@@ -1,3 +1,4 @@
+
 let navbar =document.getElementById('navbar')
 let mobNav =document.getElementById('mob-nav')
 let content =document.getElementById('content')
@@ -62,7 +63,13 @@ function menuCloseBtnCLicked(){
     
     
 }
-
+window.onload=()=>{
+    let cartShow=sessionStorage.getItem("showCart")
+    if(cartShow){
+        showCart()
+        sessionStorage.removeItem("showCart")
+    }
+}
 
 
 

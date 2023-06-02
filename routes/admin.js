@@ -7,7 +7,7 @@ var path = require('path')
 const verifyLogin = (req,res,next)=>{
   if(req.session.admin){
     next()
-  }else{
+  }else{ 
     res.redirect('/admin/login')
   }
 }

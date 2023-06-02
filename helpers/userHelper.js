@@ -79,8 +79,15 @@ module.exports={
     },
     getProducts:()=>{
         return new Promise(async(resolve, reject) => {
+
             let products= await db.get().collection(collection.PRODUCT_COLLECTION).find().toArray()
-            resolve(products)
+            if(products[0]){
+
+                resolve(products)
+            }else{
+                resolve(null)
+
+            }
         })
     },
     getProductColors:(category)=>{
@@ -125,10 +132,10 @@ module.exports={
                 userCart=await db.get().collection(collection.CART_COLLECTION).findOne({user:new objectId(user)})
             }
             if(userCart){ 
+                total=userCart.total+price
 
                 let proExist=userCart.products.findIndex(product => product.proId == proId)
                 if(proExist > -1){ 
-                    total=userCart.total+price
                     let sizeChanged=userCart.products.findIndex(product => product.size === size)
                     if(sizeChanged === -1){
                         db.get().collection(collection.CART_COLLECTION).updateOne({_id:new objectId(userCart._id),"products.proId":new objectId(proId)},{
@@ -194,7 +201,7 @@ module.exports={
 
                     }
                 }else{
-
+                    console.log(total)
                     db.get().collection(collection.CART_COLLECTION).updateOne({_id:new objectId(userCart._id)},
                     {
                     $set:{total:total},
@@ -304,6 +311,7 @@ module.exports={
                         proId:"$products.proId",
                         quantity:"$products.quantity",
                         size:"$products.size",
+                        total:"$total"
                     }},
                     {
                         $lookup:{
@@ -312,10 +320,13 @@ module.exports={
                             foreignField:'_id',
                             as:'product'
                         }
-                    }, 
+                    },
+                    {
+                        $project:{proId:1,total:1,size:1,quantity:1,product:{$arrayElemAt:["$product",0]}}
+                    }
                     
                 ]).toArray()
-                    resolve(cart[0]) 
+                    resolve(cart) 
                 
             }else{
                 db.get().collection(collection.CART_COLLECTION).findOne({user:new objectId(user._id)}).then((data)=>{
@@ -324,5 +335,52 @@ module.exports={
                 
             }
         })
-    }
+    },
+    changeProductQuantity:(details)=>{
+        return new Promise(async(resolve, reject) => {
+            details.quantity=parseInt(details.quantity)
+            details.value=parseInt(details.value)
+            details.price=parseInt(details.price)
+            details.total=parseInt(details.total)
+            let quantity= details.quantity+details.value
+            let total
+            if(details.value>-1){
+
+                total= details.total-details.price+quantity*details.price
+            }else{
+                total= details.total-details.price
+
+            }
+            console.log(details.total,quantity,details.price)
+            db.get().collection(collection.CART_COLLECTION).updateOne({_id:new objectId(details.cartId),"products.proId":new objectId(details.proId)},{
+                $set:{'products.$.quantity':quantity,total:total} 
+            }).then((data)=>{
+                let response={
+                    total,
+                    quantity
+                } 
+                resolve(response) 
+            })
+        })  
+        
+    },
+    removeProduct:(details)=>{
+        return new Promise(async(resolve, reject) => {
+            details.quantity=parseInt(details.quantity)
+            details.price=parseInt(details.price)
+            details.total=parseInt(details.total)
+            let total=details.total-details.quantity*details.price
+            
+            db.get().collection(collection.CART_COLLECTION).updateOne({_id:new objectId(details.cartId),"products.proId":new objectId(details.proId)},{
+                $set:{total:total} ,
+                $pull:{products:{proId:new objectId(details.proId)}}
+            }).then((data)=>{
+                let response={
+                    total,
+                } 
+                resolve(response) 
+            })
+        })  
+        
+    },
 }
