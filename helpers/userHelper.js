@@ -6,8 +6,8 @@ let Razorpay = require('razorpay')
 var crypto = require('crypto')
 let nodemailer = require('nodemailer')
 var instance = new Razorpay({
-    key_id: 'rzp_test_lcPIpTCk33nmrI',
-    key_secret: "yd93aKXa6yhJXKee9BOucugu",
+    key_id: 'rzp_live_yKLVzQkqA90zGx',
+    key_secret: "6pSKTVXnTS8D6pI16aBX82BK",
   });
 module.exports={
     doLogin:(userData)=>{
