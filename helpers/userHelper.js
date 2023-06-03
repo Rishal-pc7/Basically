@@ -1,6 +1,6 @@
 var db=require('../config/connection')
 var collection=require('../config/collection')
-var bcrypt=require('bcrypt')
+var bcrypt=require('bcryptjs')
 var objectId=require('mongodb').ObjectId
 let Razorpay = require('razorpay')
 var crypto = require('crypto')
