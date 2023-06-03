@@ -471,7 +471,7 @@
     
     .checkoutParentDiv{
         padding: 0 0 0 85px !important;
-        height: 2040px !important;
+        height: 2340px !important;
     }
     .checkoutParentDiv .windows{
         display: block !important;
@@ -513,6 +513,10 @@
     .checkoutParentDiv .windows .leftWindow .order-summary{
         display: block !important;
     }
+    .checkoutParentDiv .windows .leftWindow  .COD-caution{
+        font-size: 20px;
+    }
+
     .accountsParentDiv .accounts-heading{
         font-size: 40px;
     }

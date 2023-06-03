@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 var hbs=require('express-handlebars')
 var handlebars = hbs.create({})
+let compression = require('compression')
+require('dotenv').config()
 var app = express();
 const db=require('./config/connection')
 var fileUpload = require('express-fileupload')
@@ -21,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(fileUpload())
+app.use(compression())
 app.use(express.static(path.join(__dirname, 'public')));
 //mongo connection
 

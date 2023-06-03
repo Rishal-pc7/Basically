@@ -1,5 +1,5 @@
 
-function showMoreImages(e){
+async function showMoreImages(e){
     let scrollLeft=e.scrollLeft.toFixed()
     let btns=document.getElementsByClassName('ellipsis-btn')
     let activeEllipse=document.getElementsByClassName('active-ellipse')

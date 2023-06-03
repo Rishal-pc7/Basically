@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var userHelper = require('../helpers/userHelper'); 
-const { response } = require('../app');
 /* GET home page. */
 const verifyLogin =(req,res,next)=>{
   let user = req.session.user
@@ -25,11 +24,17 @@ router.get('/',async function(req, res, next) {
   let colors=await userHelper.getProductColors(proCategory)
   let products=await userHelper.getProducts()
   let cart=await userHelper.getCart(user,guestUser)
-  let cartId=cart._id
-  if(!cart){
+  let cartId
+  let total=0
+  if(cart[0]){
+    cartId=cart[0]._id
+    total=cart[0].total 
+  }
+  else{
     emptyCart=true
-  } 
-  res.render('index', { clientPage:true,user:req.session.user,products,colors,emptyCart,cart,cartId});
+
+  }
+  res.render('index', { clientPage:true,user:req.session.user,products,colors,emptyCart,cart,cartId,total});
 });
 
 router.get('/product-page/:id',async function(req, res, next) {
@@ -42,32 +47,31 @@ router.get('/product-page/:id',async function(req, res, next) {
     guestUser=true
   }
   let emptyCart=false
-  let products=await userHelper.getProducts()
+  let products=await userHelper.getProductsNames()
   let cart=await userHelper.getCart(user,guestUser)
-  let cartId=cart._id
-  console.log(cart)
+  let cartId
   let total=0
   if(cart[0]){
-
-    total=cart[0].total
+    cartId=cart[0]._id
+    total=cart[0].total 
   }
-  if(cart[0] === null){
+  else{
     emptyCart=true
   }
   userHelper.getProductDetails(req.params.id).then(async(product)=>{
     let colors=await userHelper.getProductColors(product.category)
-    res.render('pages/product-page',{ clientPage:true,colors,product,products,colors,emptyCart,cart,total,cartId });
+    res.render('pages/product-page',{ clientPage:true,colors,product,products,colors,emptyCart,cart,total,cartId }); 
   })
 });
 router.get('/addToCart/:proId/:size',async function(req,res,next){
   let user 
-  let isGuest=false
+  let isGuest=false 
   if(req.session.user){ 
   
     user=req.session.user._id
   }else{ 
     isGuest=true
-    user=req.sessionID
+    user=req.sessionID 
   } 
   userHelper.addToCart(req.params.proId,req.params.size,user,isGuest).then((result)=>{
     res.json({status:true,newProduct:result.newProduct})
@@ -79,14 +83,72 @@ router.post('/changeProductQuantity',(req,res,next)=>{
   }) 
 })   
 router.post('/removeProduct',(req,res,next)=>{
-  console.log('dataa')
   userHelper.removeProduct(req.body).then((data)=>{
-    console.log('Yess')   
-    res.json({status:true})     
+    res.json({status:true})      
   })
 })   
-router.get('/checkout/:cartId', function(req, res, next) {  
-  res.render('pages/checkout',{  }); 
+router.get('/checkout/:cartId',async function(req, res, next) { 
+  let guestUser=false
+  let user
+  if(req.session.user){ 
+    user=req.session.user 
+  }else{
+    user=req.sessionID
+    guestUser=true
+  } 
+  let cart=await userHelper.getCart(user,guestUser,req.params.cartId) 
+  let total
+  let cartId=req.params.cartId
+  if(cart[0]){
+    total=cart[0].total
+  } 
+  res.render('pages/checkout',{ cart,total,cartId }); 
+})
+router.post('/checkout',async(req,res,next)=>{
+  let user
+  if(req.session.user){ 
+    user=req.session.user 
+  }else{
+    user=req.sessionID
+  }
+  let products=await userHelper.getCartProducts(req.body.cartId)
+  console.log(products);
+  userHelper.placeOrder(req.body,products,user).then(async(data)=>{
+    
+    if(data.status === 'Placed'){
+      res.json({codSuccess:true}) 
+      let email=await userHelper.sendMail(data.orderId)
+      }
+      else if(data.status === 'Pending'){
+        userHelper.generateRazorPay(data.orderId,data.total).then((response)=>{    
+            res.json({response,cartId:req.body.cartId})
+        })
+
+      } 
+  })
+})
+router.post('/verifyPayment',(req,res,next)=>{ 
+  console.log(req.body);
+  userHelper.verifyPayment(req.body).then((data)=>{
+     userHelper.changeOrderStatus(req.body['order[receipt]'],req.body.cartId).then(async(status)=>{
+      if(status){
+        res.json({success:true})
+        let email=await userHelper.sendMail(req.body['order[receipt]'])
+      }   
+     })
+  }).catch((err)=>{
+    console.log('Err');
+    res.json({success:false})
+  })
+})    
+router.post('/applyCoupon',(req,res,next)=>{
+  userHelper.applyCoupon(req.body).then((data)=>{ 
+    if(data.applied){ 
+      res.json({status:true,total:data.total,discount:data.discount})
+    }else{
+      res.json({status:false})
+    }
+  })
 })
 router.get('/accounts',verifyLogin, async function(req, res, next) {
     let userDetails=await userHelper.getUser(req.session.user._id)

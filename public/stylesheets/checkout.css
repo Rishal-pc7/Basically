@@ -1,6 +1,5 @@
 .checkoutParentDiv{
     padding: 0 0 0 200px;
-    height: 975px;
 }
 .checkoutParentDiv .windows{
     display: grid;
@@ -65,7 +64,7 @@
 }
 
 .checkoutParentDiv .order-summary .header .price{
-    width: 10%;
+    width: 15%;
     font-size: 30px;
     margin-top: .1em;
 }
@@ -74,15 +73,16 @@
 }
 .checkoutParentDiv .order-summary .item-details .items{
     width: 100%;
-    height: 200px;
+    min-height: 200px;
     margin-top: 3em;
     margin-left: -2em;
 }
 .checkoutParentDiv .order-summary .item-details .items .item{
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 30% 45% 30%;
+    grid-auto-columns: 28% 43% 35%;
     width: 100%;
+    margin-bottom: 2em;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-img{
     border: 1px solid #ccc;
@@ -99,30 +99,33 @@
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-name{
     margin-left: -3em;
-    padding-top: 1.5em;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-name .name{
     font-weight: 600;
-    font-size: 26px;
+    font-size: 21px;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-name .size{
 
     font-weight: 600;
-    font-size: 22px;
+    font-size: 18px;
     color: #9ba0a5;
     margin-top: .5em;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-name .size span{
-    font-weight: 500;
+    font-weight: 300;
     
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-price{
-    margin-left: 10.5em;
+    padding-left: 8em;
     padding-top: 2.5em;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-price .price{
     font-weight: 600;
-    font-size: 28px;
+    font-size: 22px;
+}
+.checkoutParentDiv .order-summary .item-details .items .item .pro-price .price span{
+    font-size: 24px;
+    margin-left: 3px;
 }
 .checkoutParentDiv .order-summary .item-details .total-div{
     width: 90%;
@@ -139,6 +142,48 @@
     position: relative; 
     margin-left: 1em;  
     margin-top: 2em; 
+}
+.checkoutParentDiv .form-div{
+    width: 100%;
+    margin-bottom: 1em;
+}
+.checkoutParentDiv  .form-div input[type='text']{
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 620px;
+    font-size: 20px;
+}
+.checkoutParentDiv .form-div input[type='submit']{
+    padding: 15px 15px;
+    height: 45px;
+    margin-top: 0px;
+    border: 1px solid #ccc;
+    background: #000;
+    color: #fff;
+    font-size: 15px;
+    margin-left: -5px;
+    outline: none;
+    width: 80px;
+}
+.checkoutParentDiv .form-div .danger-text{
+    font-size: 18px;
+    color:#DC3545 ;
+    display: none;
+    margin-top: .5em;
+}
+.checkoutParentDiv .form-div .success-text{
+    font-size: 18px;
+    color:#4BB543 ;
+    display: none;
+    margin-top: .5em;
+    
+}
+.checkoutParentDiv .form-div #couponFound{
+    font-size: 22px;
+}
+.checkoutParentDiv .form-div #couponNotFound{
+    font-size: 22px;
 }
 .checkoutParentDiv .order-summary .item-details .total-div .totals .total-text h4{
     float: left;
@@ -180,15 +225,20 @@
 }
 .checkoutParentDiv .windows .leftWindow .checkout-options .payment-option{
     width: 220px;
-    padding: 15px 10px;
+    padding: 10px;
     border-radius: 4px;
     float: left;
     margin-top: 2em;
     margin-right: 1em;
     text-align: center;
 }
-.st0{fill:#3395FF;}
-.st1{fill:#072654;}
+.checkoutParentDiv .windows .leftWindow  .COD-caution{
+    display: none;
+    font-size: 15px;
+    color: #9ba0a5;
+    margin-bottom: 1em;
+    margin-top: -20px;
+}
 .checkoutParentDiv .windows .leftWindow .checkout-options .online-payment svg{
     height: 28px;
     margin-top: .1em;
@@ -291,15 +341,16 @@
 }
 .checkoutParentDiv .windows .rightWindow .items{
     width: 100%;
-    height: 200px;
+    min-height: 200px;
 
 }
 .checkoutParentDiv .windows .rightWindow .items .item{
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 30% 45% 30%;
+    grid-auto-columns: 30% 45% 35%;
     width: 100%;
     gap: 3em;
+    margin-bottom: 2em;
 }
 .checkoutParentDiv .windows .rightWindow .items .item .pro-img{
     border: 1px solid #ccc;

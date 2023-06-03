@@ -12,9 +12,11 @@ module.exports.connect = function (){
 
                 console.log(data.error);
             }
+            else{
 
-            console.log('successfully connected')
-            state.db=client.db(dbName)
+                console.log('successfully connected')
+                state.db=client.db(dbName)
+            }
         })
     })
     

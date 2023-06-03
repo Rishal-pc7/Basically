@@ -17,8 +17,8 @@
     <tbody>
         {{#each coupons}}
         <tr>
-            <td>{{this.details.couponCode}}</td>
-            <td>{{this.details.discountedPercentage}}%</td>
+            <td>{{this.couponCode}}</td>
+            <td>{{this.discountedPercentage}}%</td>
             <td><a href="/admin/remove-coupon/{{this._id}}">Remove Coupon</a></td>
         </tr>
         {{/each}}

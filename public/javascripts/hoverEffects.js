@@ -8,7 +8,7 @@ let optionsHovered={
 
 
 
-function shopBtnHover(elm){
+async function shopBtnHover(elm){
    
     elm.style.border='2px solid #FFFF'
     elm.style.transition='.5s ease-in-out'
@@ -17,14 +17,14 @@ function shopBtnHover(elm){
     a.style.color='#FFFF'
     
 } 
-function shopBtnOut(elm){
+async function shopBtnOut(elm){
     elm.style.border='none'
     elm.style.backgroundColor='#FFFF'
     let a=elm.getElementsByTagName('a')[0]
     a.style.color='black'
 
 }
-function moreBtnHover(elm){
+async function moreBtnHover(elm){
     
     elm.style.border='none'
     elm.style.backgroundColor='#FFFF'
@@ -32,7 +32,7 @@ function moreBtnHover(elm){
     a.style.color='black'
     elm.style.transition='.5s ease-in-out'
 }
-function moreBtnOut(elm){
+async function moreBtnOut(elm){
     elm.style.border='2px solid #FFFF'
     elm.style.backgroundColor='transparent'
     let a=elm.getElementsByTagName('a')[0]
@@ -43,7 +43,7 @@ let transpOpt=document.getElementById('transpOpt')
 let abtOpt=document.getElementById('abtOpt')
 let myTimeout
 
-function shopOptHover(elm){
+async function shopOptHover(elm){
             transpOptOut()
             abtOptOut()
             navbar.style.height='35em'
@@ -64,7 +64,7 @@ function shopOptHover(elm){
     
      
 }
-function shopOptOut(){
+async function shopOptOut(){
     document.getElementById('shopOpts').style.display='none'
     let elm=shopOpt
     optionsHovered.status=false
@@ -80,7 +80,7 @@ function shopOptOut(){
     navbar.style.height='5em'
        
 }; 
-function transpOptHover(elm){
+async function transpOptHover(elm){
     shopOptOut()
     abtOptOut()
     optionsHovered.status=true
@@ -101,7 +101,7 @@ function transpOptHover(elm){
          
      }
 }
-function transpOptOut(){
+async function transpOptOut(){
     document.getElementById('transpOpts').style.display='none'
     let elm=transpOpt
     optionsHovered.status=false
@@ -116,7 +116,7 @@ function transpOptOut(){
     navbar.style.height='5em'
     
 }
-function abtOptHover(elm){
+async function abtOptHover(elm){
     transpOptOut()
     shopOptOut()
     optionsHovered.status=true
@@ -134,7 +134,7 @@ function abtOptHover(elm){
         document.getElementById('abtOpts').style.display='grid'
     }
 }
-function abtOptOut(){
+async function abtOptOut(){
     let elm=abtOpt
     document.getElementById('abtOpts').style.display='none'
     optionsHovered.status=false
@@ -152,12 +152,12 @@ function abtOptOut(){
 let initialImg=document.getElementById('initialImg')
 let ltwtImg=document.getElementById('ltwtImg')
 let prmImg=document.getElementById('prmImg')
-function productOut(cat){
+async function productOut(cat){
     const activeImg=document.querySelector('[data-img-active]')
     initialImg.dataset.imgActive=true
     delete activeImg.dataset.imgActive
 }
-function productHovered(cat){
+async function productHovered(cat){
     const activeImg=document.querySelector('[data-img-active]')
     if(cat === 'prmweight'){
         prmImg.dataset.imgActive=true
@@ -171,7 +171,7 @@ function productHovered(cat){
       
     
 }
-function changeActiveOption(elm){
+async function changeActiveOption(elm){
     console.log(elm.id)
     let id=elm.id
     let activeClass=document.getElementsByClassName('active')[0]
@@ -190,7 +190,7 @@ function changeActiveOption(elm){
     elm.classList.add('active')
  
 }
-function showFooterOpts(elm){
+async function showFooterOpts(elm){
     elm.style.display='none'
     let footerHt=document.getElementById('footer-div').clientHeight
     if(elm.id === 'policyShowBtn'){
@@ -209,7 +209,7 @@ function showFooterOpts(elm){
         document.getElementById('aboutOpts').style.display='block'
     }
 }
-function hideFooterOpts(elm){
+async function hideFooterOpts(elm){
     elm.style.display='none'
     let footerHt=document.getElementById('footer-div').clientHeight
     console.log(footerHt);
@@ -229,7 +229,7 @@ function hideFooterOpts(elm){
         document.getElementById('aboutOpts').style.display='none'
     }
 }
-function changeDetailsOptions(elm){
+async function changeDetailsOptions(elm){
     console.log(elm);
     let activeDetails=document.getElementsByClassName('activeDetails')
     let activeDetailsOptions=document.getElementsByClassName('activeDetailsOptions')
@@ -248,12 +248,12 @@ function changeDetailsOptions(elm){
         document.getElementById('sizeDiv').className += ' activeDetailsOptions' 
     }
 }
-function showMoreBasicallies(elm){
+async function showMoreBasicallies(elm){
     xscrolled=true
    document.getElementById('basic-prev-btn').style.display='block'
    document.getElementById('grid-items').scrollLeft +=500
 }
-function showLessBasicallies(elm){
+async function showLessBasicallies(elm){
     xscrolled=true
     let gridItems=document.getElementById('grid-items')
     gridItems.scrollLeft -=500
@@ -263,7 +263,7 @@ function showLessBasicallies(elm){
         
     }
 }
-function showOrderSummary(elm){
+async function showOrderSummary(elm){
     elm.style.display='none'
     let hideBtn=document.getElementById('hideOrderSummary')
     let orderSummary=document.getElementById('orderSummary')
@@ -271,7 +271,7 @@ function showOrderSummary(elm){
     orderSummary.style.display='block'
 
 }
-function hideOrderSummary(elm){
+async function hideOrderSummary(elm){
     elm.style.display='none'
     let showBtn=document.getElementById('showOrderSummary')
     let orderSummary=document.getElementById('orderSummary')
@@ -279,18 +279,24 @@ function hideOrderSummary(elm){
     orderSummary.style.display='none'
 
 }
-function showCart(){
+async function showCart(){
+    let path=location.pathname
+    let proPath=path.split("-")
+    
     document.getElementById('cart').style.display='block'
     document.getElementById('chat-wid').style.display='none'
     body.style.overflow='hidden'
     mobNav.style.zIndex='1'
-    if(location.pathname === '/'){
+    if(location.pathname === '/'){ 
 
         document.getElementById('hero-content').style.zIndex='0'
     }
-    
+    if(proPath.indexOf('/product')> -1){
+        document.getElementsByClassName('sticky-btn')[0].style.position='relative'
+
+    } 
 }
-function hideCart(){
+async function hideCart(){
     document.getElementById('cart').style.display='none'
     document.getElementById('chat-wid').style.display='block'
     body.style.overflow='auto'
@@ -300,7 +306,7 @@ function hideCart(){
         document.getElementById('hero-content').style.zIndex='none'
     }
 }
-function changeAcntsOpts(elm){
+async function changeAcntsOpts(elm){
     let activeAcnts=document.getElementsByClassName('activeAcnts')
     let activeAcntsOpts=document.getElementsByClassName('activeAcntsOpts')
     activeAcnts[0].classList.replace('activeAcnts','.')

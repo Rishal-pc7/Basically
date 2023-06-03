@@ -159,7 +159,7 @@ module.exports={
      addCoupon:(details)=>{
         return new Promise((resolve, reject) => {
             details.discountedPercentage=parseInt(details.discountedPercentage)
-            db.get().collection(collection.COUPON_COLLECTION).insertOne({details}).then((data)=>{
+            db.get().collection(collection.COUPON_COLLECTION).insertOne(details).then((data)=>{
                 resolve(data.insertedId)
             })
         })

@@ -10,9 +10,10 @@ const verifyLogin = (req,res,next)=>{
   }else{ 
     res.redirect('/admin/login')
   }
-}
+}  
 /* GET users listing. */
 router.get('/',verifyLogin, function(req, res, next) {
+  console.log(process.env.COLOR)
   userHelper.getProducts().then((products)=>{
 
     res.render('admin/home',{adminPage:true,products,admin:req.session.admin})
@@ -110,10 +111,10 @@ router.get('/view-coupons', verifyLogin,function(req, res, next) {
 router.get('/add-coupon',verifyLogin, function(req, res, next) {
     res.render('admin/add-coupon',{adminPage:true,admin:req.session.admin})
    
-})
+}) 
 router.post('/add-coupon', verifyLogin,function(req, res, next) {
   adminHelper.addCoupon(req.body).then((result)=>{
-    res.redirect("/admin/view-coupons",{adminPage:true,admin:req.session.admin})
+    res.redirect("/admin/view-coupons")
   }) 
   
 })

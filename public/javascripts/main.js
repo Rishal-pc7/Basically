@@ -14,6 +14,7 @@ let mobSideBar=document.getElementById('mobSideBar')
 let path=location.pathname
 let splitPath=path.split("/")
 let proPath=path.split("-")
+let chkPath=path.split("/")
 let scrolled=false
 let shopBtns=document.getElementsByClassName('shop-btn')
 let moreBtns=document.getElementsByClassName('more-btn')
@@ -24,7 +25,7 @@ let body=document.getElementsByTagName('BODY')[0]
 let id = null
 let screenL=window.screenLeft
 var links = [].slice.call(linksColl);
-function menuBtnClicked(){
+async function menuBtnClicked(){
 
     menuBtn.style.display='none'
     document.getElementById('mobNavItems').style.display='none'
@@ -38,7 +39,7 @@ function menuBtnClicked(){
     
     
 }
-function chatBtnClicked(){
+async function chatBtnClicked(){
     chatPopup.style.display='block'
     chatBtn.style.display='none'
 }
@@ -48,7 +49,7 @@ function chatCloseBtnClicked(){
     
 }
 
-function menuCloseBtnCLicked(){
+async function menuCloseBtnCLicked(){
     mobSideBar.style.animationName='unfade'
     mobSideBar.style.animationDuration='.8s'
     mobSideBar.style.animationTimingFunction='ease-in-out'
@@ -72,43 +73,43 @@ window.onload=()=>{
 }
 
 
+if(navbar){
 
-let elm=document.getElementById('navbar')
-elm.onmouseover=()=>{
-    navHovered=true
+    navbar.onmouseover=()=>{
+        navHovered=true
     links.forEach((link) => {
         link.style.color='#000'
         
     });
-    let elm=document.getElementById('navbar')
-    elm.style.backgroundColor='#FFFF'
+    navbar.style.backgroundColor='#FFFF'
     
 }
 
-elm.onmouseleave=()=>{
-
+navbar.onmouseleave=()=>{
+    
     shopOptOut()
     transpOptOut()
     abtOptOut()
     if(location.pathname === '/'){
-    
-    if(document.body.scrollTop > 40 || document.documentElement.scrollTop >40){
         
+        if(document.body.scrollTop > 40 || document.documentElement.scrollTop >40){
+            
+            
+            links.forEach((link) => {
+                link.style.color='black'
+                
+            });
+           navbar.style.backgroundColor='#FFFF'
+        }else{
+            links.forEach((link) => {
+                link.style.color='#FFFF'
+                
+            });
+            navbar.style.backgroundColor='transparent'
+            
+        }
         
-        links.forEach((link) => {
-            link.style.color='black'
-            
-        });
-        elm.style.backgroundColor='#FFFF'
-    }else{
-        links.forEach((link) => {
-            link.style.color='#FFFF'
-            
-        });
-        elm.style.backgroundColor='transparent'
-
     }
-    
 }
 }
 let premCards=document.getElementById('prem-product-cards')
@@ -116,7 +117,7 @@ let lightCards=document.getElementById('light-product-cards')
 let prevBtn=document.getElementById('prev-btn')
 let scrollCard=0
 let lightScrollCard=0
-function nextBtnClicked(nextBtn,cat){
+async function nextBtnClicked(nextBtn,cat){
     if(cat === 'prem'){
 
         premCards.scrollLeft += 500
@@ -143,7 +144,7 @@ function nextBtnClicked(nextBtn,cat){
     }
     nextBtn.closest('[data-btns]').querySelector('[data-prev-btn]').style.color='#000'
 }
-function prevBtnClicked(prevBtn,cat){
+async function prevBtnClicked(prevBtn,cat){
     if(cat === 'prem'){
 
         premCards.scrollLeft -= 500
@@ -198,7 +199,7 @@ if(x.matches){
 
 let xscrolled
 let scrollTop=document.documentElement.scrollTop
-function isInViewport(el) {
+async function isInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
         rect.top >= 0 &&
@@ -240,7 +241,7 @@ window.onscroll=()=>{
         
     }
     
-    
+    if(chkPath.indexOf('checkout') === -1){
     if(document.body.scrollTop > 40 || document.documentElement.scrollTop >40){
         scrolled=true
         
@@ -296,7 +297,49 @@ window.onscroll=()=>{
      }
    }
  }
-}  
+ }
+} 
+async function showMoreImages(e){
+    let scrollLeft=e.scrollLeft.toFixed()
+    let btns=document.getElementsByClassName('ellipsis-btn')
+    let activeEllipse=document.getElementsByClassName('active-ellipse')
+    if(scrollLeft <900){
+        activeEllipse[0].classList.replace('active-ellipse','.')
+        btns[0].className +=' active-ellipse'
+    }
+    if(scrollLeft >900 && scrollLeft <1900){
+
+            activeEllipse[0].classList.replace('active-ellipse','.')
+            btns[1].className +=' active-ellipse'
+    }
+    if(scrollLeft >1900 && scrollLeft < 2900 ){
+
+            activeEllipse[0].classList.replace('active-ellipse','.')
+            btns[2].className +=' active-ellipse'
+        
+    }
+    if(scrollLeft >2900 && scrollLeft < 3900 ){
+
+            activeEllipse[0].classList.replace('active-ellipse','.')
+            btns[3].className +=' active-ellipse'
+        
+    }
+    if(scrollLeft >3900 && scrollLeft < 4900 ){
+
+            activeEllipse[0].classList.replace('active-ellipse','.')
+            btns[4].className +=' active-ellipse'
+        
+    }
+    if(scrollLeft >4900 && scrollLeft < 5900 ){
+
+            activeEllipse[0].classList.replace('active-ellipse','.')
+            btns[5].className +=' active-ellipse'
+        
+    }
+    
+   
+}
+
 
 
 
