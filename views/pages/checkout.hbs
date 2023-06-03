@@ -246,7 +246,7 @@
     }
   async function razorPayPayment(order,cartId){
     var options = {
-    "key": "rzp_test_lcPIpTCk33nmrI", // Enter the Key ID generated from the Dashboard
+    "key": "rzp_live_yKLVzQkqA90zGx'", // Enter the Key ID generated from the Dashboard
     "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
     "currency": "INR",
     "name": "Basically",
@@ -256,11 +256,7 @@
     "handler": function (response){
         verifyPayment(response,order,cartId)
     },
-    "prefill": {
-        "name": "Gaurav Kumar",
-        "email": "gaurav.kumar@example.com",
-        "contact": "9000090000"
-    },
+    
     
     "theme": {
         "color": "#000"

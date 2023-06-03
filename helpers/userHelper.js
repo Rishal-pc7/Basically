@@ -459,7 +459,7 @@ module.exports={
     },
     verifyPayment:(details)=>{
         return new Promise(async(resolve, reject) => {
-            let hmac=crypto.createHmac('sha256',"yd93aKXa6yhJXKee9BOucugu")
+            let hmac=crypto.createHmac('sha256',"6pSKTVXnTS8D6pI16aBX82BK")
             hmac.update(details['payment[razorpay_order_id]']+'|'+details['payment[razorpay_payment_id]'])
             hmac=hmac.digest('hex')
             console.log(hmac,details['payment[razorpay_signature]']);
