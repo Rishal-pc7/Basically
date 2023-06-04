@@ -4,9 +4,6 @@ let mobNav =document.getElementById('mob-nav')
 let content =document.getElementById('content')
 let txtContent =document.getElementById('txtContent')
 let linksColl=document.getElementsByClassName('links')
-let chatBtn=document.getElementById('chatBtn')
-let chatPopup=document.getElementById('chatPopup')
-let closeBtn=document.getElementById('closeBtn')
 let menuCloseBtn=document.getElementById('menuCloseBtn')
 let menuBtn=document.getElementById('menuBtn')
 let mobNavBrand=document.getElementById('mobNavBrand')
@@ -39,17 +36,9 @@ async function menuBtnClicked(){
     
     
 }
-async function chatBtnClicked(){
-    chatPopup.style.display='block'
-    chatBtn.style.display='none'
-}
-function chatCloseBtnClicked(){
-    chatPopup.style.display='none'
-    chatBtn.style.display='block'
-    
-}
 
-async function menuCloseBtnCLicked(){
+
+async function menuCloseBtnClicked(){
     mobSideBar.style.animationName='unfade'
     mobSideBar.style.animationDuration='.8s'
     mobSideBar.style.animationTimingFunction='ease-in-out'
@@ -179,7 +168,7 @@ if (location.pathname === '/') {
 if(proPath.indexOf('/product') >  -1){
 document.getElementById('pro-images').focus()
 document.getElementById('returnPolicy').style.display='block'
-mobNav.style.top='50px'
+mobNav.style.top='70px'
 mobNav.style.background='transparent'
 navbar.style.top='40px'
 let proImages=document.getElementById('pro-images')

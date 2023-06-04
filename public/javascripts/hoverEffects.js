@@ -284,7 +284,6 @@ async function showCart(){
     let proPath=path.split("-")
     
     document.getElementById('cart').style.display='block'
-    document.getElementById('chat-wid').style.display='none'
     body.style.overflow='hidden'
     mobNav.style.zIndex='1'
     if(location.pathname === '/'){ 
@@ -298,7 +297,6 @@ async function showCart(){
 }
 async function hideCart(){
     document.getElementById('cart').style.display='none'
-    document.getElementById('chat-wid').style.display='block'
     body.style.overflow='auto'
     mobNav.style.zIndex='99'
     if(location.pathname === '/'){

@@ -23,17 +23,21 @@
         font-size: 30px !important;
         margin-top: 3em;
     }
+    .hero-content h1{
+        font-size: 80px;
+    }
     .hero-content .content h2{
         margin-top: 0.2em;
         font-weight: 400;
-        font-size: 25px;
-        margin-left: 80px;
+        font-size: 35px;
+        margin-left: 10px;
     }
     .hero-content .content .shop-link{
-        bottom: -225px;
+        bottom: -330px;
+        left: 46%;
     }
     .hero-content .content .shop-link a{
-        font-size: 24px;
+        font-size: 32px;
     }
     .hero .hero-content{
         padding-top: 60em;
@@ -185,9 +189,9 @@
         bottom: 60px;
     }
     .cartParentDiv .showableDiv .checkout-btn a{
-        padding: 15px 0;
+        padding: 25px 0;
         width: 95%;
-        border-radius: 35px;
+        border-radius: 55px;
         font-size: 28px;
     }
 
@@ -232,8 +236,9 @@
     
     .collections{
         padding: 60px 45px;
-        height: 670px;
+        height: 1100px;
     }
+    
     .collections .product-cards{
        margin-top: 5em;
 
@@ -245,18 +250,26 @@
         display: none;
     }
     .collections .product-cards .product-card{
-        height: 640px;
+        height: 1000px;
+    }
+    .collections .product-cards .product-card img{
+        height: 830px;
+        width: 725px;
+    }
+    .collections .product-cards .product-card{
+        width: 750px;
     }
     .collections .product-cards .product-card .product-details{
         height: auto;
-        margin-top: 0;
+        margin-top: 20px;
     }
     .collections .product-cards .product-card .product-details .product-name a{
-        font-size: 21px;
+        font-size: 35px;
         margin-top: 0;
     }
     .collections .product-cards .product-card .product-details .product-color{
         margin-top: 0;
+        font-size: 32px;
     }
     .collections .product-cards .product-card .product-details .more-colors p {
         margin-top: 15px;
@@ -268,6 +281,7 @@
         flex-wrap: nowrap;
         gap: 10px;
         margin-top: 1em;
+        width: 50%;
       }
       .collections .product-cards .product-card .colors a{
         background: none;
@@ -282,11 +296,11 @@
         margin-top: -6px;
       }
       .collections .product-cards .product-card .colors a i{
-        font-size: 30px;
+        font-size: 32px;
       }
       .collections .product-cards .product-card .colors .product-color{
          color: #000;
-         font-size:22px;
+         font-size:32px;
          margin-left: 10px;
          font-weight: 400;
       }
@@ -300,10 +314,10 @@
         transform: scale(0.9);
       }
       .collections .collection-text{
-        font-size: 38px;
+        font-size: 55px;
       }
     
-   
+      
     .transparency-section .learn-more{
         width: 25%;
         padding: 20px;
@@ -322,15 +336,19 @@
     }
 
     .our-story{
-        height: 700px;
+        height: 550px;
 
     }
+    .our-story img{
+        height: 550px;
+    }
+
     .return-policy{
         padding-top: 1.1em;
         padding-bottom: 1em;
     }
     .return-policy h5{
-        font-size: 24px;
+        font-size: 30px;
     }
     .productParentDiv{
         padding: 55px;
@@ -338,25 +356,27 @@
     
     .products{
         display: block;
-        height: 2100px;
+        height: 2050px;
     }
     .des-pro-image{
         display: none;
     }
     .mob-carousel-section{
         display: block;
-        margin: -100px -60px;
+        margin: -27px -60px;
+        height: 1280px;
     }
 
     .pro-details{
         width: 100%;
         padding: 10px;
+        height: 980px;
     }
     .pro-details .name{
         font-size: 50px;
     }
     .pro-details .price{
-        margin-top: 1em;
+        margin-top: .5em;
         font-size: 38px;
     }
     .pro-details .price span{
@@ -379,10 +399,10 @@
         margin-top: 3em;
     }
     .pro-details .size-section a{
-        font-size: 30px;
+        font-size: 35px;
     }
     .pro-details .size-section .size-div .size-text h5{
-        font-size: 28px;
+        font-size: 32px;
     }
     .pro-details .size-section .size-div .sizes{
         right: 40px;
@@ -390,14 +410,18 @@
     }
     .pro-details .add-to {
         margin-top: 4em;
+        height: 145px;
+        /* text-align: left; */
     }
     .pro-details .add-to button{
         margin-left: 0;
         width: 100%;
         padding: 25px 185px;
-        border-radius: 35px;
-        font-weight: 600;
-        font-size: 30px;
+        border-radius: 55px;
+        font-weight: 500;
+        font-size: 40px;
+        font-family: inherit;
+        text-transform: capitalize;
     }
                 
     .pro-details .size-section .size-div .sizes button{
@@ -405,38 +429,58 @@
         border-radius: 35px;
         font-size: 28px;
     }
+    .pro-details .less-description{
+        margin-top: 4em;
+        width: auto;
+        text-align: left;
+    }
+    .pro-details .less-description p{
+        font-size: 35px;
+        line-height: 50px;
+    }
     .product-details {
-        height: 850px;
+        height: 1150px;
+        margin-top: 3em;
     }
     .product-details h5{
-        font-size: 38px;
+        font-size: 40px;
     }
     .product-details .details-div{
-        height: 690px;
+        height: 1390px;
         grid-template-columns: 100%;
     }
     .product-details .details-div .about-product .options .option{
-        margin-left: 11em;
+        margin-left: 7em;
     }
     .product-details .details-div .about-product .options .option h5{
-        font-size: 26px;
+        font-size: 35px;
     }
     .product-details .details-div .image-div{
         display: none;
     }
+    .product-details .details-div .about-product .details-options-div{
+        height: 1262px;
+    }
     .product-details .details-div .about-product .details-options-div .subheadings{
-        font-size: 26px;
+        font-size: 35px;
     }
     .product-details .details-div .about-product .details-options-div .subdetails{
-        font-size: 22px;
+        font-size: 35px;
     }
     .product-details .details-div .about-product .details-options-div ul li{
-        font-size: 22px;
+        font-size: 35px;
     }
     
     .our-ethics-section {
         margin-top: 1em;
+        height: 900px;
     }
+    .our-ethics-section .logo img{
+        width: 300px;
+        margin-top: 7em;
+        margin-bottom: -1em;
+    }
+
     .our-ethics-section h5{
         font-size: 36px;
     }
@@ -445,20 +489,34 @@
         grid-template-columns: 65% 65% 65%;
     }
     .our-ethics-section .item-grid .item-description .sub-heading{
-        font-size: 26px;
+        font-size: 28px;
     }
     .our-ethics-section .item-grid .item-description .ethics-description{
-        font-size: 19px;
+        font-size: 24px;
     }
     .our-ethics-section .item-grid .item-description a{
         font-size: 24px;
     }
     .clothing {
         height: 750px;
-        margin-top: 2em;
+        margin-top: 13em;
+        padding: 70px;
+        background: rgb(250, 250, 250);
+        height: 800px;
+    }
+    .clothing .mob-heading{
+        display: block;
+        margin-bottom: 4em;
+    }
+    .clothing .mob-heading h5{
+        font-size: 40px;
+        font-weight: 600;
+        
+    }
+    .clothing .img-div{
         display: flex;
         justify-content: center;
-        padding: 70px;
+
     }
     .clothing img{
         height: 720px;

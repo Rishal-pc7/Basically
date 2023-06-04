@@ -11,6 +11,7 @@ const verifyLogin =(req,res,next)=>{
   }
 } 
 router.get('/',async function(req, res, next) {
+  
   let user
   let guestUser=false
   if(req.session.user){
@@ -20,15 +21,15 @@ router.get('/',async function(req, res, next) {
     guestUser=true
   }
   let emptyCart=false
-  let proCategory='The Perfect Tshirt'
+  let proCategory='The Perfect Tshirt | SUPIMA'
   let colors=await userHelper.getProductColors(proCategory)
   let products=await userHelper.getProducts()
   let cart=await userHelper.getCart(user,guestUser)
   let cartId
-  let total=0
+  let total=0 
   if(cart[0]){
     cartId=cart[0]._id
-    total=cart[0].total 
+    total=cart[0].total  
   }
   else{
     emptyCart=true
