@@ -428,12 +428,15 @@ float: left;
     font-weight: 600;
 }
  .our-ethics-section .item-grids{
-    position: relative;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 33% 32% 34%;
-    gap: 2em;
-    margin-top: 2em;
+     position: relative;
+     width: 100%;
+     display: grid;
+     grid-template-columns: 33% 32% 34%;
+     gap: 2em;
+     margin-top: 2em;
+    }
+.our-ethics-section .item-grids::-webkit-scrollbar{
+    display:none;
 }
  .our-ethics-section .item-grid{
     text-align: center;

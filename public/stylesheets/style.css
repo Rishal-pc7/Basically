@@ -231,14 +231,9 @@ a {
   scroll-behavior: smooth;
 }
 .collections .product-cards::-webkit-scrollbar{
-  height: 2px;
   display: none;
 }
-.collections .product-cards::-webkit-scrollbar-thumb{
-  background-color: #57595B;
-  border: 4px solid #57595B;
-  background-clip: content-box;
-}
+
 .collections .product-cards .product-card{
   width: 380px;
   height: 590px;
@@ -386,13 +381,9 @@ a {
 
 }
 .mob-abt-section .about-items::-webkit-scrollbar{
-  height: 2px;
+  display: none;
 }
-.mob-abt-section .about-items::-webkit-scrollbar-thumb{
-  background-color: #57595B;
-  border: 4px solid #57595B;
-  background-clip: content-box;
-}
+
 .mob-abt-section .about-items .about-item{
   width: 840px;
   transition: .5s ease-in-out;

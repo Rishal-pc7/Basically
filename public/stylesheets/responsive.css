@@ -243,9 +243,7 @@
        margin-top: 5em;
 
     }
-    .collections .product-cards::-webkit-scrollbar{
-        display: block;
-    }
+    
     .collections .btns{
         display: none;
     }
@@ -476,7 +474,7 @@
     
     .our-ethics-section {
         margin-top: 1em;
-        height: 900px;
+        height: 990px;
         width: 105%;
     }
     .our-ethics-section .logo img{
