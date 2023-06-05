@@ -525,13 +525,13 @@
     .clothing img{
         height: 960px;
         position: relative;
-        right: 0;
+        right: -20px;
     }
     .clothing .description{
         display: none;
     }
     .insta-section{
-      height: 1000px;
+      height: 1075px;
     }
     .insta-section .texts{
         display: block;

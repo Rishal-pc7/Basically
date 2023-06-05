@@ -63,10 +63,10 @@ router.get('/product-page/:id',async function(req, res, next) {
     let colors=await userHelper.getProductColors(product.category)
     res.render('pages/product-page',{ clientPage:true,colors,product,products,colors,emptyCart,cart,total,cartId }); 
   })
-});
+}); 
 
 router.get('/download-size-chart',async function(req,res,next){
-  res.download('./public/images/size-chart.pdf')
+  res.download('./public/images/Size-chart.pdf')
 })
 router.get('/addToCart/:proId/:size',async function(req,res,next){
   let user 

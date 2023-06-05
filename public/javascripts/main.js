@@ -229,16 +229,23 @@ window.onscroll=()=>{
         
     }
     
+    if(document.body.scrollTop > 600 || document.documentElement.scrollTop >600){
+        
+        if(proPath.indexOf('/product') >  -1 && x.matches){
+            
+            document.getElementsByClassName('sticky-btn')[0].style.display='block'
+        }
+    }else{
+        if(proPath.indexOf('/product') > -1){
+            document.getElementsByClassName('sticky-btn')[0].style.display='none'
+        }
+    }
     if(chkPath.indexOf('checkout') === -1){
     if(document.body.scrollTop > 40 || document.documentElement.scrollTop >40){
         scrolled=true
         
         navbar.style.backgroundColor='#FFFF'
         mobNav.style.backgroundColor='#FFFF'
-        if(proPath.indexOf('/product') >  -1 && x.matches){
-            
-            document.getElementsByClassName('sticky-btn')[0].style.display='block'
-        }
         mobNav.style.paddingTop='.5em'
         links.forEach((link) => {
             
@@ -279,9 +286,7 @@ window.onscroll=()=>{
           })
     }
 
-    if(proPath.indexOf('/product') > -1){
-            document.getElementsByClassName('sticky-btn')[0].style.display='none'
-        }
+    
      }
    }
  }
