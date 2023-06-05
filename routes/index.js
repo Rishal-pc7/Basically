@@ -12,14 +12,14 @@ const verifyLogin =(req,res,next)=>{
 } 
 router.get('/',async function(req, res, next) {
   
-  let user
+  let user   
   let guestUser=false
   if(req.session.user){
     user=req.session.user 
   }else{
     user=req.sessionID
     guestUser=true
-  }
+  } 
   let emptyCart=false
   let proCategory='The Perfect Tshirt | SUPIMA'
   let colors=await userHelper.getProductColors(proCategory)
@@ -64,6 +64,10 @@ router.get('/product-page/:id',async function(req, res, next) {
     res.render('pages/product-page',{ clientPage:true,colors,product,products,colors,emptyCart,cart,total,cartId }); 
   })
 });
+
+router.get('/download-size-chart',async function(req,res,next){
+  res.download('./public/images/size-chart.pdf')
+})
 router.get('/addToCart/:proId/:size',async function(req,res,next){
   let user 
   let isGuest=false 

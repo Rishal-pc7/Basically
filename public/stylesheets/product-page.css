@@ -20,8 +20,7 @@
 
 
 .productParentDiv{
-    padding: 115px 85px;
-
+    padding: 115px 85px 0;
 }
 .product-category-details{
     margin-top: 1em;
@@ -65,7 +64,6 @@
     width: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
-    
 }
 .mob-carousel-section{
 
@@ -74,10 +72,10 @@
 }
 .mob-carousel{
     position: relative;
-    height: 1250px;
+    height: 1290px;
   }
   .mob-carousel .slides{
-    height: 1220px;
+    height: 1260px;
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
@@ -105,23 +103,23 @@
   .mob-carousel .ellipsis .active-ellipse {
     color: 	#0a0b24;
   }
-  .mob-carousel .slides .slide-res{
+  .mob-carousel .slides .slides-res{
     inset: 0;
-    position: relative;
     scroll-snap-align: center;
   }
-  .mob-carousel .slides .slide-res img{
-    width: 980px;
-    height: 100%;
+  .mob-carousel .slides .slides-res img{
+    width: 1015px;
+    aspect-ratio: 4/5;
   }
 
 .des-pro-image{
-     display: block;
-    position: relative;
+    display: block;
     float: left;
+    
 }
 .des-pro-image .pro-images{
-    width: 100%;
+    position: absolute;
+    width: 94%;
     display: grid;
     grid-auto-flow: row;
     margin-top: 2em;
@@ -129,7 +127,6 @@
     scroll-behavior: smooth;
     overflow: auto;
     height: 700px;
-    position: relative;
     outline: none;
 }
 .des-pro-image .pro-images::-webkit-scrollbar{
@@ -158,7 +155,7 @@
 }
 .pro-images .mid-img img{
     aspect-ratio: 1/1;
-    height: 325px;
+    height: 310px;
     object-fit: cover;
 }
 
@@ -168,6 +165,7 @@
   padding: 30px 80px;
   overflow: hidden;
   height: 700px;
+  overflow: hidden;
 }
 .pro-details .name{
     font-size: 30px;
@@ -187,8 +185,9 @@
 }
 .pro-details .color-div .color-text{
 
-    width: 40%;
-    float: left;
+width: 50%;
+
+float: left;
 }
 .pro-details .color-div .pro-color{
     font-weight: 500;
@@ -231,6 +230,10 @@
     text-decoration: underline;
     text-underline-offset: 5px;
     color: #000;
+    position: absolute;
+    z-index: 0;
+    margin-bottom: 1em;
+    height: 10px;
 }
 .pro-details .size-section .size-div{
     width: 100%;
@@ -293,8 +296,9 @@
     background: #57595b;
     color: #fff;
     border: none;
+    position: absolute;
     border-radius: 25px;
-    margin-left: 1.5em;
+    margin-left: -10em;
     font-weight: 500;
     font-size: 20px;
 }
@@ -520,70 +524,62 @@
     font-size: 18px;
 
 }
-.basicallies-section{
+.insta-section{
     width: 100%;
-    height: 700px;
+    height: 450px;
     position: relative;
-    background-color: #fff;
+    background-color: #fafafa;
+    padding: 35px 85px;
+    margin: 40px -95px;
 }
-.basicallies-section .heading{
-    text-align: center;
-    font-size: 32px;
-    font-weight: 600;
+.insta-section .texts{
+    display: grid;
+    grid-auto-flow: column;
+    margin-top: 3em;
 }
 
-.basicallies-section .basicallies-grids{
+.insta-section .texts .heading h6{
+    font-size: 26px;
+    font-weight: 600;
+}
+.insta-section .texts .ig{
+   position: absolute;
+   right: 95px;
+}
+.insta-section .texts .ig h6 a{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    color: #57595B;
+}
+.insta-section .texts .ig h6 i{
+    font-size: 20px;
+    margin-right: 8px;
+    margin-top: -4px;
+}
+
+.insta-section .insta-grids{
     width: 100%;
     overflow-x: scroll;
     display: grid;
     grid-auto-flow: column;
-    grid-template-areas: 'a b c d';
     overflow-y: hidden;
-    margin-top: 3em;
-    gap: 2em;
+    gap: 1em;
     scroll-behavior: smooth;
-}
-.basicallies-section .basicallies-grids .grid-btns{
-    position: absolute;
-    background: none;
-    font-size: 3em;
-    padding: 25px;
-    border: none;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #909191;
-}
-.basicallies-section .basicallies-grids .nextBtn{
-    display: block;
-    right: 15px;
-}
-.basicallies-section .basicallies-grids .prevBtn{
-    display: none;
-    left: 5px;
-}
-.basicallies-section .basicallies-grids .grid-btns:hover , .basicallies-section .basicallies-grids .grid-btns:focus{
-    color: #57595B;
-    outline: none;
+    margin-top: 4em;
 }
 
-.basicallies-section .basicallies-grids::-webkit-scrollbar{
-    height: 2px;
+
+.insta-section .insta-grids::-webkit-scrollbar{
     display: none;
 }
-.basicallies-section .basicallies-grids::-webkit-scrollbar-thumb{
-    background-color: #57595B;
-    border: 4px solid #57595B;
-    background-clip: content-box;
-}
- .basicallies-section .basicallies-grids .basicallies{
-    padding-bottom: .5em;
-}
-.basicallies-section .basicallies-grids .basicallies img{
-    height: 475px;  
+
+.insta-section .insta-grids .insta-imgs img{
     display: block;
     object-fit: cover;
     object-position: center;
-    width: 380px;
+    width: 300px;
+    aspect-ratio: 1/1;
 }
 
 

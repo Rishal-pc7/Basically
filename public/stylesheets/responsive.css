@@ -44,7 +44,7 @@
     }
     
 }
-@media only screen and (min-width:200px) and (max-width:1250px){
+@media only screen and (min-width: 200px) and (max-width: 1250px){
     .mobile-nav{
         display: block;
     }
@@ -210,11 +210,11 @@
         font-size: 24px;
     }
     .footer-div .contact-div .input input[type='text']{
-        border-radius: 15px 0px 15px 15px;
+        border-radius: 40px 0px 15px 40px;
         font-size: 20px;
     }
     .footer-div .contact-div .input input[type='submit']{
-        border-radius: 0px 15px 15px 0px;
+        border-radius: 0px 40px 40px 0px;
         font-size: 20px;
         padding: 22px !important;
     }
@@ -281,7 +281,7 @@
         flex-wrap: nowrap;
         gap: 10px;
         margin-top: 1em;
-        width: 50%;
+        width: 100%;
       }
       .collections .product-cards .product-card .colors a{
         background: none;
@@ -352,6 +352,7 @@
     }
     .productParentDiv{
         padding: 55px;
+        margin-right: 25px;
     }
     
     .products{
@@ -363,8 +364,8 @@
     }
     .mob-carousel-section{
         display: block;
-        margin: -27px -60px;
-        height: 1280px;
+        margin: -27px -80px;
+        height: 1320px;
     }
 
     .pro-details{
@@ -411,15 +412,17 @@
     .pro-details .add-to {
         margin-top: 4em;
         height: 145px;
+        width: 100%;
         /* text-align: left; */
     }
     .pro-details .add-to button{
-        margin-left: 0;
+        margin-left: 10px;
         width: 100%;
         padding: 25px 185px;
         border-radius: 55px;
         font-weight: 500;
         font-size: 40px;
+        position: relative;
         font-family: inherit;
         text-transform: capitalize;
     }
@@ -474,6 +477,7 @@
     .our-ethics-section {
         margin-top: 1em;
         height: 900px;
+        width: 105%;
     }
     .our-ethics-section .logo img{
         width: 300px;
@@ -486,6 +490,7 @@
     }
     .our-ethics-section .item-grids{
         overflow-x: scroll;
+        margin-right: 69px;
         grid-template-columns: 65% 65% 65%;
     }
     .our-ethics-section .item-grid .item-description .sub-heading{
@@ -498,11 +503,10 @@
         font-size: 24px;
     }
     .clothing {
-        height: 750px;
         margin-top: 13em;
         padding: 70px;
         background: rgb(250, 250, 250);
-        height: 800px;
+        height: 1050px;
     }
     .clothing .mob-heading{
         display: block;
@@ -519,32 +523,77 @@
 
     }
     .clothing img{
-        height: 720px;
+        height: 960px;
         position: relative;
         right: 0;
     }
     .clothing .description{
         display: none;
     }
-    
+    .insta-section{
+      height: 1000px;
+    }
+    .insta-section .texts{
+        display: block;
+    }
+    .insta-section .texts .heading h6{
+        font-size: 40px;
+    }
+    .insta-section .texts .ig{
+        position: relative;
+        margin-top: 2em;
+        right: 0;
+    }
+    .insta-section .texts .ig h6 a{
+        font-size: 30px;
+    }
+    .insta-section .texts .ig h6 i{
+        font-size: 38px;
+        margin-right: 24px;
+    }
+    .insta-section .insta-grids{ 
+       width: 105%;
+        gap: 2em;
+    }
+    .insta-section .insta-grids .insta-imgs img{
+        width: 830px;
+    }
     .checkoutParentDiv{
         padding: 0 0 0 85px !important;
-        height: 2340px !important;
+        height: 3250px !important;
+    }
+    .swal2-popup {
+        font-size: 2rem;
+    }
+    .checkoutParentDiv .windows .leftWindow .redirected{
+        font-size: 30px !important;
+    }
+    .checkoutParentDiv .form-div input[type='text'] {
+        width: 620px;
+        font-size: 30px;
+        padding: 20px;
+    }
+    .checkoutParentDiv .form-div input[type='submit']{
+        padding: 15px 15px;
+        height: 85px;
+        font-size: 26px;
+        width: 115px;
     }
     .checkoutParentDiv .windows{
         display: block !important;
     }
     .checkoutParentDiv .windows .leftWindow .shipping-options h4{
-        font-size: 28px !important;
+        font-size: 35px !important;
     }
     .checkoutParentDiv .windows .leftWindow .shipping-options form .input input{
-        height: 50px !important;
-        font-size: 18px !important;
-        padding: 25px 5px 5px 10px !important;
+        height: 80px !important;
+        font-size: 32px !important;
+        padding: 35px 20px 5px 20px !important;
     }
     .checkoutParentDiv .windows .leftWindow .shipping-options form .input label{
-        font-size: 20px !important;
+        font-size: 32px !important;
         bottom: 4.5em !important;
+        left: 20px;
     }
     .checkoutParentDiv .windows .leftWindow .shipping-options form .input .double-inputs{
         display: block !important;
@@ -555,15 +604,44 @@
     .checkoutParentDiv .windows .leftWindow .checkout-options{
         padding-bottom: 3em !important;
         margin-top: 2em !important;
+        height: 370px !important;
     }
     .checkoutParentDiv .windows .leftWindow .checkout-options h6{
-        font-size: 28px !important;
+        font-size: 35px !important;
+    }
+    .checkoutParentDiv .windows .leftWindow .checkout-options .options-box{
+        height: 340px;
+    }
+    .checkoutParentDiv .windows .leftWindow .checkout-options .options-box .options{
+
+       max-height: 80px;
+       width: 95%;
+    }
+    .checkoutParentDiv .windows .leftWindow .checkout-options .options-box .cod{
+        max-height: 135px;
+    }
+
+    .checkoutParentDiv .windows .leftWindow .checkout-options .options .input input[type="radio"]{
+        height: 40px !important;
+        margin-top: 20px;
+    }
+    .checkoutParentDiv .windows .leftWindow .checkout-options .options-box .options .option{
+        padding-top: 22px;
+    }
+    .checkoutParentDiv .windows .leftWindow .checkout-options .options-box .options .option h5{
+        font-size: 32px;
+    }
+    .checkoutParentDiv .windows .leftWindow .checkout-options .options-box .options .total h5{
+        font-size: 28px;
+    }
+    .checkoutParentDiv .windows .leftWindow .checkout-options .options-box .options .total h5 span{
+        font-size: 30px;
     }
     .checkoutParentDiv .windows .leftWindow .shipping-options .input .btns button{
         position: relative !important;
         width: 100% !important;
         margin-top: 1em !important;
-        font-size: 22px !important;
+        font-size: 32px !important;
     }
     .checkoutParentDiv .windows .rightWindow{
         display: none;
@@ -572,7 +650,7 @@
         display: block !important;
     }
     .checkoutParentDiv .windows .leftWindow  .COD-caution{
-        font-size: 20px;
+        font-size: 26px;
     }
 
     .accountsParentDiv .accounts-heading{

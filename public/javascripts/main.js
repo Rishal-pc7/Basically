@@ -18,7 +18,7 @@ let moreBtns=document.getElementsByClassName('more-btn')
 let moreLinks=document.getElementsByClassName('more-link')
 let shopLinks=document.getElementsByClassName('shop-link')
 let navHovered=false
-let body=document.getElementsByTagName('BODY')[0]
+let body=document.getElementsByTagName('body')[0]
 let id = null
 let screenL=window.screenLeft
 var links = [].slice.call(linksColl);
@@ -53,12 +53,26 @@ async function menuCloseBtnClicked(){
     
     
 }
+async function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+    );
+}
 window.onload=()=>{
+    let proImgSeen
     let cartShow=sessionStorage.getItem("showCart")
     if(cartShow){
         showCart()
-        sessionStorage.removeItem("showCart")
+        sessionStorage.removeItem("showCart")  
     }
+   
+
+  
 }
 
 
@@ -188,29 +202,14 @@ if(x.matches){
 
 let xscrolled
 let scrollTop=document.documentElement.scrollTop
-async function isInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 
-    );
-}
 let proImgSeen=false
 
 window.onscroll=()=>{
     if(splitPath.indexOf('admin') ===  -1){
         var x = window.matchMedia("(max-width: 991px)")
     scrollTop=document.documentElement.scrollTop
-     if(proPath.indexOf('/product') >  -1){
-
-      proImgSeen= isInViewport(document.getElementById('products'))    
-    if(proImgSeen){
-            document.getElementById('pro-images').focus()
-         }   
-    }
+     
     if(location.pathname === '/'){
 
         if(document.body.scrollTop > 750 || document.documentElement.scrollTop >750){

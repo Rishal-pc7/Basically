@@ -127,22 +127,54 @@
                      <input type="text" name="total" id="totalInput" value="{{total}}" hidden required>
                 </div>
                 <div class="input">
-                    <label for="">Whatsapp number</label>
-                     <input type="tel" name="wtsp-num" required>
+                    <label for="">Whatsapp number (optional)</label>
+                     <input type="tel" name="wtsp-num">
                 </div>
                <div class="checkout-options">
                 <h6>Payment Options</h6>
-               <div class="payment-option online-payment">
-                           <input type="radio" onchange="hideCODCaution()" name="paymentMethod" value="Online" required>                
-                            <label for="">RazorPay</label>
-               </div>
-               <div class="payment-option on-delivery">
-                   <input type="radio" onchange="showCODCaution()" name="paymentMethod" value="COD" required>
-                     <label for="">Cash On Delivery</label>                
-                   
+                <div class="options-box">
+                    <div class="options">
+                        <div class="input">
+                           <input type="radio"  name="paymentMethod" value="Online" required>                
+                        </div>
+                        <div class="option">
+                            <h5>Prepaid</h5>
+                        </div>
+                        <div class="total">
+                            <h5 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> <span data-total>{{total}}</span></h5>
+                        </div>
+                        
+                    </div>
+                    <div class="options cod">
+                        <div class="input" >
+                           <input type="radio" name="paymentMethod" value="COD" required>                
+                        </div>
+                        <div class="option" >
+                            <h5>Cash on Delivery</h5>
+                            <div class="caution">
+                                <p class="COD-caution">You will have to pay an extra INR 30 to proceed with Cash on delivery</p>
+                            </div>
+                        </div>
+                        <div class="total">
+                            <h5 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> <span data-total>{{#addValues total 30}} {{/addValues}}</span></h5>
+                        </div>
+                        
+                    </div>
+                    <div class="options">
+                        <div class="input" >
+                        </div>
+                        <div class="option" >
+                            <h5>Estimated Delivery Time</h5>
+                            
+                        </div>
+                        <div class="total">
+                            <h5 class="">5-7 Days</h5>
+                        </div>
+                        
+                    </div>
                 </div>
+               
               </div>
-                <p class="COD-caution" id="COD-caution"><i class="fa-solid fa-circle-info" style="margin-right: 3px;"></i>You will have to pay an extra INR 30 to proceed with Cash on delivery</p>
                 <div class="input">
                     <div class="btns">
                       <button class="goback">Back to Cart</button>
@@ -216,12 +248,7 @@
 <script src="/javascripts/jquery.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    async function showCODCaution(){
-       document.getElementById('COD-caution').style.display='block'
-    }
-    async function hideCODCaution(){
-       document.getElementById('COD-caution').style.display='none'
-    }
+    
     async function checkoutFormSubmitted(e){
         e.preventDefault()
        $.ajax({
@@ -251,7 +278,7 @@
     "currency": "INR",
     "name": "Basically",
     "description": "Test Transaction",
-    "image": "https://example.com/your_logo",
+    "image": "/images/logo.png",
     "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
     "handler": function (response){
         verifyPayment(response,order,cartId)
@@ -277,7 +304,7 @@
             if(res.success){
                 swal({
                     title:'Thank You!',
-                    text: "Order Placed Successfully!You will get notified with other details through whatsapp",
+                    text: "Order Placed Successfully!You will get notified with other details through your contact details",
                     icon: "success",
                   }).then(()=>{
                     location.href='/'

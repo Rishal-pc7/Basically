@@ -80,36 +80,40 @@
 .checkoutParentDiv .order-summary .item-details .items .item{
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 28% 43% 35%;
+    grid-auto-columns: 35% 42% 29%;
     width: 100%;
     margin-bottom: 2em;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-img{
     border: 1px solid #ccc;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     border-radius: 4px;
     margin-left: 2em;
     display: flex;
     justify-content: center;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-img img{
-    height:  150px;
+    height: 200px;
     aspect-ratio: 4/5;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-name{
     margin-left: -3em;
+    margin-top: 3em;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-name .name{
     font-weight: 600;
-    font-size: 21px;
+    font-size: 20px;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-name .size{
 
-    font-weight: 600;
-    font-size: 18px;
-    color: #9ba0a5;
-    margin-top: .5em;
+font-weight: 600;
+
+font-size: 18px;
+
+color: #9ba0a5;
+
+margin-top: .5em;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-name .size span{
     font-weight: 300;
@@ -121,10 +125,10 @@
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-price .price{
     font-weight: 600;
-    font-size: 22px;
+    font-size: 23px;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-price .price span{
-    font-size: 24px;
+    font-size: 26px;
     margin-left: 3px;
 }
 .checkoutParentDiv .order-summary .item-details .total-div{
@@ -148,23 +152,25 @@
     margin-bottom: 1em;
 }
 .checkoutParentDiv  .form-div input[type='text']{
-    padding: 10px 15px;
+    padding: 10px;
     border: 1px solid #ccc;
     outline: none;
     width: 620px;
-    font-size: 20px;
+    font-size: 18px;
+    font-family: inherit;
 }
 .checkoutParentDiv .form-div input[type='submit']{
-    padding: 15px 15px;
-    height: 45px;
+    padding: 12px 15px;
+    height: 85px;
     margin-top: 0px;
     border: 1px solid #ccc;
     background: #000;
     color: #fff;
-    font-size: 15px;
+    font-size: 18px;
     margin-left: -5px;
     outline: none;
-    width: 80px;
+    width: 85px;
+    font-family: inherit;
 }
 .checkoutParentDiv .form-div .danger-text{
     font-size: 18px;
@@ -201,11 +207,10 @@
     color: #9ba0a5;
 }
 .checkoutParentDiv .windows .leftWindow .redirected{
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     color: #000;
     margin-top: 2em;
-    
 }
 .checkoutParentDiv .windows .leftWindow .redirected .within-spans{
     margin-left: 1em;
@@ -215,7 +220,7 @@
 }
 .checkoutParentDiv .windows .leftWindow .checkout-options{
     padding-bottom: 1em;
-    height: 115px;
+    height: 300px;
     width: 105%;
     position: relative;
 }
@@ -223,21 +228,57 @@
     font-size: 18px;
     font-weight: 600;
 }
-.checkoutParentDiv .windows .leftWindow .checkout-options .payment-option{
-    width: 220px;
-    padding: 10px;
-    border-radius: 4px;
-    float: left;
-    margin-top: 2em;
-    margin-right: 1em;
-    text-align: center;
+.checkoutParentDiv .windows .leftWindow .checkout-options .options-box{
+    width: 100%;
+    height: 215px;
+    background: #fafafa;
+    border: 1px solid #ccc;
+    margin-top: 1em;
+    border-radius: 5px;
 }
+.checkoutParentDiv .windows .leftWindow .checkout-options .options-box .options{
+    width: 93%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 10% 70% 30%;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+    max-height: 30px;
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options .options-box .cod{
+    max-height: 100px;
+}
+
+.checkoutParentDiv .windows .leftWindow .checkout-options .options .input input[type="radio"] {
+    height: 20px;
+    margin-left: -10px;
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options .options-box .options .option{
+    padding-top: 9px;
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options .options-box .options .option h5{
+    font-size: 18px;
+    font-weight: 500;
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options .options-box .options .total{
+    padding-top: 14px;
+    right: 30px;
+    position: absolute;
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options .options-box .options .total h5{
+    font-size: 16px;
+    font-weight: 600;
+}
+.checkoutParentDiv .windows .leftWindow .checkout-options .options-box .options .total h5 span{
+    font-size: 18px;
+}
+
+
 .checkoutParentDiv .windows .leftWindow  .COD-caution{
-    display: none;
-    font-size: 15px;
+    font-size: 14px;
     color: #9ba0a5;
     margin-bottom: 1em;
-    margin-top: -20px;
+    margin-top: 10px;
 }
 .checkoutParentDiv .windows .leftWindow .checkout-options .online-payment svg{
     height: 28px;

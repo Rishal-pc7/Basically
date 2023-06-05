@@ -8,13 +8,12 @@ const verifyLogin = (req,res,next)=>{
   if(req.session.admin){
     next()
   }else{ 
-    res.redirect('/admin/login') 
+    res.redirect('/admin/login')  
   }
 }  
 /* GET users listing. */
 router.get('/',verifyLogin, function(req, res, next) {
-  console.log(process.env.COLOR)
-  userHelper.getProducts().then((products)=>{
+   userHelper.getProducts().then((products)=>{
 
     res.render('admin/home',{adminPage:true,products,admin:req.session.admin})
   })
