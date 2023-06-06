@@ -27,6 +27,9 @@ body {
   animation: fade .8s ease-in-out;
   
 }
+.cartSuperParentDiv{
+  display: none;
+}
 
 .mob-view{
   display: none;
