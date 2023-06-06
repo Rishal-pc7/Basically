@@ -7,25 +7,22 @@ let bcrypt = require('bcryptjs')
 module.exports={
     doLogin:(details)=>{
         return new Promise(async(resolve, reject) => {
-           details.password=await bcrypt.hash(details.password,10)
-           db.get().collection(collection.USER_COLLECTION).insertOne(details).then((data)=>{
-            resolve(data.insertedId)
-         })
-            // let admin = await db.get().collection(collection.ADMIN_COLLECTION).findOne({email:details.email})
-            // if(admin){
-            //    bcrypt.compare(details.password,admin.password).then((status)=>{
-            //     let response={}
-            //     if(status){
-            //         response.status=true
-            //         response.admin=admin
-            //     }else{
-            //         resolve({passErr:true})
-            //     }
-            //     resolve(response)
-            //    })
-            // }else{
-            //     resolve({adminErr:true})
-            // }
+           
+            let admin = await db.get().collection(collection.ADMIN_COLLECTION).findOne({email:details.email})
+            if(admin){
+               bcrypt.compare(details.password,admin.password).then((status)=>{
+                let response={}
+                if(status){
+                    response.status=true
+                    response.admin=admin
+                }else{
+                    resolve({passErr:true})
+                }
+                resolve(response)
+               })
+            }else{
+                resolve({adminErr:true})
+            }
         })
     },
     convertToBase64:(images,proCat,proColor)=>{
