@@ -1,0 +1,69 @@
+.policyParentDiv{
+    text-align: center;
+    padding: 85px 160px;
+    min-height: 900px;
+}
+.policyParentDiv .heading{
+    padding-top: 3em;
+    padding-bottom: 2em;
+}
+.policyParentDiv .heading h5{
+    font-weight: 600;
+    font-size: 26px;
+}
+.policyParentDiv  li:first-child{
+    margin-top: 1em;
+}
+.policyParentDiv  li{
+    margin-left: 25px;
+}
+.policyParentDiv .content p , .policyParentDiv  li{
+    font-weight: 300;
+    font-size: 20px;
+}
+.policyParentDiv .para{
+    margin-top: 3em;
+}
+.policyParentDiv .small-para{
+    margin-top: 1.5em;
+}
+.policyParentDiv .subheading{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 1em;
+}
+.policyParentDiv .para .content ,.policyParentDiv .small-para .content {
+    text-align: left;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 1250px){
+    .policyParentDiv{
+        text-align: center;
+        padding: 125px 55px;
+        min-height: 900px;
+    }
+    .policyParentDiv  li{
+        margin-left: 35px;
+    }
+    .policyParentDiv .heading{
+        padding-top: 3em;
+        padding-bottom: 2em;
+    }
+    .policyParentDiv .heading h5{
+        font-weight: 600;
+        font-size: 35px;
+    }
+    .policyParentDiv .content p ,.policyParentDiv  li{
+        font-weight: 300;
+        font-size: 26px;
+        line-height: 1.5em;
+    }
+    .policyParentDiv .subheading{
+        font-size: 28px;
+        font-weight: 600;
+        text-align: left;
+        margin-bottom: 1em;
+    }
+    
+}

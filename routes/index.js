@@ -38,6 +38,18 @@ router.get('/',async function(req, res, next) {
   res.render('index', { clientPage:true,user:req.session.user,products,colors,emptyCart,cart,cartId,total});
 });
 
+router.get('/terms&conditions',async function(req, res, next) {
+  res.render("pages/terms",{clientPage:true})
+})
+router.get('/return-policy',async function(req, res, next) {
+  res.render("pages/return-policy",{clientPage:true})
+})
+router.get('/privacy-policy',async function(req, res, next) {
+  res.render("pages/privacy-policy",{clientPage:true})
+})
+router.get('/shipping-policy',async function(req, res, next) {
+  res.render("pages/shipping-policy",{clientPage:true})
+})
 router.get('/product-page/:id',async function(req, res, next) {
   let user
   let guestUser=false
@@ -117,11 +129,10 @@ router.post('/checkout',async(req,res,next)=>{
     user=req.sessionID
   }
   let products=await userHelper.getCartProducts(req.body.cartId)
-  console.log(products);
   userHelper.placeOrder(req.body,products,user).then(async(data)=>{
     
     if(data.status === 'Placed'){
-      res.json({codSuccess:true}) 
+      res.json({codSuccess:true,id:data.orderId}) 
       let email=await userHelper.sendMail(data.orderId)
       }
       else if(data.status === 'Pending'){
@@ -136,14 +147,20 @@ router.post('/verifyPayment',(req,res,next)=>{
   console.log(req.body);
   userHelper.verifyPayment(req.body).then((data)=>{
      userHelper.changeOrderStatus(req.body['order[receipt]'],req.body.cartId).then(async(status)=>{
-      if(status){
-        res.json({success:true})
+      if(status.status){
+        res.json({success:true,id:status.id})
         let email=await userHelper.sendMail(req.body['order[receipt]'])
       }   
      })
   }).catch((err)=>{
     console.log('Err');
     res.json({success:false})
+  })
+})
+router.get('/thank-you/:id',(req,res,next)=>{
+  userHelper.getOrderProducts(req.params.id).then((orders)=>{
+
+    res.render('pages/thankyou-page',({clientPage:true,orders}))
   })
 })    
 router.post('/applyCoupon',(req,res,next)=>{

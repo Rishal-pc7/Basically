@@ -480,7 +480,7 @@ module.exports={
             }).then(()=>{
                 db.get().collection(collection.CART_COLLECTION).deleteOne({_id:new objectId(cartId)}).then((res)=>{
 
-                    resolve({status:true})
+                    resolve({status:true,id:orderId})
                 })
             })
         })
@@ -496,6 +496,7 @@ module.exports={
                 date:"$date",
                 total:"$total",
                 size:"$products.size",
+                quantity:"$products.quantity",
                 paymentMethod:"$paymentMethod"
                 
             }},
@@ -508,17 +509,17 @@ module.exports={
                 }
             },
             {
-                $project:{proId:1,deliveryDetails:1,date:1,total:1,size:1,paymentMethod:1,products:{$arrayElemAt:['$products',0]}}
+                $project:{proId:1,deliveryDetails:1,date:1,total:1,size:1,paymentMethod:1,quantity:1,products:{$arrayElemAt:['$products',0]}}
             }
         ]).toArray()
         let proHtml
         if(orderProducts.length === 1){
             proHtml=`<h4>Products</h4>
-            <ul><li>Item:${orderProducts[0].products.category} Size:${orderProducts[0].size} Color:${orderProducts[0].products.color} Price:${orderProducts[0].products.price}</li></ul>
+            <ul><li>Item:${orderProducts[0].products.category} Size:${orderProducts[0].size} Quantity:${orderProducts[0].quantity} Color:${orderProducts[0].products.color} Price:${orderProducts[0].products.price}</li></ul>
             `
         }else{
             for(i in orderProducts){
-                proHtml+=`<ul><li>Item:${orderProducts[i].products.category} Size:${orderProducts[i].size} Color:${orderProducts[i].products.color} Price:${orderProducts[i].products.price}</li></ul>`
+                proHtml+=`<ul><li>Item:${orderProducts[i].products.category} Size:${orderProducts[i].size} Quantity:${orderProducts[i].quantity} Color:${orderProducts[i].products.color} Price:${orderProducts[i].products.price}</li></ul>`
             }
         }
         let html=`<h4>Order Id:${orderProducts[0]._id}</h4>
@@ -557,5 +558,35 @@ module.exports={
         console.log(info.messageId)
         resolve(info)
        })
+    },
+    getOrderProducts:(orderId)=>{
+        return new Promise(async(resolve, reject) => {
+            let orderProducts=await db.get().collection(collection.ORDER_COLLECTION).aggregate([
+                {$match:{_id:new objectId(orderId)}},
+                {$unwind:"$products"},
+                {$project:{
+                    proId:"$products.proId",
+                    deliveryDetails:"$deliveryDetails",
+                    date:"$date",
+                    total:"$total",
+                    size:"$products.size",
+                    quantity:"$products.quantity",
+                    paymentMethod:"$paymentMethod"
+                    
+                }},
+                {
+                    $lookup:{
+                        from:collection.PRODUCT_COLLECTION,
+                        localField:'proId',
+                        foreignField:'_id',
+                        as:'products'
+                    }
+                },
+                {
+                    $project:{proId:1,deliveryDetails:1,date:1,total:1,size:1,paymentMethod:1,quantity:1,products:{$arrayElemAt:['$products',0]}}
+                }
+            ]).toArray()
+            resolve(orderProducts)           
+        })
     }   
 }

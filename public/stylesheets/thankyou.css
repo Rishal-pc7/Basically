@@ -1,0 +1,327 @@
+
+
+.thankyouParentDiv{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   height: 1500px;
+   background: #fafafa;
+}
+.thankyouParentDiv .thankyouDiv{
+    background: #fff;
+    width: 65%;
+    margin-top: 10em;
+    padding: 70px;
+}
+.thankyouParentDiv .thankyouDiv .header{
+    text-align: center;
+}
+.thankyouParentDiv .thankyouDiv .header h5{
+    font-weight: 500;
+    font-size: 24px;
+}
+.thankyouParentDiv .thankyouDiv .header h6{
+    font-weight: 300;
+    font-size: 18px;
+    margin-top: 1em;
+}
+.thankyouParentDiv .thankyouDiv .shipping-div{
+    
+    height: 220px;
+    border: 1px solid #ccc;
+    margin-top: 2em;
+    padding: 30px;
+}
+.thankyouParentDiv .thankyouDiv .shipping-div .shipping-add{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 35% 65%;
+    margin-bottom: 1em;
+}
+.thankyouParentDiv .thankyouDiv .shipping-div .shipping-add h5 {
+    font-weight: 600;
+    font-size: 22px;
+}
+.thankyouParentDiv .thankyouDiv .shipping-div .shipping-add  p {
+    font-weight: 500;
+    font-size: 20px;
+}
+.thankyouParentDiv .thankyouDiv .order-summary{
+    min-height: 580px;
+    max-height:1880px ;
+    border: 1px solid #ccc;
+    margin-top: 2em;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .products{
+    min-height: 250px;
+    max-height:1150px ;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .products .product{
+    height: 220px;
+    border-bottom: 1px solid #ccc;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 25% 35% 15% 25%;
+    padding: 20px;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-img img{
+    width: 180px;
+    height: 215px;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-details .options{
+    padding-top: 1em;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-details h4{
+    font-size: 26px;
+    font-weight: 500;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-details h5{
+    font-size: 16px;
+    font-weight: 500;
+    color: #ccc;
+    margin-top: 1em;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-quantity h6{
+    margin-top: 1em;
+    font-size: 20px;
+    font-weight: 500;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-price{
+    margin-left: 8em;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-price h5{
+    font-size: 20px;
+    margin-top: 1em;
+    font-weight: 600;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-price h5 span{
+    font-size: 22px;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .subtotal-div{
+    padding: 50px;
+    position: relative;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals{
+    position: absolute;
+    right: 40px;
+    width: 300px;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals .sub-totals{
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ccc;
+}
+
+.thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals .sub-totals .sub-total{
+    position: relative;
+    display:grid ;
+    grid-auto-flow: column;
+    margin-bottom: 1.5em;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals p{
+    
+    font-weight: 500;
+    font-size: 22px;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals  .value {
+    position: absolute;
+    right: 10px;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals  .value h5{
+    font-weight: 600;
+    font-size: 20px;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals  .value h5 i{
+    font-size: 20px;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals  .main-total{
+    position: relative;
+    display:grid ;
+    grid-auto-flow: column;
+    margin-top: 2.5em;
+}
+.thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals  .main-total .key p{
+    font-weight: 600;
+}
+.thankyouParentDiv .thankyouDiv .gohome {
+
+    text-align: center;
+    margin-top: 2em;
+}
+.thankyouParentDiv .thankyouDiv .gohome a{
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    color: #000;
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 1250px){
+  
+
+.thankyouParentDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-height: 1500px;
+    background: #fafafa;
+    max-height: 2500px;
+ }
+ .thankyouParentDiv .thankyouDiv{
+     background: #fff;
+     width: 80%;
+     margin-top: 10em;
+     padding: 50px;
+ }
+ .thankyouParentDiv .thankyouDiv .header{
+     text-align: center;
+ }
+ .thankyouParentDiv .thankyouDiv .header h5{
+     font-weight: 500;
+     font-size: 35px;
+ }
+ .thankyouParentDiv .thankyouDiv .header h6{
+     font-weight: 300;
+     font-size: 28px;
+     margin-top: 1em;
+ }
+ .thankyouParentDiv .thankyouDiv .shipping-div{
+     
+     height: 220px;
+     border: 1px solid #ccc;
+     margin-top: 2em;
+     padding: 30px;
+ }
+ .thankyouParentDiv .thankyouDiv .shipping-div .shipping-add{
+     display: grid;
+     grid-auto-flow: column;
+     grid-template-columns: 45% 65%;
+     margin-bottom: 1em;
+ }
+ .thankyouParentDiv .thankyouDiv .shipping-div .shipping-add h5 {
+     font-weight: 600;
+     font-size: 28px;
+ }
+ .thankyouParentDiv .thankyouDiv .shipping-div .shipping-add  p {
+     font-weight: 500;
+     font-size: 26px;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary{
+    min-height: 300px;
+    max-height: 1500px;
+    border: 1px solid #ccc;
+    margin-top: 2em;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .products{
+    min-height: 240px;
+    max-height: 1200px;
+    height: auto;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .products .product{
+     
+    height: 240px;
+    border-bottom: 1px solid #ccc;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 30% 40% 15% 15%;
+    padding: 20px;
+
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-img img{
+    width: 200px;
+    height: 235px;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-details{
+    height: 215px;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-details .options{
+     padding-top: 1em;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-details h4{
+    font-size: 32px;
+    font-weight: 500;
+
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-details h5{
+    font-size: 26px;
+    font-weight: 500;
+    color: #ccc;
+    margin-top: 1em;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-quantity h6{
+    margin-top: 1em;
+    font-size: 28px;
+    font-weight: 500;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-price{
+     margin-left: 1em;
+     margin-top: 4px;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-price h5{
+    font-size: 26px;
+    margin-top: 1em;
+    font-weight: 600;
+
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .products .product .pro-price h5 span{
+     font-size: 28px;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .subtotal-div{
+    padding: 50px;
+    position: relative;
+    height: 280px;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals{
+    position: relative;
+    right: auto;
+    width: auto;
+
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals .sub-totals{
+     padding-bottom: 0.5em;
+     border-bottom: 1px solid #ccc;
+ }
+ 
+ .thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals .sub-totals .sub-total{
+     position: relative;
+     display:grid ;
+     grid-auto-flow: column;
+     margin-bottom: 1.5em;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals p{
+     
+    font-weight: 500;
+    font-size: 30px;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals  .value {
+     position: absolute;
+     right: 10px;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals  .value h5{
+    font-weight: 600;
+    font-size: 30px;
+
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals  .value h5 i{
+     font-size: 30px;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals  .main-total{
+     position: relative;
+     display:grid ;
+     grid-auto-flow: column;
+     margin-top: 2.5em;
+ }
+ .thankyouParentDiv .thankyouDiv .order-summary .subtotal-div .totals  .main-total .key p{
+     font-weight: 600;
+ }
+ .thankyouParentDiv .thankyouDiv .gohome {
+ 
+     text-align: center;
+     margin-top: 5em;
+ }
+ .thankyouParentDiv .thankyouDiv .gohome a{
+     text-decoration: underline;
+     text-underline-offset: 10px;
+     color: #000;
+     font-size: 30px;
+ }
+     
+}

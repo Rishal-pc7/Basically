@@ -4,6 +4,7 @@
     height: 100vh;
     top: 0;
     z-index: 1;
+    display: none;
 }
 .cartParentDiv .hiddenDiv{
     position: fixed;

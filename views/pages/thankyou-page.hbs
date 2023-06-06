@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="/stylesheets/thankyou.css">
+<script>
+        
+        !function(f,b,e,v,n,t,s){
+        if(f.fbq)
+        return;
+        n=f.fbq=function(){
+          n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+         fbq('init', '172181538913764');
+         fbq('track', 'Purchase');
+     </script>
+<div class="thankyouParentDiv">
+    <div class="thankyouDiv">
+
+    <div class="header">
+        <h5>Thank you,{{orders.0.deliveryDetails.name}}</h5>
+        <h6>You will get a conformation email soon</h6>
+    </div>
+    <div class="shipping-div">
+        <div class="shipping-add">
+            <div class="key">
+               <h5>Shipping Address</h5>
+            </div>
+            <div class="value">
+              <h5>Billing Address</h5>
+            </div>
+        </div>
+        <div class="shipping-add">
+            <div class="key">
+               <p>Customer Name</p>
+            </div>
+            <div class="value">
+              <p>{{orders.0.deliveryDetails.name}}</p>
+            </div>
+        </div>
+        <div class="shipping-add">
+            <div class="key">
+               <p>City , Pincode</p>
+            </div>
+            <div class="value">
+              <p>{{orders.0.deliveryDetails.city}} , {{orders.0.deliveryDetails.pincode}}</p>
+            </div>
+        </div>
+        <div class="shipping-add">
+            <div class="key">
+               <p>Phone</p>
+            </div>
+            <div class="value">
+              <p>{{orders.0.deliveryDetails.phone}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="order-summary">
+        <div class="products">
+            {{#each orders}}
+            <div class="product">
+                <div class="pro-img">
+
+                    <img src="{{this.products.coverImage}}" alt="">
+                </div>
+                <div class="pro-details">
+                    <div class="options">
+                        <h4>{{this.products.category}}</h4>
+                        <h5>Size : {{this.size}}</h5>
+                        <h5>Color : Black</h5>
+                    </div>
+
+                </div>
+                <div class="pro-quantity">
+                    <h6>Qty : {{this.quantity}}</h6>
+                </div>
+                <div class="pro-price">
+                    <h5><i class="fa-solid fa-indian-rupee-sign"></i> <span>{{this.products.price}}</span></h5>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="subtotal-div">
+              <div class="totals">
+                <div class="sub-totals">
+                    <div class="sub-total">
+
+                   <div class="key">
+                      <p>Subtotal</p>
+                   </div>
+                   <div class="value">
+                    <h5><i class="fa-solid fa-indian-rupee-sign"></i> {{orders.0.total}}</h5>
+                   </div>
+                    </div>
+                    <div class="sub-total">
+
+                   <div class="key">
+                      <p>Currency</p>
+                   </div>
+                   <div class="value">
+                      <p>INR</p>
+                   </div>
+                    </div>
+                    <div class="sub-total">
+
+                   <div class="key">
+                      <p>Shipping</p>
+                   </div>
+                   <div class="value">
+                      <p>Free</p>
+                   </div>
+                    </div>
+                </div>
+                <div class="main-total">
+                   <div class="key">
+                      <p>Total</p>
+                   </div>
+                   <div class="value">
+                      <h5><i class="fa-solid fa-indian-rupee-sign"></i> {{orders.0.total}}</h5>
+                   </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="gohome">
+
+    <a href="/">Contine Browsing</a>
+    </div>
+    </div>
+</div>
