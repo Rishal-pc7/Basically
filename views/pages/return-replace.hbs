@@ -1,0 +1,99 @@
+ <link rel="stylesheet" href="/stylesheets/return-replace.css">
+
+<div class="returnParentDiv">
+    <div class="returnDiv">
+        <h5 class="heading">Return/Replacement</h5>
+        <div class="form-div">
+            <form  id="returnForm" onsubmit="returnFormSubmitted(event)">
+               <div class="input">
+                <label for="">Order ID</label>
+                <input type="text" name="orderId" required>
+               </div>
+               <div class="input">
+                <label for="">Item</label>
+                <input type="text" name="item" required>
+               </div>
+               <div class="double-input">
+                  <div class="input">
+                      <label for="">Color</label>
+                      <input type="text" name="color" required>
+                  </div>
+                  <div class="input">
+                      <label for="">Size</label>
+                    <select name="size" id="">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                        <option value="3XL">3XL</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input">
+                      <label for="">Contact Information</label>
+                      <input type="text" name="contact" required>
+                </div>
+                <div class="input">
+                    <div class="options">
+                        <div class="option">
+
+                      <input type="radio" name="option" value="Return" checked required>
+                       <label for="">Return</label>
+                    </div>
+                        <div class="option">
+
+                        <input type="radio" name="option" value="Replace" required>
+                        <label for="">Replace</label>
+                        </div>
+                    </div>
+                </div>            
+                
+                <div class="terms">
+                    
+                    <input type="checkbox" name="agree" value="Agreed" id="agreeCheck" onchange="enableCheck()" required>
+                    <label for="">By Clicking this you agreed our terms and conditions<a href="/return-policy">View Return Policy</a></label>
+                </div>
+                <div class="input">
+                      <input type="submit" id="returnSubmit" value="SUBMIT" disabled required>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
+<script>
+
+      function enableCheck(){
+      let agreeCheck=document.getElementById('agreeCheck')
+
+         if(agreeCheck.checked){
+           document.getElementById('returnSubmit').removeAttribute('disabled')
+         }else{
+           document.getElementById('returnSubmit').setAttribute('disabled',"true")
+
+         }
+      }  
+    function returnFormSubmitted(e){
+        e.preventDefault()
+       $.ajax({
+        url:'/return-or-replace',
+        data:$('#returnForm').serialize(),
+        method:'post',
+        success:(res)=>{
+            if(res.success){
+                swal({
+                    title:'Return Issued',
+                    text: "Our team will verify your request and contact you as soon as possible",
+                    icon: "success",
+                }).then(()=>{
+                    location.href='/'
+                })
+            }
+        }
+       })
+    }
+</script>

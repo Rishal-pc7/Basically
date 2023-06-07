@@ -50,6 +50,14 @@ router.get('/privacy-policy',async function(req, res, next) {
 router.get('/shipping-policy',async function(req, res, next) {
   res.render("pages/shipping-policy",{clientPage:true})
 })
+router.get('/return-replace',async function(req, res, next) {
+  res.render("pages/return-replace",{clientPage:true})
+})
+router.post('/return-or-replace',async function(req, res, next) {
+  userHelper.submitReturn(req.body).then((data)=>{
+    res.json({success:true})
+  })
+})
 router.get('/product-page/:id',async function(req, res, next) {
   let user
   let guestUser=false

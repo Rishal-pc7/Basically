@@ -1,0 +1,141 @@
+.returnParentDiv{
+    background: #fafafa;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 900px;
+}
+.returnParentDiv .returnDiv{
+    position: absolute;
+    margin-top: 10em;
+    width: 50%;
+    padding: 50px 100px;
+    min-height:500px ;
+    background: #fff;
+}
+.returnParentDiv .returnDiv .heading{
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    
+}
+.returnParentDiv .returnDiv .form-div{
+    margin-top: 2em;
+}
+.returnParentDiv .returnDiv .form-div .input label{
+    font-size: 20px;
+}
+.returnParentDiv .returnDiv .form-div .input select{
+    width: 108% !important;
+}
+.returnParentDiv .returnDiv .form-div .input input ,.returnParentDiv .returnDiv .form-div .input select{
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    margin-top: .5em;
+    outline: none;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    padding: 10px;
+}
+.returnParentDiv .returnDiv .form-div .double-input{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3em;
+}
+.returnParentDiv .returnDiv .form-div .input .options{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 150px 150px;
+}
+.returnParentDiv .returnDiv .form-div .input .options label{
+    margin-left: 4px;
+}
+.returnParentDiv .returnDiv .form-div .input input[type='radio']{
+    width: auto;
+    transform: scale(1.2);
+}
+.returnParentDiv .returnDiv .form-div .terms{
+    margin-top: 1.5em;
+}
+.returnParentDiv .returnDiv .form-div .terms label{
+    font-size: 16px;
+    margin-left: 4px;
+}
+.returnParentDiv .returnDiv .form-div .terms label a{
+    margin-left: 2px;
+    color: black;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+.returnParentDiv .returnDiv .form-div .terms input[type='checkbox']{
+    transform: scale(1.2);
+}    
+.returnParentDiv .returnDiv .form-div .input input[type='submit']{
+    width: 20%;
+    padding: 10px;
+    background: #000;
+    margin-top: 2em;
+    color: #fff;
+    font-family: inherit;
+}
+.returnParentDiv .returnDiv .form-div .input input[type='submit']:disabled{
+    background: #e1dfdf;
+    color: #ccc;
+}
+.returnParentDiv .returnDiv .form-div .input input[type='submit']:disabled:hover,.returnParentDiv .returnDiv .form-div .input input[type='submit']:disabled:focus {
+    background: #e1dfdf;
+    color: #ccc;
+
+}
+.returnParentDiv .returnDiv .form-div .input input[type='submit']:hover,.returnParentDiv .returnDiv .form-div .input input[type='submit']:focus {
+    background: #333;
+}
+@media only screen and (min-width: 200px) and (max-width: 1250px){
+    .returnParentDiv{
+        min-height: 1200px;
+    }
+    .returnParentDiv .returnDiv{
+        width: 75%;
+        padding: 50px;
+    }
+    .returnParentDiv .returnDiv .heading{
+        font-size: 35px;
+    }
+    .returnParentDiv .returnDiv .form-div .input label{
+        font-size: 30px;
+    }
+    
+    .returnParentDiv .returnDiv .form-div .input input,.returnParentDiv .returnDiv .form-div .input select{
+        width: 95%;
+        font-size: 24px;
+        padding: 20px;
+    }
+    .returnParentDiv .returnDiv .form-div .input .options{
+        grid-template-columns: 230px 230px;
+    }
+    .returnParentDiv .returnDiv .form-div .input .options label{
+        margin-left: 15px;
+    }
+    .returnParentDiv .returnDiv .form-div .input input[type='radio']{
+        width: auto;
+        transform: scale(2.2);
+    }
+    .returnParentDiv .returnDiv .form-div .terms{
+        margin-top: 2.5em;
+    }
+    .returnParentDiv .returnDiv .form-div .terms label{
+        font-size: 20px;
+        margin-left: 25px;
+    }
+    .returnParentDiv .returnDiv .form-div .terms input[type='checkbox']{
+        transform: scale(2.2);
+    }    
+    .returnParentDiv .returnDiv .form-div .input input[type='submit']{
+        width: 25%;
+    }
+    .returnParentDiv .returnDiv .form-div .double-input{
+        grid-auto-columns: 45% 45%;
+    }
+}
+

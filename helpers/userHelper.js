@@ -555,9 +555,42 @@ module.exports={
             subject:'Order Placed',
             html:html
         })
-        console.log(info.messageId)
         resolve(info)
        })
+    },
+    submitReturn:(details)=>{
+        return new Promise(async(resolve, reject) => {
+            let html=`<h4>A ${details.option} Issued</h4>
+            <h4>ORDER ID:${details.orderId}</h4>
+            <ul>
+               <li style='list-style:none'>Item : ${details.item}</li>
+               <li style='list-style:none'>Color : ${details.color}</li>
+               <li style='list-style:none'>Size : ${details.size}</li>
+            </ul>
+            <h3>Contact Information : ${details.contact}</h3>
+            `
+            const transporter= nodemailer.createTransport({
+                host:"smtp.gmail.com",
+                port:587,
+                secure:false,
+                auth:{
+                    user:'messagebot69@gmail.com',
+                    pass:'qlsrdpftmtcbxart'
+                },
+                tls: {
+                    ciphers:'SSLv3'
+                }
+            })
+            const info=await transporter.sendMail({
+                from:'Basically_Bot <messagebot69@gmail.com> ',
+                to:"fasalrahmanpv7@gmail.com",
+                subject:'Order Placed',
+                html:html
+            })
+
+            resolve(info)
+                
+        })
     },
     getOrderProducts:(orderId)=>{
         return new Promise(async(resolve, reject) => {

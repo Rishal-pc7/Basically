@@ -380,8 +380,7 @@
     document.getElementById('stickyAddToCart').setAttribute('disabled',true)
   }
 </script>
-<script src="/javascripts/jquery.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
 <script>
   async function addToCart(proId,quantity){
       let sizeTag=document.querySelectorAll('[data-size]')
@@ -408,9 +407,9 @@
             document.getElementById('cartLength').innerHTML = cartlength+1
             }
             
-                swal("Product Added to Cart Successfully", {
+                swal({
                     title:'Congrats!',
-                    text: "Your product has been added to cart successfully,Apply Coupon Code 'FIRSTORDER' to get upto 10% off",
+                    text: "Your product has been added to cart successfully",
                     icon: "success",
                   }).then(()=>{
                     sessionStorage.setItem('showCart',true)

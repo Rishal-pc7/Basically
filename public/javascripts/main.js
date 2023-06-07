@@ -178,7 +178,7 @@ window.onscroll=()=>{
         mobNav.style.backgroundColor='#FFFF'
         mobNav.style.paddingTop='.5em'
         links.forEach((link) => {
-            link.style.color='#000'
+            link.style.color='#000' 
         });
     }else{
         if(optionsHovered){
