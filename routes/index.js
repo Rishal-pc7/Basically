@@ -39,19 +39,24 @@ router.get('/',async function(req, res, next) {
 });
 
 router.get('/terms&conditions',async function(req, res, next) {
-  res.render("pages/terms",{clientPage:true})
+  let products=await userHelper.getProducts()
+  res.render("pages/terms",{clientPage:true,products})
 })
 router.get('/return-policy',async function(req, res, next) {
-  res.render("pages/return-policy",{clientPage:true})
+  let products=await userHelper.getProducts()
+  res.render("pages/return-policy",{clientPage:true,products})
 })
 router.get('/privacy-policy',async function(req, res, next) {
-  res.render("pages/privacy-policy",{clientPage:true})
+  let products=await userHelper.getProducts()
+  res.render("pages/privacy-policy",{clientPage:true,products})
 })
 router.get('/shipping-policy',async function(req, res, next) {
-  res.render("pages/shipping-policy",{clientPage:true})
+  let products=await userHelper.getProducts()
+  res.render("pages/shipping-policy",{clientPage:true,products})
 })
 router.get('/return-replace',async function(req, res, next) {
-  res.render("pages/return-replace",{clientPage:true})
+  let products=await userHelper.getProducts()
+  res.render("pages/return-replace",{clientPage:true,products})
 })
 router.post('/return-or-replace',async function(req, res, next) {
   userHelper.submitReturn(req.body).then((data)=>{
@@ -92,7 +97,7 @@ router.get('/addToCart/:proId/:size',async function(req,res,next){
   let user 
   let isGuest=false 
   if(req.session.user){ 
-  
+    
     user=req.session.user._id
   }else{ 
     isGuest=true
@@ -146,15 +151,15 @@ router.post('/checkout',async(req,res,next)=>{
       else if(data.status === 'Pending'){
         userHelper.generateRazorPay(data.orderId,data.total).then((response)=>{    
             res.json({response,cartId:req.body.cartId})
-        })
-
+          })
+          
       } 
   })
 })
 router.post('/verifyPayment',(req,res,next)=>{ 
   console.log(req.body);
   userHelper.verifyPayment(req.body).then((data)=>{
-     userHelper.changeOrderStatus(req.body['order[receipt]'],req.body.cartId).then(async(status)=>{
+    userHelper.changeOrderStatus(req.body['order[receipt]'],req.body.cartId).then(async(status)=>{
       if(status.status){
         res.json({success:true,id:status.id})
         let email=await userHelper.sendMail(req.body['order[receipt]'])
@@ -166,9 +171,10 @@ router.post('/verifyPayment',(req,res,next)=>{
   })
 })
 router.get('/thank-you/:id',(req,res,next)=>{
-  userHelper.getOrderProducts(req.params.id).then((orders)=>{
-
-    res.render('pages/thankyou-page',({clientPage:true,orders}))
+  userHelper.getOrderProducts(req.params.id).then(async(orders)=>{
+    let products=await userHelper.getProducts()
+    
+    res.render('pages/thankyou-page',({clientPage:true,orders,products}))
   })
 })    
 router.post('/applyCoupon',(req,res,next)=>{

@@ -227,9 +227,9 @@
 
 
 .mobile-nav .side-menu .hoverOpts .MobOption .items-options  .items-list{
-    width: 100%;
+    width: 90%;
     float: left;
-    padding: 1em 4em;
+    padding: 0px 4em;
 }
 .mobile-nav .side-menu .hoverOpts .MobOption .items-options  .items-list li{
     list-style: none;
@@ -240,7 +240,7 @@
     text-decoration: none;
     color: #57595B;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 22px;
 }
 .mobile-nav .side-menu .hoverOpts .MobOption .items-options  .items-list li:first-child{
     margin-top: 2em;

@@ -93,7 +93,7 @@
 }
 @media only screen and (min-width: 200px) and (max-width: 1250px){
     .returnParentDiv{
-        min-height: 1200px;
+        min-height: 1210px;
     }
     .returnParentDiv .returnDiv{
         width: 75%;
@@ -126,7 +126,7 @@
     }
     .returnParentDiv .returnDiv .form-div .terms label{
         font-size: 20px;
-        margin-left: 25px;
+        margin-left: 15px;
     }
     .returnParentDiv .returnDiv .form-div .terms input[type='checkbox']{
         transform: scale(2.2);
