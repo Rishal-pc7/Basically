@@ -1,4 +1,3 @@
-
 let navbar =document.getElementById('navbar')
 let mobNav =document.getElementById('mob-nav')
 let content =document.getElementById('content')
@@ -23,7 +22,6 @@ let id = null
 let screenL=window.screenLeft
 var links = [].slice.call(linksColl);
 async function menuBtnClicked(){
-
     menuBtn.style.display='none'
     document.getElementById('mobNavItems').style.display='none'
     mobNavBrand.style.display='none'
@@ -33,11 +31,7 @@ async function menuBtnClicked(){
     clearInterval(id)
     mobSideBar.style.display='block'
     body.style.overflowY='hidden'
-    
-    
 }
-
-
 async function menuCloseBtnClicked(){
     mobSideBar.style.animationName='unfade'
     mobSideBar.style.animationDuration='.8s'
@@ -49,9 +43,6 @@ async function menuCloseBtnClicked(){
         document.getElementById('mobNavItems').style.display='block'
     },800)
     body.style.overflowY='scroll'
-    
-    
-    
 }
 async function isInViewport(el) {
     const rect = el.getBoundingClientRect();
@@ -60,69 +51,47 @@ async function isInViewport(el) {
         rect.left >= 0 &&
         rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-
     );
 }
 window.onload=()=>{
-    let proImgSeen
     let cartShow=sessionStorage.getItem("showCart")
     if(cartShow){
         showCart()
         sessionStorage.removeItem("showCart")  
     }
-   
-
-  
 }
-
-
 if(navbar){
-
     navbar.onmouseover=()=>{
         navHovered=true
     links.forEach((link) => {
         link.style.color='#000'
-        
     });
     navbar.style.backgroundColor='#FFFF'
-    
 }
-
 navbar.onmouseleave=()=>{
-    
     shopOptOut()
     transpOptOut()
     abtOptOut()
     if(location.pathname === '/'){
-        
         if(document.body.scrollTop > 40 || document.documentElement.scrollTop >40){
-            
-            
             links.forEach((link) => {
                 link.style.color='black'
-                
             });
            navbar.style.backgroundColor='#FFFF'
         }else{
             links.forEach((link) => {
                 link.style.color='#FFFF'
-                
             });
             navbar.style.backgroundColor='transparent'
-            
         }
-        
     }
 }
 }
 let premCards=document.getElementById('prem-product-cards')
-let lightCards=document.getElementById('light-product-cards')
 let prevBtn=document.getElementById('prev-btn')
 let scrollCard=0
-let lightScrollCard=0
 async function nextBtnClicked(nextBtn,cat){
     if(cat === 'prem'){
-
         premCards.scrollLeft += 500
         scrollCard=premCards.scrollLeft.toFixed()
         let premNewScroll=premCards.scrollLeft
@@ -133,41 +102,17 @@ async function nextBtnClicked(nextBtn,cat){
             nextBtn.style.color='#ccc'
         }
     }
-    if(cat === 'light'){
-
-        lightCards.scrollLeft += 500
-        lightScrollCard=lightCards.scrollLeft.toFixed()
-        let newScroll=lightCards.scrollLeft
-        let width=lightCards.offsetWidth
-        let scrollWidth=lightCards.scrollWidth
-        let offSet=scrollWidth - newScroll -width
-        if(offSet < 1){
-            nextBtn.style.color='#ccc'
-        }
-    }
     nextBtn.closest('[data-btns]').querySelector('[data-prev-btn]').style.color='#000'
 }
 async function prevBtnClicked(prevBtn,cat){
     if(cat === 'prem'){
-
         premCards.scrollLeft -= 500
         scrollCard=premCards.scrollLeft.toFixed()
         if(scrollCard<500){
             prevBtn.style.color='#ccc'
-            
         }
     }
-    if(cat === 'light')
-    lightCards.scrollLeft -= 500
-    lightScrollCard=lightCards.scrollLeft.toFixed()
-    if(lightScrollCard<500){
-        prevBtn.style.color='#ccc'
-        
-    }
     prevBtn.closest('[data-btns]').querySelector('[data-next-btn]').style.color='#000'
-
-    
-    
 }
 let colln=document.getElementById('collections')
 let heroCntnt=document.getElementById('hero-content')
@@ -176,7 +121,6 @@ if (location.pathname === '/') {
     navbar.style.backgroundColor='transparent'
         links.forEach((link) => {
             link.style.color='#FFFF'
-            
         })               
 }
 if(proPath.indexOf('/product') >  -1){
@@ -199,40 +143,27 @@ if(x.matches){
     })               
 }
 }
-
 let xscrolled
 let scrollTop=document.documentElement.scrollTop
-
 let proImgSeen=false
-
 window.onscroll=()=>{
     if(splitPath.indexOf('admin') ===  -1){
         var x = window.matchMedia("(max-width: 991px)")
     scrollTop=document.documentElement.scrollTop
-     
     if(location.pathname === '/'){
-
         if(document.body.scrollTop > 750 || document.documentElement.scrollTop >750){
-            
             let herDIv=document.getElementById('hero')
             if(!x.matches){
                 herDIv.style.position='relative'
             }
-            
         }else{
             if(!x.matches){
-                
                 document.getElementById('hero').style.position='fixed'
             }
-            
         }
-        
     }
-    
     if(document.body.scrollTop > 600 || document.documentElement.scrollTop >600){
-        
         if(proPath.indexOf('/product') >  -1 && x.matches){
-            
             document.getElementsByClassName('sticky-btn')[0].style.display='block'
         }
     }else{
@@ -243,21 +174,16 @@ window.onscroll=()=>{
     if(chkPath.indexOf('checkout') === -1){
     if(document.body.scrollTop > 40 || document.documentElement.scrollTop >40){
         scrolled=true
-        
         navbar.style.backgroundColor='#FFFF'
         mobNav.style.backgroundColor='#FFFF'
         mobNav.style.paddingTop='.5em'
         links.forEach((link) => {
-            
             link.style.color='#000'
-            
         });
     }else{
         if(optionsHovered){
         if(!optionsHovered.status){
-
             scrolled=false
-        
         if(location.pathname === '/'){
             navbar.style.backgroundColor='transparent'
             mobNav.style.backgroundColor='transparent'
@@ -273,9 +199,7 @@ window.onscroll=()=>{
                 mobNav.style.paddingTop='0'
                 links.forEach((link) => {
                     link.style.color='#FFFF'
-                    
                 })
-                
         }
     }else{
           navbar.style.backgroundColor='#FFFF'
@@ -285,8 +209,6 @@ window.onscroll=()=>{
                     
           })
     }
-
-    
      }
    }
  }
@@ -301,35 +223,26 @@ async function showMoreImages(e){
         btns[0].className +=' active-ellipse'
     }
     if(scrollLeft >900 && scrollLeft <1900){
-
             activeEllipse[0].classList.replace('active-ellipse','.')
             btns[1].className +=' active-ellipse'
     }
     if(scrollLeft >1900 && scrollLeft < 2900 ){
-
             activeEllipse[0].classList.replace('active-ellipse','.')
             btns[2].className +=' active-ellipse'
-        
     }
     if(scrollLeft >2900 && scrollLeft < 3900 ){
-
             activeEllipse[0].classList.replace('active-ellipse','.')
             btns[3].className +=' active-ellipse'
-        
     }
     if(scrollLeft >3900 && scrollLeft < 4900 ){
-
             activeEllipse[0].classList.replace('active-ellipse','.')
             btns[4].className +=' active-ellipse'
-        
     }
     if(scrollLeft >4900 && scrollLeft < 5900 ){
-
             activeEllipse[0].classList.replace('active-ellipse','.')
             btns[5].className +=' active-ellipse'
         
     }
-    
    
 }
 

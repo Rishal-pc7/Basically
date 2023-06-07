@@ -1,4 +1,3 @@
-
 @keyframes fade {
   0%{
       opacity: 0;
@@ -10,27 +9,15 @@
   
   
 }
-@keyframes unfade {
-  from{opacity: 1;}
-  to{opacity: 0;}
-  
-  
-}
-
 *{
   margin: 0;
   padding: 0;
 }
-
 body {
   font-family:"Be Vietnam Pro", sans-serif;
   animation: fade .8s ease-in-out;
   font-display: inherit;
 }
-.cartSuperParentDiv{
-  display: none;
-}
-
 .mob-view{
   display: none;
 }
@@ -40,96 +27,7 @@ a {
 .white-link{
   color:#fff !important ;
 }
-.chat-widget{
-  bottom: 1em;
-  right: 1em;
-  position: fixed;
-  z-index: 2;
-}
-.chat-widget .chat-btn{
-  border: none;
-  background: #c0c0c0;
-  border-radius: 25px;
-  padding: 15px 40px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 100;
-  cursor: pointer;
-}
-.chat-widget .chat i{
-  font-size: 24px;
-}
-.chat-widget .chat{
-  background: #fff;
-  height: 550px;
-  width: 350px;
-  border-radius: 24px;
-  display: none;
-}
-.chat-widget .chat .header{
-  padding-top: 10px;
-  height: 80px;
-  box-shadow: 0px 15px 38px -15px #9a9898;    
-}
-.chat-widget .chat .header h2{
-  font-size: 20px;
-  font-weight: 300;
-  margin-top: 10px;
-  margin-left: 20px;
-}
-.chat-widget .chat .header h3{
-  font-size: 14px;
-  font-weight: 300;
-  margin-top: -1.6em;
-  margin-left: 40px;
-
-}
-.chat-widget .chat .header .dot{
-  font-size: 20px;
-  font-weight: 700;
-  color: #43b72a;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-.chat-widget .chat .header .icon{
-  right: 10px;
-  position: absolute;
-  top: 35px;
-  font-size: 20px;
-  cursor: pointer;
-}
-.chat-widget .chat .input{
-  width: 100%;
-  height: 80px;
-  box-shadow: 0px 15px 38px -15px #9a9898;    
-  position: absolute;
-  bottom: 0;
-}
-.chat-widget .chat .input input[type='text']{
-  height: 100%;
-  width: 70%;
-  margin-left: 20px;
-  border: none;
-  background: none;
-  font-size: 14px;
-  font-weight: 200;
-  font-family: 'Be Vietnam Pro',sans-serif;
-}
-.chat-widget .chat .input input[type='text']:hover , .chat-widget .chat .input input[type='text']:focus {
-  outline: none;
-}
-.chat-widget .chat .input button{
-  width: 8%;
-  background: none;
-  border: none;
-  color: #d9dcdc;
-  cursor: pointer;
-}
-.chat-widget .chat .input button:hover{
-  color: #ccc;
-}
 .hero-section{
-
   height: 900px;
 }
 .hero{
@@ -158,7 +56,6 @@ a {
   position: relative;
   height: 400px;
 }
-
 .hero-content h1{
  margin-top: .5em;
  font-weight: 500;
@@ -290,12 +187,9 @@ a {
   font-weight: 400;
   margin-top: 4px;
 }
-
 .collections .product-cards .product-card .product-details .colors button i:hover{
   transform: scale(0.9);
 }
-
-
 .about-section{
   position: relative;
   height: 620px;
@@ -489,7 +383,6 @@ a {
 .our-story .opts .opt{ 
   font-size: 30px;
   font-weight: 600;
-  
 }
 .our-story .opts .to-link{
   border-radius: 35px;

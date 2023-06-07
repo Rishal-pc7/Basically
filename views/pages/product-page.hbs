@@ -31,7 +31,7 @@
   <div class="products" id="products">
     <div class="mob-carousel-section">
     <div class="mob-carousel">
-       <ul class="slides" id="slides" onscroll="showMoreImages(this)" data-carousel-items>
+       <ul class="slides" id="slides" onscroll="showMoreImages(event)" data-carousel-items>
         <div class="ellipsis">
           {{#each product.proImages}}
           {{#if_eq @index 0}}

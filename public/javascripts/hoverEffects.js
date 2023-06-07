@@ -2,30 +2,20 @@ let optionsHovered={
     status:false,
     elm:null
 }
-
-
-
-
-
-
 async function shopBtnHover(elm){
-   
     elm.style.border='2px solid #FFFF'
     elm.style.transition='.5s ease-in-out'
     elm.style.backgroundColor='transparent'
     let a=elm.getElementsByTagName('a')[0]
     a.style.color='#FFFF'
-    
 } 
 async function shopBtnOut(elm){
     elm.style.border='none'
     elm.style.backgroundColor='#FFFF'
     let a=elm.getElementsByTagName('a')[0]
     a.style.color='black'
-
 }
 async function moreBtnHover(elm){
-    
     elm.style.border='none'
     elm.style.backgroundColor='#FFFF'
     let a=elm.getElementsByTagName('a')[0]
@@ -41,8 +31,6 @@ async function moreBtnOut(elm){
 let shopOpt=document.getElementById('shopOpt')
 let transpOpt=document.getElementById('transpOpt')
 let abtOpt=document.getElementById('abtOpt')
-let myTimeout
-
 async function shopOptHover(elm){
             transpOptOut()
             abtOptOut()
@@ -58,11 +46,7 @@ async function shopOptHover(elm){
             elm.getElementsByTagName('a')[0].classList.add('white-link')
             if(navbar.style.height === '35em'){
                document.getElementById('shopOpts').style.display='grid'
-                
             }
-            
-    
-     
 }
 async function shopOptOut(){
     document.getElementById('shopOpts').style.display='none'
@@ -78,7 +62,6 @@ async function shopOptOut(){
     elm.getElementsByTagName('a')[0].classList.add('links')
     elm.getElementsByTagName('a')[0].classList.remove('white-link')
     navbar.style.height='5em'
-       
 }; 
 async function transpOptHover(elm){
     shopOptOut()
@@ -98,7 +81,6 @@ async function transpOptHover(elm){
     document.getElementById('abtOpts').style.display='none'
     if(navbar.style.height === '35em'){
         document.getElementById('transpOpts').style.display='grid'
-         
      }
 }
 async function transpOptOut(){
@@ -114,7 +96,6 @@ async function transpOptOut(){
     elm.getElementsByTagName('a')[0].classList.add('links')
     elm.getElementsByTagName('a')[0].classList.remove('white-link')
     navbar.style.height='5em'
-    
 }
 async function abtOptHover(elm){
     transpOptOut()
@@ -147,7 +128,6 @@ async function abtOptOut(){
     elm.getElementsByTagName('a')[0].classList.add('links')
     elm.getElementsByTagName('a')[0].classList.remove('white-link')
     navbar.style.height='5em'
-    
 }
 let initialImg=document.getElementById('initialImg')
 let ltwtImg=document.getElementById('ltwtImg')
@@ -167,9 +147,6 @@ async function productHovered(cat){
         ltwtImg.dataset.imgActive=true
         delete activeImg.dataset.imgActive
     }
-    
-      
-    
 }
 async function changeActiveOption(elm){
     console.log(elm.id)
@@ -188,7 +165,6 @@ async function changeActiveOption(elm){
         document.getElementById('abtMobOpts').classList.add('activeOpts')
     }
     elm.classList.add('active')
- 
 }
 async function showFooterOpts(elm){
     elm.style.display='none'
@@ -260,7 +236,6 @@ async function showLessBasicallies(elm){
     let scrollLeft=gridItems.scrollLeft.toFixed()
     if(scrollLeft < 500){
         document.getElementById('basic-prev-btn').style.display='none'
-        
     }
 }
 async function showOrderSummary(elm){
@@ -269,7 +244,6 @@ async function showOrderSummary(elm){
     let orderSummary=document.getElementById('orderSummary')
     hideBtn.style.display='block'
     orderSummary.style.display='block'
-
 }
 async function hideOrderSummary(elm){
     elm.style.display='none'
@@ -277,16 +251,13 @@ async function hideOrderSummary(elm){
     let orderSummary=document.getElementById('orderSummary')
     showBtn.style.display='block'
     orderSummary.style.display='none'
-
 }
 async function showCart(){
     let path=location.pathname
     let proPath=path.split("-")
-    
     document.getElementById('cart').style.display='block'
     body.style.overflow='hidden'
     mobNav.style.zIndex='1'
-    
     !function(f,b,e,v,n,t,s){
         if(f.fbq)
         return;
@@ -298,14 +269,11 @@ async function showCart(){
           s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
          fbq('init', '172181538913764');
          fbq('track', 'AddToCart');
-         
     if(location.pathname === '/'){ 
-
         document.getElementById('hero-content').style.zIndex='0'
     }
     if(proPath.indexOf('/product')> -1){
         document.getElementsByClassName('sticky-btn')[0].style.position='relative'
-
     } 
 }
 async function hideCart(){
@@ -313,7 +281,6 @@ async function hideCart(){
     body.style.overflow='auto'
     mobNav.style.zIndex='99'
     if(location.pathname === '/'){
-
         document.getElementById('hero-content').style.zIndex='none'
     }
 }
@@ -334,6 +301,4 @@ async function changeAcntsOpts(elm){
         activeAcntsOpts[0].classList.replace('activeAcntsOpts','.')
         document.getElementById('logoutDiv').className += ' activeAcntsOpts'
     }
-
-    
 }
