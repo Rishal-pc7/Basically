@@ -4,7 +4,7 @@
         height: 1760px;
     }
     .hero{
-        background: url('/images/home-mob.jpg');
+        background: url('/images/home-mob.webp');
         position: absolute;
         height: 1750px;
         aspect-ratio: 9/16;
@@ -355,7 +355,7 @@
     
     .products{
         display: block;
-        height: 2050px;
+        height: 2300px;
     }
     .des-pro-image{
         display: none;
@@ -411,7 +411,6 @@
         margin-top: 4em;
         height: 145px;
         width: 100%;
-        /* text-align: left; */
     }
     .pro-details .add-to button{
         margin-left: 10px;
