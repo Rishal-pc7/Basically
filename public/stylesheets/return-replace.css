@@ -93,7 +93,7 @@
 }
 @media only screen and (min-width: 200px) and (max-width: 1250px){
     .returnParentDiv{
-        min-height: 1210px;
+        min-height: 1250px;
     }
     .returnParentDiv .returnDiv{
         width: 75%;

@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/stylesheets/product-page.css">
-<script>
+<script defer >
         
         !function(f,b,e,v,n,t,s){
         if(f.fbq)
@@ -31,7 +31,7 @@
   <div class="products" id="products">
     <div class="mob-carousel-section">
     <div class="mob-carousel">
-       <ul class="slides" id="slides" onscroll="showMoreImages(event)" data-carousel-items>
+       <ul class="slides" id="slides"  data-carousel-items>
         <div class="ellipsis">
           {{#each product.proImages}}
           {{#if_eq @index 0}}
@@ -279,7 +279,7 @@
   <div class="our-ethics-section">
     <div class="logo">
 
-    <img src="/images/supima-logo.webp" alt="">
+    <img data-src="/images/supima-logo.webp" alt="">
     </div>
      <div class="item-grids">
         <div class="item-grid">
@@ -290,7 +290,7 @@
           </div>
         </div>
         <div class="item-grid">
-          <img src="/images/fit.webp" alt="">
+          <img data-src="/images/fit.webp" alt="">
           <div class="item-description">
             <h5 class="sub-heading">FIT</h5>
             <p class="ethics-description">No end of day bagginess, keeps in shape all day, wrinkle free with excellent drape</p>
@@ -336,6 +336,39 @@
 </div>
 </div>
   <script>
+    let slides = document.getElementById('slides')
+    slides.onscroll =()=>{
+    let scrollLeft=slides.scrollLeft
+    let btns=document.getElementsByClassName('ellipsis-btn')
+    let activeEllipse=document.getElementsByClassName('active-ellipse')
+    if(scrollLeft <900){
+        activeEllipse[0].classList.replace('active-ellipse','.')
+        btns[0].className +=' active-ellipse'
+    }
+    if(scrollLeft >900 && scrollLeft <1900){
+            activeEllipse[0].classList.replace('active-ellipse','.')
+            btns[1].className +=' active-ellipse'
+    }
+    if(scrollLeft >1900 && scrollLeft < 2900 ){
+            activeEllipse[0].classList.replace('active-ellipse','.')
+            btns[2].className +=' active-ellipse'
+    }
+    if(scrollLeft >2900 && scrollLeft < 3900 ){
+            activeEllipse[0].classList.replace('active-ellipse','.')
+            btns[3].className +=' active-ellipse'
+    }
+    if(scrollLeft >3900 && scrollLeft < 4900 ){
+            activeEllipse[0].classList.replace('active-ellipse','.')
+            btns[4].className +=' active-ellipse'
+    }
+    if(scrollLeft >4900 && scrollLeft < 5900 ){
+            activeEllipse[0].classList.replace('active-ellipse','.')
+            btns[5].className +=' active-ellipse'
+        
+    }
+   
+}
+
    
    let images=document.querySelectorAll('[data-src]')
    let imgOptions={}
