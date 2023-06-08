@@ -100,7 +100,7 @@ module.exports={
     getProductsNames:()=>{
        return new Promise(async(resolve, reject) => {
         let names=[]
-        let products=await db.get().collection(collection.PRODUCT_COLLECTION).find().toArray()
+        let products=await db.get().collection(collection.PRODUCT_COLLECTION).find({},{_id:1,category:1,color:1}).toArray()
         for(i in products){
             let proName={}
             proName.id=products[i]._id
@@ -113,7 +113,7 @@ module.exports={
     getProductColors:(category)=>{
        return new Promise(async(resolve, reject) => {
         let colors=[]
-        let products=await db.get().collection(collection.PRODUCT_COLLECTION).find({category:category}).toArray()
+        let products=await db.get().collection(collection.PRODUCT_COLLECTION).find({category:category},{color:1}).toArray()
         for(i in products){
             let proColor={}
             proColor.id=products[i]._id
