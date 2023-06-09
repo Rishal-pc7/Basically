@@ -55,7 +55,7 @@
     .footer-div{
         padding-left: 40px;
         padding-right: 40px;
-        height: 520px;
+        height: 620px;
     }
     .cartParentDiv .hiddenDiv{
         display: none;
@@ -215,6 +215,7 @@
     }
     .footer-div .copyright h4{
         margin-top: 1em;
+        font-size: 20px;
     }
     .footer-div .mob-opts{
         display: block;
@@ -222,12 +223,6 @@
     .footer-div .des-opts{
         display: none;
       }
-    .chat-widget .chat-btn .chat-txt{
-        display: none;
-    }
-    .chat-widget .chat-btn{
-        padding:10px 15px ;
-    }
     
     .collections{
         padding: 60px 45px;

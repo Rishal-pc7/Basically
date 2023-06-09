@@ -54,6 +54,14 @@ router.get('/shipping-policy',async function(req, res, next) {
   let products=await userHelper.getProducts()
   res.render("pages/shipping-policy",{clientPage:true,products})
 })
+router.get('/cancellation-policy',async function(req, res, next) {
+  let products=await userHelper.getProducts()
+  res.render("pages/cancel-policy",{clientPage:true,products})
+})
+router.get('/contact-us',async function(req, res, next) {
+  let products=await userHelper.getProducts()
+  res.render("pages/contact-us",{clientPage:true,products})
+})
 router.get('/return-replace',async function(req, res, next) {
   let products=await userHelper.getProducts()
   res.render("pages/return-replace",{clientPage:true,products})
@@ -62,6 +70,16 @@ router.post('/return-or-replace',async function(req, res, next) {
   userHelper.submitReturn(req.body).then((data)=>{
     res.json({success:true})
   })
+})
+router.get('/cancel-order',async function(req, res, next) {
+  let products=await userHelper.getProducts()
+  res.render("pages/cancel-order",{clientPage:true,products})
+})
+router.post('/cancel-order',async function(req, res, next) {
+    userHelper.submitReturn(req.body).then((data)=>{
+      res.json({success:true})
+    })
+
 })
 router.get('/product-page/:id',async function(req, res, next) {
   let user
@@ -73,7 +91,7 @@ router.get('/product-page/:id',async function(req, res, next) {
     guestUser=true
   }
   let emptyCart=false
-  let products=await userHelper.getProductsNames()
+  let products=await userHelper.getProducts()
   let cart=await userHelper.getCart(user,guestUser)
   let cartId
   let total=0

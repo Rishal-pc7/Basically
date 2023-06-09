@@ -129,7 +129,9 @@
         margin-left: 15px;
     }
     .returnParentDiv .returnDiv .form-div .terms input[type='checkbox']{
-        transform: scale(2.2);
+        transform: scale(1.5);
+        margin-left: 8px;
+        margin-bottom: 15px;
     }    
     .returnParentDiv .returnDiv .form-div .input input[type='submit']{
         width: 25%;

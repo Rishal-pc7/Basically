@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="/stylesheets/policies.css">
+
+<div class="policyParentDiv">
+    <div class="">
+
+    <div class="heading">
+        <h5>Cancellation Policy</h5>
+    </div>
+    
+    </div>
+    <div class="para">
+        <h5 class="subheading">
+            How do I cancel an order?
+        </h5>
+        <div class="content">
+            <p>If unfortunately you have to cancel an order, please do before 5:00 PM because we dispatch the orders same day to reach you our products as early as possible.</p>
+            
+        </div>
+       
+    </div>
+    <div class="para">
+       <div class="content">
+            <p>For outright cancellations by you:</p>
+            <ul>
+                <li>If you cancel your order before your product has dispatched, we will refund the entire amount.</li>
+            </ul>
+            
+        </div>
+       
+    </div>
+    <div class="para">
+       <div class="content">
+            <p>If the cancellation is after your product has been dispatched:</p>
+            <ul>
+                <li>If you received the product, it will be eligible for return & replacement for 7 days. Please check the refund policy.</li>
+            </ul>
+            
+        </div>
+       
+    </div>
+
+</div>
+
+<script>
+   
+   let images=document.querySelectorAll('[data-src]')
+   let imgOptions={}
+   
+   async function preLoadImage(img){
+    const src=img.getAttribute("data-src")
+    if(!src){
+        return;
+    }
+    img.src=src
+
+   }
+
+   let imgObserver=new IntersectionObserver(async(entries,imgObserver)=>{
+    entries.forEach(entry =>{
+        if(!entry.isIntersecting){
+            return;
+        }else{
+            preLoadImage(entry.target)
+            imgObserver.unobserve(entry.target)
+        }
+    })
+   })
+    images.forEach(image =>{
+        imgObserver.observe(image)
+    })
+</script>

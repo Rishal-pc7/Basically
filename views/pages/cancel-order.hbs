@@ -1,0 +1,113 @@
+ <link rel="stylesheet" href="/stylesheets/return-replace.css">
+
+<div class="returnParentDiv">
+    <div class="returnDiv">
+        <h5 class="heading">Cancel Order</h5>
+        <div class="form-div">
+            <form  id="cancelForm" onsubmit="cancelFormSubmitted(event)">
+               <div class="input">
+                <label for="">Order ID</label>
+                <input type="text" name="orderId" required>
+               </div>
+               <div class="input">
+                <label for="">Item</label>
+                <input type="text" name="item" required>
+               </div>
+               <div class="double-input">
+                  <div class="input">
+                      <label for="">Color</label>
+                      <input type="text" name="color" required>
+                  </div>
+                  <div class="input">
+                      <label for="">Size</label>
+                    <select name="size" id="">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                        <option value="3XL">3XL</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input">
+                      <label for="">Contact Information</label>
+                      <input type="text" name="contact" required>
+                </div>
+                      <input type="radio" name="option" value="Cancellation" hidden checked required>
+                <div class="terms">
+                    
+                    <input type="checkbox" name="agree" value="Agreed" id="cancelAgreeCheck" onchange="enableCheck()" required>
+                    <label for="">By Clicking this you agreed our terms and conditions<a href="/cancellation-policy">View Cancellation Policy</a></label>
+                </div>
+                <div class="input">
+                      <input type="submit" id="cancelSubmit" value="SUBMIT" disabled required>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+   
+   let images=document.querySelectorAll('[data-src]')
+   let imgOptions={}
+   
+   async function preLoadImage(img){
+    const src=img.getAttribute("data-src")
+    if(!src){
+        return;
+    }
+    img.src=src
+
+   }
+
+   let imgObserver=new IntersectionObserver(async(entries,imgObserver)=>{
+    entries.forEach(entry =>{
+        if(!entry.isIntersecting){
+            return;
+        }else{
+            preLoadImage(entry.target)
+            imgObserver.unobserve(entry.target)
+        }
+    })
+   })
+    images.forEach(image =>{
+        imgObserver.observe(image)
+    })
+</script>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
+<script>
+
+      function enableCheck(){
+      let agreeCheck=document.getElementById('cancelAgreeCheck')
+
+         if(agreeCheck.checked){
+           document.getElementById('cancelSubmit').removeAttribute('disabled')
+         }else{
+           document.getElementById('cancelSubmit').setAttribute('disabled',"true")
+
+         }
+      }  
+    function cancelFormSubmitted(e){
+        e.preventDefault()
+       $.ajax({
+        url:'/cancel-order',
+        data:$('#cancelForm').serialize(),
+        method:'post',
+        success:(res)=>{
+            if(res.success){
+                swal({
+                    title:'Cancellation Issued',
+                    text: "Our team will verify your request and contact you as soon as possible",
+                    icon: "success",
+                }).then(()=>{
+                    location.href='/'
+                })
+            }
+        }
+       })
+    }
+</script>

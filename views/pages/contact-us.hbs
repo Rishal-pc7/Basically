@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="/stylesheets/policies.css">
+
+<div class="policyParentDiv">
+    <div class="">
+
+    <div class="heading">
+        <h5>CONTACT US</h5>
+    </div>
+    <div class="content">
+        <p>Our concierge service is open Monday – Saturday for the hours of 09:00am – 5:30pm.<br>If you have any questions, please don’t hesitate to get in touch!</p>
+    </div>
+    </div>
+    <div class="para">
+        <h5 class="subheading">
+               ONLINE STORE CONTACT
+       </h5>
+       <div class="content">
+            <ul>
+                <a style="text-decoration: none;color: black;" href="mailto:support@thebasically.in"><li>support@thebasically.in</li></a>
+                <li>Phone: +91 7594842304</li>
+            </ul>
+            
+        </div>
+       
+    </div>
+    <div class="para">
+        <h5 class="subheading">
+               ADDRESS
+       </h5>
+       <div class="content">
+            <p>Thalipadam, Edakkara, Malappuram District - 679331 Kerala, India</p>
+            
+        </div>     
+        </div>
+       
+    </div>
+
+</div>
+
+<script>
+   
+   let images=document.querySelectorAll('[data-src]')
+   let imgOptions={}
+   
+   async function preLoadImage(img){
+    const src=img.getAttribute("data-src")
+    if(!src){
+        return;
+    }
+    img.src=src
+
+   }
+
+   let imgObserver=new IntersectionObserver(async(entries,imgObserver)=>{
+    entries.forEach(entry =>{
+        if(!entry.isIntersecting){
+            return;
+        }else{
+            preLoadImage(entry.target)
+            imgObserver.unobserve(entry.target)
+        }
+    })
+   })
+    images.forEach(image =>{
+        imgObserver.observe(image)
+    })
+</script>

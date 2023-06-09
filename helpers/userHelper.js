@@ -584,7 +584,7 @@ module.exports={
             const info=await transporter.sendMail({
                 from:'Basically_Bot <messagebot69@gmail.com> ',
                 to:"fasalrahmanpv7@gmail.com",
-                subject:'Order Placed',
+                subject:details.option+' Issued',
                 html:html
             })
 

@@ -155,7 +155,7 @@
     margin-left: 2em;
 }
 .mobile-nav .side-menu .options li{
-    width: 17%;
+    width: 16%;
     list-style: none;
     font-size: 32px;
     line-height: 2em;
@@ -240,7 +240,7 @@
     text-decoration: none;
     color: #57595B;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 38px;
 }
 .mobile-nav .side-menu .hoverOpts .MobOption .items-options  .items-list li:first-child{
     margin-top: 2em;
