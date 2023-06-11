@@ -269,6 +269,7 @@ async function showCart(){
           s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
          fbq('init', '172181538913764');
          fbq('track', 'AddToCart');
+         
     if(location.pathname === '/'){ 
         document.getElementById('hero-content').style.zIndex='0'
     }

@@ -116,7 +116,7 @@ async function prevBtnClicked(prevBtn,cat){
 }
 let colln=document.getElementById('collections')
 let heroCntnt=document.getElementById('hero-content')
-if (location.pathname === '/') {
+if (location.pathname === '/' || location.pathname === '/transparency' || location.pathname === '/about-us') {
     mobNav.style.backgroundColor='transparent'
     navbar.style.backgroundColor='transparent'
         links.forEach((link) => {
@@ -184,7 +184,7 @@ window.onscroll=()=>{
         if(optionsHovered){
         if(!optionsHovered.status){
             scrolled=false
-        if(location.pathname === '/'){
+        if(location.pathname === '/' || location.pathname === '/transparency' || location.pathname === '/about-us'){
             navbar.style.backgroundColor='transparent'
             mobNav.style.backgroundColor='transparent'
             mobNav.style.paddingTop='0'

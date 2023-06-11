@@ -17,6 +17,7 @@ body {
   font-family:"Be Vietnam Pro", sans-serif;
   animation: fade .8s ease-in-out;
   font-display: inherit;
+  background: #fff !important;
 }
 .mob-view{
   display: none;

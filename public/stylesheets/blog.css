@@ -1,0 +1,286 @@
+.blogParentDiv{
+    height: 3000px;
+}
+.about-us-ParentDiv{
+    height: 2760px;
+}
+
+
+.blogParentDiv .blogHeroSection {
+    position: relative;
+    height: 670px;
+}
+.blogParentDiv .about-us-hero{
+    height: 890px;
+}
+.blogParentDiv .blogHeroSection .blog-hero-img{
+    width: 100%;
+    z-index: 99;
+    filter: contrast(85%);
+}
+
+.blogParentDiv  .des-img{
+    display: block;
+} 
+.blogParentDiv .res-img{
+    display: none;
+}
+.blogParentDiv .blogHeroSection .blog-hero-content{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-40%,0%);
+    z-index: 1;
+    text-align: center;
+}
+.blogParentDiv .blogHeroSection .blog-hero-content p{
+    font-size: 35px;
+    font-weight: 600;
+    color: #fff;
+}
+.blogParentDiv .fashion-section{
+    height: 600px !important;
+}
+.blogParentDiv .blog-content-section{
+    display: grid;
+    grid-auto-flow: column;
+    background: #fff;
+    height: 850px;
+    grid-template-columns: 50% 50%;
+    position: relative;
+}
+.blogParentDiv .blog-content-section .blog-content{
+    position: relative;
+    text-align: center;
+}
+.blogParentDiv .blog-content-section .blog-content .contents{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 65px;
+}
+.blogParentDiv .blog-content-section .blog-content .contents h5{
+    font-size: 26px;
+    font-weight: 600;
+}
+.blogParentDiv .blog-content-section .blog-content .contents p{
+    font-size: 20px;
+    margin-top: 1em;
+    line-height: 1.5em;
+    font-weight: 300;
+}
+
+.blogParentDiv .blog-content-section .blog-img img{
+    object-fit: cover;
+    width: 100%;
+}
+.blogParentDiv .padding-content{
+    padding: 0 100px;
+    height: 550px;
+    margin-top: 4em;
+}
+.blogParentDiv .padding-content .supply-blog{
+
+    text-align: center !important;
+}
+.blogParentDiv .padding-content .blog-content{
+    text-align: left;
+}
+.blogParentDiv .padding-content .blog-content ul{
+
+    margin-top: 1em;
+}
+.blogParentDiv .padding-content .blog-content ul li{
+    list-style: none;
+    font-size: 18px;
+    line-height: 2em;
+}
+.blogParentDiv .padding-content .blog-content ul li .key{
+    font-weight: 600;
+}
+.blogParentDiv .padding-content .blog-content ul li .value{
+    font-weight: 300;
+    margin-right: 4em;
+}
+.blogParentDiv .padding-content .blog-img img{
+    height: 400px;
+    aspect-ratio: 1/1;
+}
+.blogParentDiv .padding-content .blog-img .svg-img{
+    height: 500px;
+    width: 450px;
+}
+.blogParentDiv .padding-content .blog-content .supply-content{
+    top: 50% !important;
+    transform: translateY(-70%) !important;
+    position: absolute !important;
+}
+.blogParentDiv .padding-content .blog-content .contents{
+    position: relative;
+    top: 20px;
+    transform: translateY(0);
+}
+.about-us-parentDiv .full-blog-div{
+
+    padding: 35px 250px !important;
+}
+.blogParentDiv .full-blog-div{
+    height: 200px;
+    text-align: center;
+    padding: 10px 165px;
+}
+.blogParentDiv .only-heading {
+    height: 100px !important;
+}
+.blogParentDiv .only-heading h5{
+    font-size: 55px !important;
+    font-weight: 600 !important;
+}
+.blogParentDiv .full-blog-div h5{
+    font-size: 28px;
+    font-weight: 600;
+}
+.blogParentDiv .full-blog-div p{
+    font-size: 22px;
+    margin-top: 1em;
+    line-height: 1.5em;
+    font-weight: 300;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 1250px){
+   
+    .blogParentDiv{
+        height: 6500px;
+    }
+    .about-us-parentDiv{
+        height: 5150px;
+
+    }
+    
+    
+    .blogParentDiv .blogHeroSection {
+        position: relative;
+        height: 985px;
+    }
+    .blogParentDiv .blogHeroSection .blog-hero-img{
+        width: 100%;
+        z-index: 99;
+        filter: contrast(85%);
+    }
+    .blogParentDiv .des-img{
+        display: none;
+    } 
+    .blogParentDiv  .res-img{
+        display: block;
+    }
+    .blogParentDiv .blogHeroSection .blog-hero-content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,85%);
+        z-index: 1;
+        text-align: center;
+    }
+    .blogParentDiv .blogHeroSection .blog-hero-content p{
+        font-size: 45px;
+        font-weight: 600;
+        color: #fff;
+    }
+    .blogParentDiv .about-us-blog{
+        height: 1900px !important;
+    }
+    .blogParentDiv .blog-content-section{
+        display: block;
+        height: 1670px;
+    }
+    .blogParentDiv .blog-content-section .blog-content{
+        position: relative;
+        text-align: center;
+    }
+    .blogParentDiv .blog-content-section .blog-content .contents{
+        position: relative;
+        top: auto;
+        transform: translateY(0);
+        padding: 45px 65px;
+    }
+    .about-us-parentDiv .full-blog-div{
+
+        padding: 40px 65px !important;
+    }
+    .blogParentDiv .blog-content-section .blog-content .contents h5{
+        font-size: 40px;
+    }
+    .blogParentDiv .blog-content-section .blog-content .contents p{
+        font-size: 35px;
+    }
+    
+    .blogParentDiv .blog-content-section .supply-img{
+        display: flex;
+        justify-content: center;
+    }
+    .blogParentDiv .blog-content-section .blog-img img{
+        object-fit: cover;
+        height: 1150px;
+    }
+    .blogParentDiv .padding-content{
+        padding: 0;
+        margin-top: 0em;
+    }
+    .blogParentDiv .padding-content .supply-blog{
+        text-align: center !important;
+    }
+    .blogParentDiv .padding-content .blog-content{
+        text-align: center;
+        padding: 60px;
+    }
+    .blogParentDiv .padding-content .blog-content ul{
+        margin-top: 1em;
+        text-align: left;
+    }
+    .blogParentDiv .padding-content .blog-content ul li{
+        list-style: none;
+        font-size: 28px;
+        line-height: 2em;
+    }
+    .blogParentDiv .padding-content .blog-content ul li .key{
+        font-weight: 600;
+    }
+    .blogParentDiv .padding-content .blog-content ul li .value{
+        font-weight: 300;
+        margin-right: 4em;
+    }
+    .blogParentDiv .padding-content .blog-img img{
+        height: 815px;
+        aspect-ratio: 1/1;
+    }
+    .blogParentDiv .padding-content .blog-img .svg-img{
+        height: 900px;
+        width: 850px;
+    }
+    .blogParentDiv .padding-content .blog-content .supply-content{
+        top: auto !important;
+        transform: translateY(0) !important;
+        position: relative !important;
+    }
+    .blogParentDiv .padding-content .blog-content .contents{
+        position: relative;
+        top: 20px;
+        transform: translateY(0);
+    }
+    .blogParentDiv .full-blog-div{
+        height: 425px;
+        text-align: center;
+        padding: 40px 65px;
+    }
+    .blogParentDiv .full-blog-div h5{
+        font-size: 40px;
+        
+    }
+    .blogParentDiv .full-blog-div p{
+        font-size: 35px;
+        
+    }
+ 
+
+
+}

@@ -278,6 +278,7 @@
     padding: 20px;
     margin-left: 10px;
     margin-top: 3em;
+    /* width: 240px; */
 }
 .mobile-nav .side-menu .hoverOpts .MobOption .items-options .img-opts .opts .more-link{
     text-decoration: none;

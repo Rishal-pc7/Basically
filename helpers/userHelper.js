@@ -101,13 +101,8 @@ module.exports={
        return new Promise(async(resolve, reject) => {
         let names=[]
         let products=await db.get().collection(collection.PRODUCT_COLLECTION).find({},{_id:1,category:1,color:1}).toArray()
-        for(i in products){
-            let proName={}
-            proName.id=products[i]._id
-            proName.category=products[i].category
-           names.push(proName)
-        }
-        resolve(names)
+        
+        resolve(products)
        })
     },
     getProductColors:(category)=>{

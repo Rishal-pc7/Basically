@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="/stylesheets/blog.css">
+
+<div class="blogParentDiv about-us-parentDiv">
+    <div class="blogHeroSection about-us-hero">
+        <img src="/images/about-us.jpg" class="blog-hero-img des-img" alt="">
+        <img src="/images/about-us-mob.jpg" class="blog-hero-img res-img" alt="">
+    </div>
+    <div class="full-blog-div">
+        <h5>Less is more.</h5>
+        <p>Our wardrobe consists of simple, minimal, and perfect for essential clothing. basically revolutionizes how minimal you can be with the basic of basics, without any funky colors or designs. basically believes in expressing the real raw you rather than creating distractions.</p>
+    </div>
+    <div class="blog-content-section about-us-blog">
+        <div class="blog-content">
+            <div class="contents">
+
+            <h5 class="heading">Essentials that last</h5>
+            <p>We help stay you by caring less about trends and caring about true value. How we treat our clothes distinguish us from the world around. We want you to feel & look good & simple with basic, everyday essentials that last long. 
+               More importantly for us, we want to be sure that every piece of attire you purchase from us will serve its only intended purpose — to be worn by you who value it as much as we do.</p>
+            </div>
+        </div>
+        <div class="blog-img">
+            <img src="/images/essentials-about.jpg" alt="">
+        </div>
+    </div>
+    <div class="full-blog-div only-heading">
+        <h5>Fashion , But Make it Slow</h5>
+    </div>
+    <div class="blog-content-section fashion-section">
+        <div class="blog-content res-img">
+            <div class="contents">
+
+            <h5 class="heading">Slow Fashion</h5>
+            <p>We believe in the longevity of the clothes we make, to provide what’s essential and what is not. That’s how we will make an impact, a huge step to slow fashion and a much huge step towards a better world.</p>
+            </div>
+        </div>
+        <div class="blog-img">
+            <img src="/images/about-us-fashion.jpg" alt="">
+        </div>
+        <div class="blog-content des-img">
+            <div class="contents">
+
+           <h5 class="heading">Slow Fashion</h5>
+            <p>We believe in the longevity of the clothes we make, to provide what’s essential and what is not. That’s how we will make an impact, a huge step to slow fashion and a much huge step towards a better world.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+
+<script>
+    let images=document.querySelectorAll('[data-src]')
+   let imgOptions={}
+   
+   async function preLoadImage(img){
+    const src=img.getAttribute("data-src")
+    if(!src){
+        return;
+    }
+    img.src=src
+
+   }
+
+   let imgObserver=new IntersectionObserver(async(entries,imgObserver)=>{
+    entries.forEach(entry =>{
+        if(!entry.isIntersecting){
+            return;
+        }else{
+            preLoadImage(entry.target)
+            imgObserver.unobserve(entry.target)
+        }
+    })
+   })
+    images.forEach(image =>{
+        imgObserver.observe(image)
+    })
+</script>

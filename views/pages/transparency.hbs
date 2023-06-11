@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="/stylesheets/blog.css">
+
+<div class="blogParentDiv">
+    <div class="blogHeroSection">
+        <img src="/images/fair-pay-des.jpg" class="blog-hero-img des-img" alt="">
+        <img src="/images/fair-pay.webp" class="blog-hero-img res-img" alt="">
+       <div class="blog-hero-content">
+        <p>Fair Pay . Fair Trade</p>
+       </div>
+    </div>
+    <div class="blog-content-section">
+        <div class="blog-content">
+            <div class="contents">
+
+            <h5 class="heading">Cotton Clear Transparency</h5>
+            <p>When you choose basically you get exactly what you pay for.
+               We believe that being sustainable requires having transparent supply chain and knowing the details the whole story behind our staples<br>We love to share our production journey with you!</p>
+            </div>
+        </div>
+        <div class="blog-img">
+            <img src="/images/soft.webp" alt="">
+        </div>
+    </div>
+    <div class="full-blog-div">
+        <h5>Factourism</h5>
+        <p>We only choose the best factories from across INDIA to make our products. Our factories’ thrive for excellence convinced us to showcase the craftsmen and women behind our essentials. We want to show you how much dedication, experience, and skill go into the production of our collection. Hard work that happens far away from the hype of the fashion world.</p>
+    </div>
+    <div class="blog-content-section padding-content">
+        <div class="blog-content">
+            <div class="contents">
+
+            <h5 class="heading">MADE IN INDIA</h5>
+            <p>Handcrafted essentials in collaboration with small factories and industry experts who share our commitment to exceptional quality, high labor standards and fair wages.</p>
+            <ul>
+                <li><span class="key">Factory Name   </span> <span class="value">: V-MAQ T-shirt Factory</span></li>
+                <li><span class="key">Employees    </span> <span class="value">: 12</span></li>
+                <li><span class="key">Average Salary   </span> <span class="value">: 20,000/month (800/day)</span></li>
+                <li><span class="key">Working Time  </span> <span class="value">: 9 hours</span></li>
+                <li><span class="key">Last Visit  </span> <span class="value">: 11/11/22</span></li>
+            </ul>
+            </div>
+        </div>
+        <div class="blog-img">
+            <img src="/images/factories.webp" alt="">
+        </div>
+    </div>
+    <div class="blog-content-section padding-content">
+        <div class="blog-content supply-blog res-img">
+            <div class="contents supply-content">
+
+            <h5 class="heading">Transparent Supply Chain</h5>
+            <p>At basically. you get what you paying for. We show you exactly how much your basics cost. No Middlemen and no extra fees added. <br>
+               Have a look at the price breakdown of basically. T-Shirt.</p>
+            
+            </div>
+        </div>
+         <div class="blog-img supply-img">
+            <img src="/images/breakdown.svg" class="svg-img" alt="">
+         </div>
+        <div class="blog-content supply-blog des-img">
+            <div class="contents supply-content">
+
+            <h5 class="heading">Transparent Supply Chain</h5>
+            <p>At basically. you get what you paying for. We show you exactly how much your basics cost. No Middlemen and no extra fees added. <br>
+               Have a look at the price breakdown of basically. T-Shirt.</p>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let images=document.querySelectorAll('[data-src]')
+   let imgOptions={}
+   
+   async function preLoadImage(img){
+    const src=img.getAttribute("data-src")
+    if(!src){
+        return;
+    }
+    img.src=src
+
+   }
+
+   let imgObserver=new IntersectionObserver(async(entries,imgObserver)=>{
+    entries.forEach(entry =>{
+        if(!entry.isIntersecting){
+            return;
+        }else{
+            preLoadImage(entry.target)
+            imgObserver.unobserve(entry.target)
+        }
+    })
+   })
+    images.forEach(image =>{
+        imgObserver.observe(image)
+    })
+</script>

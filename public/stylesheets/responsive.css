@@ -541,6 +541,7 @@
     }
     .insta-section .insta-grids .insta-imgs img{
         width: 830px;
+        height: 830px;
     }
     .checkoutParentDiv{
         padding: 0 0 0 85px !important;
