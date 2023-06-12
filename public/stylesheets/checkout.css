@@ -26,12 +26,12 @@
     font-weight: 400;
 }
 .checkoutParentDiv .order-summary{
-    display: none;
     background: #fafafa;
     width: 100%;
     margin-top: 1em;
     margin-left: -85px;
     width: auto;
+    display:none ;
     padding: 55px;
 }
 .checkoutParentDiv .order-summary .header{
@@ -57,10 +57,6 @@
     font-weight: 500;
     margin-left: .5em;
     margin-top: .1em;
-    display: none;
-}
-.checkoutParentDiv .order-summary .header .btns #showOrderSummary{
-    display: block;
 }
 
 .checkoutParentDiv .order-summary .header .price{
@@ -68,9 +64,7 @@
     font-size: 30px;
     margin-top: .1em;
 }
-.checkoutParentDiv .order-summary .item-details{
-    display: none;
-}
+
 .checkoutParentDiv .order-summary .item-details .items{
     width: 100%;
     min-height: 200px;

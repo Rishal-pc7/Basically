@@ -238,20 +238,7 @@ async function showLessBasicallies(elm){
         document.getElementById('basic-prev-btn').style.display='none'
     }
 }
-async function showOrderSummary(elm){
-    elm.style.display='none'
-    let hideBtn=document.getElementById('hideOrderSummary')
-    let orderSummary=document.getElementById('orderSummary')
-    hideBtn.style.display='block'
-    orderSummary.style.display='block'
-}
-async function hideOrderSummary(elm){
-    elm.style.display='none'
-    let showBtn=document.getElementById('showOrderSummary')
-    let orderSummary=document.getElementById('orderSummary')
-    showBtn.style.display='block'
-    orderSummary.style.display='none'
-}
+
 async function showCart(){
     let path=location.pathname
     let proPath=path.split("-")

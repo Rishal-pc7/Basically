@@ -90,7 +90,7 @@
     background: #fff;
     position: absolute;
     color: #000;
-    height: 100vh;
+    min-height: 100vh;
     animation: fade .8s ease-in-out;
     top: 0;
     left: 0;
