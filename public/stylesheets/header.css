@@ -100,7 +100,7 @@
     background: #fff;
     position: absolute;
     color: #000;
-    min-height: 140vh;
+    min-height: 180vh;
     animation: fade .8s ease-in-out;
     top: 0;
     left: 0;
@@ -308,7 +308,6 @@
     position: relative;
     width: 100%;
     bottom: 0em;
-
 }
 .mobile-nav .side-menu .footer .social-media{
     left: 50%;

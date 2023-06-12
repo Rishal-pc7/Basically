@@ -30,7 +30,7 @@ async function menuBtnClicked(){
     mobSideBar.style.animationTimingFunction='ease-in-out'
     clearInterval(id)
     mobSideBar.style.display='block'
-    body.style.overflowY='hidden'
+    document.getElementById('parentDiv').style.overflow='hidden'
 }
 async function menuCloseBtnClicked(){
     mobSideBar.style.animationName='unfade'
