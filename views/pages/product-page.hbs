@@ -34,7 +34,7 @@
      </div>
      <div class="sticky-btn">
      <div class="add-to">
-      <button disabled id="stickyAddToCart">ADD TO CART</button>
+      <a href="#products" id="stickyAddToCart">ADD TO CART</a>
      </div>
    </div>
   <div class="products" id="products">
@@ -120,7 +120,7 @@
 
     </div>
   </div>
-  <div class="pro-details">
+  <div class="pro-details" >
     <h3 class="name">{{product.category}}</h3>
     <h4 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> <span>{{product.price}}</span></h4>
      <div class="color-div">
@@ -163,7 +163,7 @@
         </div>
       </div>
     </div>
-    <div class="add-to">
+    <div class="add-to" >
       <button disabled id="addToCart" onclick="addToCart('{{product._id}}',1)">ADD TO CART</button>
     </div>
     <div class="less-description">
@@ -418,12 +418,12 @@
     elm.dataset.size=true
     document.getElementById('selectedSize').value=elm.value
     document.getElementById('addToCart').removeAttribute('disabled')
-    document.getElementById('stickyAddToCart').removeAttribute('disabled')
+    document.getElementById('stickyAddToCart').style.background="#57595b"
   }
   async function clearSize(elm){
     document.getElementById('selectedSize').value=null
     document.getElementById('addToCart').setAttribute('disabled',true)
-    document.getElementById('stickyAddToCart').setAttribute('disabled',true)
+    document.getElementById('stickyAddToCart').style.background="#ccc"
   }
 </script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>

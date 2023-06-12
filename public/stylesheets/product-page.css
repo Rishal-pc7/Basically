@@ -41,25 +41,18 @@
     height: 50px;
 }
 
-.sticky-btn .add-to button{
-    padding: 25px 185px;
-    background: #57595b;
+.sticky-btn .add-to a{
+    padding: 25px 300px;
+    background: #ccc;
     color: #fff;
     border: none;
     border-radius: 55px;
     margin-left: 0;
     font-weight: 500;
     font-size: 40px;
-    width: 100%;
-    height: 100px;
     font-family: inherit;
 }
-.sticky-btn .add-to button:disabled,.sticky-btn .add-to button:disabled:hover,.sticky-btn .add-to button:disabled:focus{
-    background-color: #ccc;
-}
-.sticky-btn .add-to button:focus,.sticky-btn .add-to button:hover{
-    background: #3c3c3c;
-}
+
 .products{
     width: 100%;
     display: grid;
