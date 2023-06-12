@@ -39,9 +39,7 @@
            <div class="order-summary">
             <div class="header">
                 <h5 class="order-txt">Order Summary</h5> 
-                <div class="btns">
-                   <button id="hideOrderSummary"><i class="fa-solid fa-chevron-up"></i></button>
-                </div>
+                <div class="btns"></div>
                 <h5 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> <span>{{total}}</span></h5>
 
             </div>
@@ -179,11 +177,11 @@
                         <div class="option" >
                             <h5>Cash on Delivery</h5>
                             <div class="caution">
-                                <p class="COD-caution">You will have to pay an extra INR 30 to proceed with Cash on delivery</p>
+                                <p class="COD-caution">No Extra COD Charges</p>
                             </div>
                         </div>
                         <div class="total">
-                            <h5 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> <span data-total>{{#addValues total 30}} {{/addValues}}</span></h5>
+                            <h5 class="price"><i class="fa-solid fa-indian-rupee-sign"></i> <span data-total>{{total}}</span></h5>
                         </div>
                         
                     </div>

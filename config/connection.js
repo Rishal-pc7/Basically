@@ -4,7 +4,7 @@ const state={ db:null}
 module.exports.connect = function (){
     return new Promise(async(resolve,reject)=>{
 
-        const url="mongodb://64.227.142.69:27017"       
+        const url="mongodb://localhost:27017"       
         const dbName='basically'
         const client = new MongoClient(url)
         client.connect().then((data)=>{

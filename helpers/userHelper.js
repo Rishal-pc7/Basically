@@ -385,7 +385,7 @@ module.exports={
         return new Promise(async(resolve, reject) => {
             details.total=parseInt(details.total)
             let status=details.paymentMethod === 'COD'?'Placed':'Pending'
-            details.total=details.paymentMethod === 'COD' ? details.total+30:details.total
+            // details.total=details.paymentMethod === 'COD' ? details.total+30:details.total
             let deliveryDetails={
                 name:details.fname+" "+details.lname,
                 address:details.address,

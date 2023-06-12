@@ -90,7 +90,7 @@
     background: #fff;
     position: absolute;
     color: #000;
-    min-height: 100vh;
+    min-height: 140vh;
     animation: fade .8s ease-in-out;
     top: 0;
     left: 0;
@@ -144,7 +144,7 @@
 .mobile-nav .side-menu .options{
     height: 70px;
     width: 94%;
-    margin-top: 1em;
+    margin-top: 9em;
     border-top: 2px solid #8c8b8b;
     border-bottom: 2px solid #8c8b8b;
     display: grid;
