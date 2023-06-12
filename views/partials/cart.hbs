@@ -83,6 +83,12 @@
 <script src="/javascripts/jquery.min.js" defer></script>
 
 <script>
+    let emptyCart = {{{emptyCart}}}
+           if(emptyCart){
+                    document.getElementById('desCartCount').style.display='none'
+                    document.getElementById('mobCartCount').style.display='none'
+                    sessionStorage.removeItem('showCount')
+                   }
     async function changeProductQuantity(proId,cartId,quantity,total,price,value){
         quantity=parseInt(quantity)
         value=parseInt(value)
@@ -124,6 +130,7 @@
            data:proDetails,
            success:(response)=>{
                 if(response.status){
+                  
                     location.reload()
 
                 }

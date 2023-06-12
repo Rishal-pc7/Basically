@@ -39,32 +39,166 @@ router.get('/',async function(req, res, next) {
 });
 
 router.get('/terms&conditions',async function(req, res, next) {
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
   let products=await userHelper.getProductsNames()
-  res.render("pages/terms",{clientPage:true,products})
+  let cart=await userHelper.getCart(user,guestUser)
+  let cartId
+  let total=0
+  if(cart[0]){
+    cartId=cart[0]._id
+    total=cart[0].total 
+  }
+  else{
+    emptyCart=true
+  }
+
+  res.render("pages/terms",{clientPage:true,products,cart,emptyCart,cartId,total})
 })
 router.get('/return-policy',async function(req, res, next) {
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
   let products=await userHelper.getProductsNames()
-  res.render("pages/return-policy",{clientPage:true,products})
+  let cart=await userHelper.getCart(user,guestUser)
+  let cartId
+  let total=0
+  if(cart[0]){
+    cartId=cart[0]._id
+    total=cart[0].total 
+  }
+  else{
+    emptyCart=true
+  }
+  res.render("pages/return-policy",{clientPage:true,products,cart,cartId,total,emptyCart})
 })
 router.get('/privacy-policy',async function(req, res, next) {
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
   let products=await userHelper.getProductsNames()
-  res.render("pages/privacy-policy",{clientPage:true,products})
+  let cart=await userHelper.getCart(user,guestUser)
+  let cartId
+  let total=0
+  if(cart[0]){
+    cartId=cart[0]._id
+    total=cart[0].total 
+  }
+  else{
+    emptyCart=true
+  }
+  res.render("pages/privacy-policy",{clientPage:true,products,cart,cartId,total,emptyCart})
 })
 router.get('/shipping-policy',async function(req, res, next) {
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
   let products=await userHelper.getProductsNames()
-  res.render("pages/shipping-policy",{clientPage:true,products})
+  let cart=await userHelper.getCart(user,guestUser)
+  let cartId
+  let total=0
+  if(cart[0]){
+    cartId=cart[0]._id
+    total=cart[0].total 
+  }
+  else{
+    emptyCart=true
+  }
+  res.render("pages/shipping-policy",{clientPage:true,products,cart,cartId,total,emptyCart})
 })
 router.get('/cancellation-policy',async function(req, res, next) {
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
   let products=await userHelper.getProductsNames()
-  res.render("pages/cancel-policy",{clientPage:true,products})
+  let cart=await userHelper.getCart(user,guestUser)
+  let cartId
+  let total=0
+  if(cart[0]){
+    cartId=cart[0]._id
+    total=cart[0].total 
+  }
+  else{
+    emptyCart=true
+  }
+  res.render("pages/cancel-policy",{clientPage:true,products,cart,cartId,total,emptyCart})
 })
 router.get('/contact-us',async function(req, res, next) {
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
   let products=await userHelper.getProductsNames()
-  res.render("pages/contact-us",{clientPage:true,products})
+  let cart=await userHelper.getCart(user,guestUser)
+  let cartId
+  let total=0
+  if(cart[0]){
+    cartId=cart[0]._id
+    total=cart[0].total 
+  }
+  else{
+    emptyCart=true
+  }
+  res.render("pages/contact-us",{clientPage:true,products,cart,cartId,total,emptyCart})
 })
 router.get('/return-replace',async function(req, res, next) {
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
   let products=await userHelper.getProductsNames()
-  res.render("pages/return-replace",{clientPage:true,products})
+  let cart=await userHelper.getCart(user,guestUser)
+  let cartId
+  let total=0
+  if(cart[0]){
+    cartId=cart[0]._id
+    total=cart[0].total 
+  }
+  else{
+    emptyCart=true
+  }
+  res.render("pages/return-replace",{clientPage:true,products,cart,cartId,total,emptyCart})
 })
 router.post('/return-or-replace',async function(req, res, next) {
   userHelper.submitReturn(req.body).then((data)=>{
@@ -72,16 +206,73 @@ router.post('/return-or-replace',async function(req, res, next) {
   })
 })
 router.get('/transparency',async function(req, res, next) {
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
   let products=await userHelper.getProductsNames()
-  res.render("pages/transparency",{clientPage:true,products})
+  let cart=await userHelper.getCart(user,guestUser)
+  let cartId
+  let total=0
+  if(cart[0]){
+    cartId=cart[0]._id
+    total=cart[0].total 
+  }
+  else{
+    emptyCart=true
+  }
+  res.render("pages/transparency",{clientPage:true,products,cart,cartId,total,emptyCart})
 })
 router.get('/about-us',async function(req, res, next) {
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
   let products=await userHelper.getProductsNames()
-  res.render("pages/about-us",{clientPage:true,products})
+  let cart=await userHelper.getCart(user,guestUser)
+  let cartId
+  let total=0
+  if(cart[0]){
+    cartId=cart[0]._id
+    total=cart[0].total 
+  }
+  else{
+    emptyCart=true
+  }
+  res.render("pages/about-us",{clientPage:true,products,cart,cartId,total,emptyCart})
 })
 router.get('/cancel-order',async function(req, res, next) {
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
   let products=await userHelper.getProductsNames()
-  res.render("pages/cancel-order",{clientPage:true,products})
+  let cart=await userHelper.getCart(user,guestUser)
+  let cartId
+  let total=0
+  if(cart[0]){
+    cartId=cart[0]._id
+    total=cart[0].total 
+  }
+  else{
+    emptyCart=true
+  }
+  res.render("pages/cancel-order",{clientPage:true,products,cart,cartId,total,emptyCart})
 })
 router.post('/cancel-order',async function(req, res, next) {
     userHelper.submitReturn(req.body).then((data)=>{
@@ -196,11 +387,30 @@ router.post('/verifyPayment',(req,res,next)=>{
     res.json({success:false})
   })
 })
-router.get('/thank-you/:id',(req,res,next)=>{
+router.get('/thank-you/:id',async(req,res,next)=>{
+  let user
+  let guestUser=false
+  if(req.session.user){
+    user=req.session.user
+  }else{
+    user=req.sessionID
+    guestUser=true
+  }
+  let emptyCart=false
+  let products=await userHelper.getProductsNames()
+  let cart=await userHelper.getCart(user,guestUser)
+  let cartId
+  let total=0
+  if(cart[0]){
+    cartId=cart[0]._id
+    total=cart[0].total 
+  }
+  else{
+    emptyCart=true
+  }
   userHelper.getOrderProducts(req.params.id).then(async(orders)=>{
-    let products=await userHelper.getProducts()
     
-    res.render('pages/thankyou-page',({clientPage:true,orders,products}))
+    res.render('pages/thankyou-page',({clientPage:true,orders,products,cart,cartId,emptyCart,total}))
   })
 })    
 router.post('/applyCoupon',(req,res,next)=>{

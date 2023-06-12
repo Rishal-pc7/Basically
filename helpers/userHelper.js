@@ -309,7 +309,6 @@ module.exports={
                 total= details.total-details.price
 
             }
-            console.log(details.total,quantity,details.price)
             db.get().collection(collection.CART_COLLECTION).updateOne({_id:new objectId(details.cartId),"products.proId":new objectId(details.proId)},{
                 $set:{'products.$.quantity':quantity,total:total} 
             }).then((data)=>{

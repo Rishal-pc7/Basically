@@ -129,7 +129,9 @@
 </div>
 
 <script>
-   
+    document.getElementById('desCartCount').style.display='none'
+    document.getElementById('mobCartCount').style.display='none'
+   sessionStorage.removeItem('showCount')
    let images=document.querySelectorAll('[data-src]')
    let imgOptions={}
    

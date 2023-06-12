@@ -55,6 +55,18 @@ async function isInViewport(el) {
 }
 window.onload=()=>{
     let cartShow=sessionStorage.getItem("showCart")
+    let showCount=sessionStorage.getItem("showCount")
+    if(chkPath.indexOf('checkout') === -1){
+
+        if(showCount){
+            document.getElementById('desCartCount').style.display='block'
+            document.getElementById('mobCartCount').style.display='block'
+        }else{
+            document.getElementById('desCartCount').style.display='none'
+            document.getElementById('mobCartCount').style.display='none'
+            
+        }
+    }
     if(cartShow){
         showCart()
         sessionStorage.removeItem("showCart")  

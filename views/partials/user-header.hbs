@@ -22,7 +22,7 @@
                 {{else}}
                 <button class=""><a href="/accounts" style="color: #000;"><i class="las la-user" ></i></a></button>
                 {{/if}}
-               <button class="" onclick="showCart()"><i class="las la-shopping-bag"></i></button>
+               <button class="" onclick="showCart()"><i class="las la-shopping-bag"></i><span id="cartCount"><i class="fa-solid fa-badge"></i></span></button>
 
             </div>
            </div>
@@ -152,7 +152,7 @@
             {{else}}
             <button class="usr-btn"><a href="/accounts"><i class="las la-user links" ></i></a></button>
             {{/if}}
-            <button class="cart-btn" onclick="showCart()"><i class="las la-shopping-bag links"></i></button>
+            <button class="cart-btn" onclick="showCart()"><i class="las la-shopping-bag links"><span id="mobCartCount"><i class="fa-solid fa-circle"></i></span></i></button>
         </div>
     </div>
 
@@ -177,7 +177,7 @@
                 {{else}}
                 <li><a href="/accounts" class="links"><i class="las la-user" ></i></a></li>
                 {{/if}}
-                <li onclick="showCart()"><a class="links"><i class="las la-shopping-bag"></i></a></li>
+                <li onclick="showCart()"><a class="links"><i class="las la-shopping-bag"><span id="desCartCount"><i class="fa-solid fa-circle"></i></span></i></a></li>
             </ul>
         </div>
         <div class="shop-opts hover-options" id="shopOpts" >

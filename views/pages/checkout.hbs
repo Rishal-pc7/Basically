@@ -62,10 +62,10 @@
                 {{/each}}
               </div>
               <div class="total-div">
-                    <div class="form-div">
+                    <div class="form-div" style="width: 110%;">
                     <form id="couponForm" onsubmit="couponCodeApplied(event,this)"> 
 
-                    <input type="text" name="coupon" placeholder="Enter your coupon code here" id="couponCode">
+                    <input type="text" name="coupon" placeholder="Enter your coupon code here(in Block Letters)" id="couponCode">
                     <input type="text" name="cartId" value="{{cartId}}" hidden>
                     <input type="text" name="total" value="{{total}}" hidden>
                     <input type="submit" value="APPLY">
@@ -232,7 +232,7 @@
                 <div style="margin-left: 2em;" class="form-div">
                     <form id="couponDesForm" onsubmit="couponCodeApplied(event,this)"> 
 
-                    <input type="text" name="coupon" style="width: 400px;" placeholder="Enter your coupon code here" id="couponCode" required>
+                    <input type="text" name="coupon" style="width: 410px;" placeholder="Enter your coupon code here(in Block Letters)" id="couponCode" required>
                     <input type="text" name="cartId" value="{{cartId}}" hidden>
                     <input type="text" name="total" value="{{total}}" hidden>
                     <input type="submit" value="APPLY" style="position: absolute;margin-left: -2px;margin-top: -1px;height: 46px;">

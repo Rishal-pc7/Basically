@@ -76,9 +76,19 @@
     border: none;
     font-size: 65px;
     cursor: pointer;
-    margin-left: 25px;
+    margin-left: 11px;
     color: #fff;
 }
+.mobile-nav .nav-items .right-opts button #mobCartCount{
+    position: absolute;
+    right: 85px;
+    font-size: 25px;
+    top: 10px;
+    color: #7393B3;
+    display: none;
+    
+}
+
 
 .mobile-nav .menus{
     width: 100%;
@@ -377,6 +387,16 @@
 .navbar .nav-user a i{
     font-size: 32px;
     font-weight: 600;
+}
+.navbar .nav-user a i #desCartCount{
+    position: absolute;
+    right: 76px;
+    top: 15px;
+    color: #7393B3;
+    display: none;
+}
+.navbar .nav-user a i #desCartCount i{
+    font-size: 14px;
 }
 .navbar .hover-options{
     padding: 50px 65px;
