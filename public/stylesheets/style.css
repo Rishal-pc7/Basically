@@ -18,6 +18,7 @@ body {
   animation: fade .8s ease-in-out;
   font-display: inherit;
   background: #fff !important;
+  overflow-x: hidden;
 }
 .mob-view{
   display: none;
