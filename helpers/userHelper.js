@@ -545,8 +545,59 @@ module.exports={
         })
         const info=await transporter.sendMail({
             from:'Basically_Bot <messagebot69@gmail.com> ',
-            to:"fasalrahmanpv7@gmail.com",
+            to:"basicallyclothin@gmail.com",
             subject:'Order Placed',
+            html:html
+        })
+        resolve(info)
+       })
+    },
+    sendConformationMail:(orders)=>{
+       return new Promise(async(resolve, reject) => {
+        
+        let proHtml
+        if(orders.length === 1){
+            proHtml=`<h4>Products</h4>
+            <ul><li>Item:${orders[0].products.category} Size:${orders[0].size} Quantity:${orders[0].quantity} Color:${orders[0].products.color} Price:${orders[0].products.price}</li></ul>
+            `
+        }else{
+            for(i in orders){
+                proHtml+=`<ul><li>Item:${orders[i].products.category}</li><li>Size:${orders[i].size}</li><li>Quantity:${orders[i].quantity}</li><li>Color:${orders[i].products.color}</li><li>Price:${orders[i].products.price}</li></ul>`
+            }
+        }
+        let html=`
+        <div style='color:#000'>
+        <h4>On:${orders[0].date}</h4>
+        <h4>Payment Method:${orders[0].paymentMethod}</h4>
+        <ul>
+           <li style='list-style:none'>Name:${orders[0].deliveryDetails.name}</li>
+           <li style='list-style:none'>Address:${orders[0].deliveryDetails.address} ${orders[0].deliveryDetails.pincode} ${orders[0].deliveryDetails.city}</li>
+           <li style='list-style:none'>Mobile No:${orders[0].deliveryDetails.phone}</li>
+           <li style='list-style:none'>Whatsapp No:${orders[0].deliveryDetails.whatsapp}</li>
+           <li style='list-style:none'>Email:${orders[0].deliveryDetails.email}</li>
+        </ul>
+        
+        ${proHtml}
+        
+        <h3>Order Total:${orders[0].total}</h3>
+        </div>
+        `
+        const transporter= nodemailer.createTransport({
+            host:"smtp.gmail.com",
+            port:587,
+            secure:false,
+            auth:{
+                user:'messagebot69@gmail.com',
+                pass:'qlsrdpftmtcbxart'
+            },
+            tls: {
+                ciphers:'SSLv3'
+            }
+        })
+        const info=await transporter.sendMail({
+            from:'Basically_Bot <messagebot69@gmail.com> ',
+            to:orders[0].deliveryDetails.email,
+            subject:'An Order has been Placed from basically.',
             html:html
         })
         resolve(info)
@@ -577,7 +628,7 @@ module.exports={
             })
             const info=await transporter.sendMail({
                 from:'Basically_Bot <messagebot69@gmail.com> ',
-                to:"fasalrahmanpv7@gmail.com",
+                to:"basicallyclothin@gmail.com",
                 subject:details.option+' Issued',
                 html:html
             })

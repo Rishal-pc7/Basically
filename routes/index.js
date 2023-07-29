@@ -409,11 +409,22 @@ router.get('/thank-you/:id',async(req,res,next)=>{
     emptyCart=true
   }
   userHelper.getOrderProducts(req.params.id).then(async(orders)=>{
+    let orderTotal=parseFloat(orders[0].total)
+    let ordersFil=JSON.parse(JSON.stringify(orders)); 
+    ordersFil.forEach(obj=>{
+      obj.products.coverImage=null
+      obj.products.proImages=null
+    }) 
     
-    res.render('pages/thankyou-page',({clientPage:true,orders,products,cart,cartId,emptyCart,total}))
+    let ordersJson=JSON.stringify(ordersFil)
+    res.render('pages/thankyou-page',{clientPage:true,orders,products,cart,cartId,emptyCart,total,orderTotal,ordersJson})
   })
 })    
-router.post('/applyCoupon',(req,res,next)=>{
+router.post('/sendConformation',async(req,res,next)=>{
+  let orders=req.body
+  let email=await userHelper.sendConformationMail(orders)
+})
+router.post('/applyCoupon',(req,res,next)=>{ 
   userHelper.applyCoupon(req.body).then((data)=>{ 
     if(data.applied){ 
       res.json({status:true,total:data.total,discount:data.discount})

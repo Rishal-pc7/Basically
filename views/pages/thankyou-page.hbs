@@ -11,11 +11,14 @@
           n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
          fbq('init', '172181538913764');
-         fbq('track', 'Purchase');
+         fbq('track', 'Purchase',{
+            value:{{orderTotal}},
+            currency:'INR'
+         });
      </script>
 <div class="thankyouParentDiv">
     <div class="thankyouDiv">
-
+     <h5 id="orders" style="display: none;">{{ordersJson}}</h5>
     <div class="header">
         <h5>Thank you,{{orders.0.deliveryDetails.name}}</h5>
         <h6>You will get a conformation email soon</h6>
@@ -127,7 +130,7 @@
     </div>
     </div>
 </div>
-
+<script src="/javascripts/jquery.min.js" defer></script>
 <script>
     document.getElementById('desCartCount').style.display='none'
     document.getElementById('mobCartCount').style.display='none'
@@ -156,5 +159,13 @@
    })
     images.forEach(image =>{
         imgObserver.observe(image)
+    })
+    let orders=document.getElementById('orders').innerHTML
+    fetch('/sendConformation', {
+  method: 'POST',
+  body:orders,
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  }
     })
 </script>
