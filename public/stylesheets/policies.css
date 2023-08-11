@@ -36,6 +36,9 @@
 .policyParentDiv .para .content ,.policyParentDiv .small-para .content {
     text-align: left;
 }
+.highlighted{
+    background:#9cfa8c;
+}
 
 @media only screen and (min-width: 200px) and (max-width: 1250px){
     .policyParentDiv{
