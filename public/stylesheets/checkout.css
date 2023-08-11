@@ -94,6 +94,7 @@
 .checkoutParentDiv .order-summary .item-details .items .item .pro-name{
     margin-left: -3em;
     margin-top: 3em;
+    max-width:385px;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-name .name{
     font-weight: 600;
