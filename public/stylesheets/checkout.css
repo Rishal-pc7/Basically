@@ -72,11 +72,11 @@
     margin-left: -2em;
 }
 .checkoutParentDiv .order-summary .item-details .items .item{
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 35% 42% 29%;
+    display: flex;
     width: 100%;
     margin-bottom: 2em;
+    gap:5em;
+    position:relative;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-img{
     border: 1px solid #ccc;
@@ -97,7 +97,7 @@
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-name .name{
     font-weight: 600;
-    font-size: 20px;
+    font-size: 24px;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-name .size{
 
@@ -114,8 +114,9 @@ margin-top: .5em;
     
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-price{
-    padding-left: 8em;
     padding-top: 2.5em;
+    position:absolute;
+    right:0;
 }
 .checkoutParentDiv .order-summary .item-details .items .item .pro-price .price{
     font-weight: 600;
